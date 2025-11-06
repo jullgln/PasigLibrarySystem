@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PasigLibrarySystem.LOG_IN;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,12 @@ namespace PasigLibrarySystem
             LogInbtn.BackColor = UIColors.VividAzure;
             LogInbtn.ForeColor = UIColors.White;
         }
-
+        private void link1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgotPass ForgotPassForm = new ForgotPass();
+            ForgotPassForm.Show();
+            this.Hide();
+        }
         private void link2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             SignUp signUpForm = new SignUp();
