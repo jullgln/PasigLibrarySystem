@@ -42,6 +42,12 @@ namespace PasigLibrarySystem
             string password = passtxtbox.Text.Trim();
             DateTime joined = DateTime.Now;
 
+            if (name == "" || username == "" || password == "")
+            {
+                MessageBox.Show("Please enter all fields.");
+                return;
+            }
+
             DBConnect db = new DBConnect();
 
             try
@@ -52,7 +58,6 @@ namespace PasigLibrarySystem
                                "VALUES (@userID, @name, @username, @email, @password, @joined)";
                 MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
 
-                // ? Make sure these names exactly match those in the SQL query
                 cmd.Parameters.AddWithValue("@userID", userID);
                 cmd.Parameters.AddWithValue("@name", name);
                 cmd.Parameters.AddWithValue("@username", username);
