@@ -1,4 +1,5 @@
-﻿using PasigLibrarySystem.LOG_IN;
+﻿using PasigLibrarySystem.DATABASES;
+using PasigLibrarySystem.LOG_IN;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +39,35 @@ namespace PasigLibrarySystem
             SignUp signUpForm = new SignUp();
             signUpForm.Show();
             this.Hide();
+        }
+
+        private void LogInbtn_Click(object sender, EventArgs e)
+        {
+            string username =Usernametxtbox.Text.Trim();
+            string password =passtxtbox.Text.Trim();
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Invalid username or password.");
+                return;
+            }
+            //DBConnector class
+            DBConnect db = new DBConnect();
+
+            try
+            {
+                db.Open();
+
+                //place your query here
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+            finally 
+            { 
+                db.Close(); 
+            }
         }
     }
 }

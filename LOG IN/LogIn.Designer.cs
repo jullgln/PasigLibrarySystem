@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
             H1 = new Label();
             lbl2 = new Label();
-            textBox1 = new TextBox();
+            passtxtbox = new TextBox();
             lbl1 = new Label();
             Usernametxtbox = new TextBox();
             link1 = new LinkLabel();
@@ -64,15 +64,15 @@
             lbl2.TabIndex = 13;
             lbl2.Text = "Password";
             // 
-            // textBox1
+            // passtxtbox
             // 
-            textBox1.BackColor = Color.Gainsboro;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(506, 265);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(331, 26);
-            textBox1.TabIndex = 12;
+            passtxtbox.BackColor = Color.Gainsboro;
+            passtxtbox.BorderStyle = BorderStyle.None;
+            passtxtbox.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            passtxtbox.Location = new Point(506, 265);
+            passtxtbox.Name = "passtxtbox";
+            passtxtbox.Size = new Size(331, 26);
+            passtxtbox.TabIndex = 12;
             // 
             // lbl1
             // 
@@ -117,6 +117,7 @@
             LogInbtn.TabIndex = 16;
             LogInbtn.Text = "Log In";
             LogInbtn.UseVisualStyleBackColor = true;
+            LogInbtn.Click += LogInbtn_Click;
             // 
             // label1
             // 
@@ -175,7 +176,7 @@
             Controls.Add(LogInbtn);
             Controls.Add(link1);
             Controls.Add(lbl2);
-            Controls.Add(textBox1);
+            Controls.Add(passtxtbox);
             Controls.Add(lbl1);
             Controls.Add(Usernametxtbox);
             Controls.Add(H1);
@@ -191,7 +192,7 @@
         #endregion
         private Label H1;
         private Label lbl2;
-        private TextBox textBox1;
+        private TextBox passtxtbox;
         private Label lbl1;
         private TextBox Usernametxtbox;
         private LinkLabel link1;
