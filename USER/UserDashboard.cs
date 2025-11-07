@@ -15,6 +15,9 @@ namespace PasigLibrarySystem.USER
         public UserDashboard()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            UIRounder.FormRounder(this, 30);
+            highlightpanel.BackColor = UIColors.VividAzure;
         }
     }
 }
