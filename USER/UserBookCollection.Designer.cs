@@ -1,6 +1,6 @@
 ﻿namespace PasigLibrarySystem.USER
 {
-    partial class UserDashboard
+    partial class UserBookCollection
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserDashboard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserBookCollection));
             taskbarpanel = new Panel();
-            highlightpanel = new Panel();
+            panel = new Panel();
             pictureBox2 = new PictureBox();
             Homelbl = new Label();
             panel1 = new Panel();
             pictureBox7 = new PictureBox();
             MyAcclbl = new Label();
-            panel2 = new Panel();
+            highlightpanel = new Panel();
             pictureBox8 = new PictureBox();
             BookCollectlbl = new Label();
             panel3 = new Panel();
@@ -51,11 +51,11 @@
             H1 = new Label();
             pictureBox1 = new PictureBox();
             taskbarpanel.SuspendLayout();
-            highlightpanel.SuspendLayout();
+            panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            panel2.SuspendLayout();
+            highlightpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
@@ -68,25 +68,25 @@
             // taskbarpanel
             // 
             taskbarpanel.BackColor = Color.White;
-            taskbarpanel.Controls.Add(highlightpanel);
+            taskbarpanel.Controls.Add(panel);
             taskbarpanel.Controls.Add(panel1);
-            taskbarpanel.Controls.Add(panel2);
+            taskbarpanel.Controls.Add(highlightpanel);
             taskbarpanel.Controls.Add(panel3);
             taskbarpanel.Controls.Add(panel4);
             taskbarpanel.Location = new Point(-1, 78);
             taskbarpanel.Name = "taskbarpanel";
             taskbarpanel.Size = new Size(236, 602);
-            taskbarpanel.TabIndex = 0;
+            taskbarpanel.TabIndex = 1;
             // 
-            // highlightpanel
+            // panel
             // 
-            highlightpanel.BackColor = Color.Black;
-            highlightpanel.Controls.Add(pictureBox2);
-            highlightpanel.Controls.Add(Homelbl);
-            highlightpanel.Location = new Point(-9, 26);
-            highlightpanel.Name = "highlightpanel";
-            highlightpanel.Size = new Size(288, 82);
-            highlightpanel.TabIndex = 1;
+            panel.BackColor = Color.Transparent;
+            panel.Controls.Add(pictureBox2);
+            panel.Controls.Add(Homelbl);
+            panel.Location = new Point(-9, 26);
+            panel.Name = "panel";
+            panel.Size = new Size(288, 82);
+            panel.TabIndex = 1;
             // 
             // pictureBox2
             // 
@@ -102,13 +102,14 @@
             // 
             Homelbl.AutoSize = true;
             Homelbl.Font = new Font("Poppins", 13F);
-            Homelbl.ForeColor = Color.White;
+            Homelbl.ForeColor = Color.FromArgb(15, 46, 103);
             Homelbl.Location = new Point(74, 26);
             Homelbl.Name = "Homelbl";
             Homelbl.Size = new Size(68, 31);
             Homelbl.TabIndex = 7;
             Homelbl.Text = "Home";
             Homelbl.TextAlign = ContentAlignment.TopCenter;
+            Homelbl.Click += Homelbl_Click;
             // 
             // panel1
             // 
@@ -143,15 +144,15 @@
             MyAcclbl.TextAlign = ContentAlignment.TopCenter;
             MyAcclbl.Click += MyAcclbl_Click;
             // 
-            // panel2
+            // highlightpanel
             // 
-            panel2.BackColor = Color.Transparent;
-            panel2.Controls.Add(pictureBox8);
-            panel2.Controls.Add(BookCollectlbl);
-            panel2.Location = new Point(-11, 227);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(288, 82);
-            panel2.TabIndex = 2;
+            highlightpanel.BackColor = Color.Black;
+            highlightpanel.Controls.Add(pictureBox8);
+            highlightpanel.Controls.Add(BookCollectlbl);
+            highlightpanel.Location = new Point(-11, 227);
+            highlightpanel.Name = "highlightpanel";
+            highlightpanel.Size = new Size(288, 82);
+            highlightpanel.TabIndex = 2;
             // 
             // pictureBox8
             // 
@@ -167,14 +168,13 @@
             // 
             BookCollectlbl.AutoSize = true;
             BookCollectlbl.Font = new Font("Poppins", 13F);
-            BookCollectlbl.ForeColor = Color.FromArgb(15, 46, 103);
+            BookCollectlbl.ForeColor = Color.White;
             BookCollectlbl.Location = new Point(74, 26);
             BookCollectlbl.Name = "BookCollectlbl";
             BookCollectlbl.Size = new Size(154, 31);
             BookCollectlbl.TabIndex = 7;
             BookCollectlbl.Text = "Book Collection";
             BookCollectlbl.TextAlign = ContentAlignment.TopCenter;
-            BookCollectlbl.Click += BookCollectlbl_Click;
             // 
             // panel3
             // 
@@ -253,7 +253,7 @@
             headerpanel.Location = new Point(-33, 0);
             headerpanel.Name = "headerpanel";
             headerpanel.Size = new Size(1316, 88);
-            headerpanel.TabIndex = 1;
+            headerpanel.TabIndex = 3;
             // 
             // LogOutbtn
             // 
@@ -303,7 +303,7 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // UserDashboard
+            // UserBookCollection
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -311,19 +311,18 @@
             ClientSize = new Size(1264, 681);
             Controls.Add(headerpanel);
             Controls.Add(taskbarpanel);
-            ForeColor = SystemColors.ControlText;
-            Name = "UserDashboard";
+            Name = "UserBookCollection";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "UserDashboard";
+            Text = "UserBookCollection";
             taskbarpanel.ResumeLayout(false);
-            highlightpanel.ResumeLayout(false);
-            highlightpanel.PerformLayout();
+            panel.ResumeLayout(false);
+            panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            highlightpanel.ResumeLayout(false);
+            highlightpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -340,25 +339,25 @@
         #endregion
 
         private Panel taskbarpanel;
-        private Panel headerpanel;
-        private PictureBox pictureBox1;
-        private Label H1;
-        private Panel highlightpanel;
+        private Panel panel;
         private PictureBox pictureBox2;
         private Label Homelbl;
-        private PictureBox pictureBox6;
-        private Label Settingslbl;
-        private Label welcomelbl;
-        private Button LogOutbtn;
         private Panel panel1;
         private PictureBox pictureBox7;
         private Label MyAcclbl;
-        private Panel panel2;
+        private Panel highlightpanel;
         private PictureBox pictureBox8;
         private Label BookCollectlbl;
         private Panel panel3;
         private PictureBox pictureBox9;
         private Label Aboutlbl;
         private Panel panel4;
+        private PictureBox pictureBox6;
+        private Label Settingslbl;
+        private Panel headerpanel;
+        private Button LogOutbtn;
+        private Label welcomelbl;
+        private Label H1;
+        private PictureBox pictureBox1;
     }
 }

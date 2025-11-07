@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PasigLibrarySystem.USER
 {
-    public partial class UserDashboard : Form
+    public partial class UserMyAcc : Form
     {
-        public UserDashboard()
+        public UserMyAcc()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -23,9 +23,9 @@ namespace PasigLibrarySystem.USER
             LogOutbtn.ForeColor = UIColors.DarkBlue;
         }
 
-        private void MyAcclbl_Click(object sender, EventArgs e)
+        private void Homelbl_Click(object sender, EventArgs e)
         {
-            UserAction.SwitchForm(this, new UserMyAcc());
+            UserAction.SwitchForm(this, new UserDashboard());
         }
 
         private void BookCollectlbl_Click(object sender, EventArgs e)
@@ -42,6 +42,7 @@ namespace PasigLibrarySystem.USER
         {
             UserAction.SwitchForm(this, new UserSettings());
         }
+
         private void LogOutbtn_Click(object sender, EventArgs e)
         {
             UserAction.LogOut(this, new LogIn());

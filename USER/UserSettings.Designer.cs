@@ -1,6 +1,6 @@
 ﻿namespace PasigLibrarySystem.USER
 {
-    partial class UserDashboard
+    partial class UserSettings
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserDashboard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSettings));
+            headerpanel = new Panel();
+            LogOutbtn = new Button();
+            welcomelbl = new Label();
+            H1 = new Label();
+            pictureBox1 = new PictureBox();
             taskbarpanel = new Panel();
-            highlightpanel = new Panel();
+            panel = new Panel();
             pictureBox2 = new PictureBox();
             Homelbl = new Label();
             panel1 = new Panel();
@@ -42,16 +47,13 @@
             panel3 = new Panel();
             pictureBox9 = new PictureBox();
             Aboutlbl = new Label();
-            panel4 = new Panel();
+            highlightpanel = new Panel();
             pictureBox6 = new PictureBox();
             Settingslbl = new Label();
-            headerpanel = new Panel();
-            LogOutbtn = new Button();
-            welcomelbl = new Label();
-            H1 = new Label();
-            pictureBox1 = new PictureBox();
+            headerpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             taskbarpanel.SuspendLayout();
-            highlightpanel.SuspendLayout();
+            panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -59,34 +61,93 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            panel4.SuspendLayout();
+            highlightpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            headerpanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+            // 
+            // headerpanel
+            // 
+            headerpanel.BackColor = Color.FromArgb(15, 46, 103);
+            headerpanel.Controls.Add(LogOutbtn);
+            headerpanel.Controls.Add(welcomelbl);
+            headerpanel.Controls.Add(H1);
+            headerpanel.Controls.Add(pictureBox1);
+            headerpanel.ForeColor = SystemColors.ControlText;
+            headerpanel.Location = new Point(-33, 0);
+            headerpanel.Name = "headerpanel";
+            headerpanel.Size = new Size(1316, 88);
+            headerpanel.TabIndex = 2;
+            // 
+            // LogOutbtn
+            // 
+            LogOutbtn.FlatStyle = FlatStyle.Flat;
+            LogOutbtn.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LogOutbtn.Location = new Point(1160, 27);
+            LogOutbtn.Name = "LogOutbtn";
+            LogOutbtn.Size = new Size(93, 35);
+            LogOutbtn.TabIndex = 17;
+            LogOutbtn.Text = " Log Out";
+            LogOutbtn.TextAlign = ContentAlignment.BottomCenter;
+            LogOutbtn.UseVisualStyleBackColor = true;
+            LogOutbtn.Click += LogOutbtn_Click;
+            // 
+            // welcomelbl
+            // 
+            welcomelbl.AutoSize = true;
+            welcomelbl.Font = new Font("Poppins Light", 13F);
+            welcomelbl.ForeColor = Color.White;
+            welcomelbl.Location = new Point(1008, 31);
+            welcomelbl.Name = "welcomelbl";
+            welcomelbl.Size = new Size(150, 31);
+            welcomelbl.TabIndex = 7;
+            welcomelbl.Text = "Welcome, User!";
+            welcomelbl.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // H1
+            // 
+            H1.AutoSize = true;
+            H1.Font = new Font("Poppins", 22F, FontStyle.Bold);
+            H1.ForeColor = Color.White;
+            H1.Location = new Point(157, 18);
+            H1.Name = "H1";
+            H1.Size = new Size(354, 53);
+            H1.TabIndex = 6;
+            H1.Text = "Public Library System";
+            H1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(34, -18);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(137, 116);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // taskbarpanel
             // 
             taskbarpanel.BackColor = Color.White;
-            taskbarpanel.Controls.Add(highlightpanel);
+            taskbarpanel.Controls.Add(panel);
             taskbarpanel.Controls.Add(panel1);
             taskbarpanel.Controls.Add(panel2);
             taskbarpanel.Controls.Add(panel3);
-            taskbarpanel.Controls.Add(panel4);
+            taskbarpanel.Controls.Add(highlightpanel);
             taskbarpanel.Location = new Point(-1, 78);
             taskbarpanel.Name = "taskbarpanel";
             taskbarpanel.Size = new Size(236, 602);
-            taskbarpanel.TabIndex = 0;
+            taskbarpanel.TabIndex = 3;
             // 
-            // highlightpanel
+            // panel
             // 
-            highlightpanel.BackColor = Color.Black;
-            highlightpanel.Controls.Add(pictureBox2);
-            highlightpanel.Controls.Add(Homelbl);
-            highlightpanel.Location = new Point(-9, 26);
-            highlightpanel.Name = "highlightpanel";
-            highlightpanel.Size = new Size(288, 82);
-            highlightpanel.TabIndex = 1;
+            panel.BackColor = Color.Transparent;
+            panel.Controls.Add(pictureBox2);
+            panel.Controls.Add(Homelbl);
+            panel.Location = new Point(-9, 26);
+            panel.Name = "panel";
+            panel.Size = new Size(288, 82);
+            panel.TabIndex = 1;
             // 
             // pictureBox2
             // 
@@ -102,13 +163,14 @@
             // 
             Homelbl.AutoSize = true;
             Homelbl.Font = new Font("Poppins", 13F);
-            Homelbl.ForeColor = Color.White;
+            Homelbl.ForeColor = Color.FromArgb(15, 46, 103);
             Homelbl.Location = new Point(74, 26);
             Homelbl.Name = "Homelbl";
             Homelbl.Size = new Size(68, 31);
             Homelbl.TabIndex = 7;
             Homelbl.Text = "Home";
             Homelbl.TextAlign = ContentAlignment.TopCenter;
+            Homelbl.Click += Homelbl_Click;
             // 
             // panel1
             // 
@@ -209,15 +271,15 @@
             Aboutlbl.TextAlign = ContentAlignment.TopCenter;
             Aboutlbl.Click += Aboutlbl_Click;
             // 
-            // panel4
+            // highlightpanel
             // 
-            panel4.BackColor = Color.Transparent;
-            panel4.Controls.Add(pictureBox6);
-            panel4.Controls.Add(Settingslbl);
-            panel4.Location = new Point(-8, 497);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(288, 82);
-            panel4.TabIndex = 2;
+            highlightpanel.BackColor = Color.Black;
+            highlightpanel.Controls.Add(pictureBox6);
+            highlightpanel.Controls.Add(Settingslbl);
+            highlightpanel.Location = new Point(-8, 497);
+            highlightpanel.Name = "highlightpanel";
+            highlightpanel.Size = new Size(288, 82);
+            highlightpanel.TabIndex = 2;
             // 
             // pictureBox6
             // 
@@ -233,91 +295,30 @@
             // 
             Settingslbl.AutoSize = true;
             Settingslbl.Font = new Font("Poppins", 13F);
-            Settingslbl.ForeColor = Color.FromArgb(15, 46, 103);
+            Settingslbl.ForeColor = Color.White;
             Settingslbl.Location = new Point(71, 25);
             Settingslbl.Name = "Settingslbl";
             Settingslbl.Size = new Size(87, 31);
             Settingslbl.TabIndex = 15;
             Settingslbl.Text = "Settings";
             Settingslbl.TextAlign = ContentAlignment.TopCenter;
-            Settingslbl.Click += Settingslbl_Click;
             // 
-            // headerpanel
-            // 
-            headerpanel.BackColor = Color.FromArgb(15, 46, 103);
-            headerpanel.Controls.Add(LogOutbtn);
-            headerpanel.Controls.Add(welcomelbl);
-            headerpanel.Controls.Add(H1);
-            headerpanel.Controls.Add(pictureBox1);
-            headerpanel.ForeColor = SystemColors.ControlText;
-            headerpanel.Location = new Point(-33, 0);
-            headerpanel.Name = "headerpanel";
-            headerpanel.Size = new Size(1316, 88);
-            headerpanel.TabIndex = 1;
-            // 
-            // LogOutbtn
-            // 
-            LogOutbtn.FlatStyle = FlatStyle.Flat;
-            LogOutbtn.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LogOutbtn.Location = new Point(1160, 27);
-            LogOutbtn.Name = "LogOutbtn";
-            LogOutbtn.Size = new Size(93, 35);
-            LogOutbtn.TabIndex = 17;
-            LogOutbtn.Text = " Log Out";
-            LogOutbtn.TextAlign = ContentAlignment.BottomCenter;
-            LogOutbtn.UseVisualStyleBackColor = true;
-            LogOutbtn.Click += LogOutbtn_Click;
-            // 
-            // welcomelbl
-            // 
-            welcomelbl.AutoSize = true;
-            welcomelbl.Font = new Font("Poppins Light", 13F);
-            welcomelbl.ForeColor = Color.White;
-            welcomelbl.Location = new Point(1008, 31);
-            welcomelbl.Name = "welcomelbl";
-            welcomelbl.Size = new Size(150, 31);
-            welcomelbl.TabIndex = 7;
-            welcomelbl.Text = "Welcome, User!";
-            welcomelbl.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // H1
-            // 
-            H1.AutoSize = true;
-            H1.Font = new Font("Poppins", 22F, FontStyle.Bold);
-            H1.ForeColor = Color.White;
-            H1.Location = new Point(157, 18);
-            H1.Name = "H1";
-            H1.Size = new Size(354, 53);
-            H1.TabIndex = 6;
-            H1.Text = "Public Library System";
-            H1.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(34, -18);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(137, 116);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // UserDashboard
+            // UserSettings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(238, 238, 238);
             ClientSize = new Size(1264, 681);
             Controls.Add(headerpanel);
             Controls.Add(taskbarpanel);
-            ForeColor = SystemColors.ControlText;
-            Name = "UserDashboard";
+            Name = "UserSettings";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "UserDashboard";
+            Text = "UserSettings";
+            headerpanel.ResumeLayout(false);
+            headerpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             taskbarpanel.ResumeLayout(false);
-            highlightpanel.ResumeLayout(false);
-            highlightpanel.PerformLayout();
+            panel.ResumeLayout(false);
+            panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -328,28 +329,23 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            highlightpanel.ResumeLayout(false);
+            highlightpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            headerpanel.ResumeLayout(false);
-            headerpanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel taskbarpanel;
         private Panel headerpanel;
-        private PictureBox pictureBox1;
+        private Button LogOutbtn;
+        private Label welcomelbl;
         private Label H1;
-        private Panel highlightpanel;
+        private PictureBox pictureBox1;
+        private Panel taskbarpanel;
+        private Panel panel;
         private PictureBox pictureBox2;
         private Label Homelbl;
-        private PictureBox pictureBox6;
-        private Label Settingslbl;
-        private Label welcomelbl;
-        private Button LogOutbtn;
         private Panel panel1;
         private PictureBox pictureBox7;
         private Label MyAcclbl;
@@ -359,6 +355,8 @@
         private Panel panel3;
         private PictureBox pictureBox9;
         private Label Aboutlbl;
-        private Panel panel4;
+        private Panel highlightpanel;
+        private PictureBox pictureBox6;
+        private Label Settingslbl;
     }
 }
