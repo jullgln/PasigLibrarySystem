@@ -30,4 +30,17 @@ namespace PasigLibrarySystem.DATABASES
             return connectdb;
         }
     }
+    public static class IDGenerator
+    {
+        public static string GenerateUserID()
+        {
+            const string prefix = "UR";
+            Random random = new Random();
+
+            int code = random.Next(0, 1000); // generates from 0–999
+            string formattedCode = code.ToString("D3"); // ensures 3 digits (e.g., 007, 123)
+
+            return prefix + formattedCode;
+        }
+    }
 }

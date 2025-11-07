@@ -48,5 +48,6 @@ namespace PasigLibrarySystem
         public static readonly Color VividAzure = ColorTranslator.FromHtml("#148cf0");
         public static readonly Color LightGray = ColorTranslator.FromHtml("#eeeeee");
         public static readonly Color White = ColorTranslator.FromHtml("#FFFFFF");
+        public static readonly Color Crimson = ColorTranslator.FromHtml("#DC143C");
     }
 }

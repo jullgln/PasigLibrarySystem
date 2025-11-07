@@ -1,11 +1,14 @@
-﻿using PasigLibrarySystem.DATABASES;
+﻿using MySql.Data.MySqlClient;
+using PasigLibrarySystem.DATABASES;
 using PasigLibrarySystem.LOG_IN;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -48,7 +51,9 @@ namespace PasigLibrarySystem
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Invalid username or password.");
+                inc.ForeColor = UIColors.Crimson;
+                inc.Text = "Please enter username and password";
+                inc1.Text = "";
                 return;
             }
             //DBConnector class
@@ -58,7 +63,27 @@ namespace PasigLibrarySystem
             {
                 db.Open();
 
-                //place your query here
+                string query = "SELECT * FROM users WHERE username=@Username AND password=@Password";
+                MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
+                cmd.Parameters.AddWithValue("@Username", username);
+                cmd.Parameters.AddWithValue("@Password", password);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    USER.UserDashboard Dashboard = new USER.UserDashboard();
+                    Dashboard.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    inc1.ForeColor = UIColors.Crimson;
+                    inc1.Text = "Invalid username or password";
+                    inc.Text = "";
+                    Usernametxtbox.Clear();
+                    passtxtbox.Clear();
+                }
             }
             catch (Exception ex)
             {

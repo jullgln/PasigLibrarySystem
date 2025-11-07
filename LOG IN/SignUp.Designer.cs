@@ -36,7 +36,7 @@
             lbl2 = new Label();
             Usernametxtbox = new TextBox();
             lbl3 = new Label();
-            textBox1 = new TextBox();
+            passtxtbox = new TextBox();
             Registerbtn = new Button();
             lbl4 = new Label();
             emailtxtbox = new TextBox();
@@ -113,15 +113,15 @@
             lbl3.TabIndex = 9;
             lbl3.Text = "Password";
             // 
-            // textBox1
+            // passtxtbox
             // 
-            textBox1.BackColor = Color.Gainsboro;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(511, 385);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(331, 26);
-            textBox1.TabIndex = 8;
+            passtxtbox.BackColor = Color.Gainsboro;
+            passtxtbox.BorderStyle = BorderStyle.None;
+            passtxtbox.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            passtxtbox.Location = new Point(511, 385);
+            passtxtbox.Name = "passtxtbox";
+            passtxtbox.Size = new Size(331, 26);
+            passtxtbox.TabIndex = 8;
             // 
             // Registerbtn
             // 
@@ -165,7 +165,7 @@
             Controls.Add(emailtxtbox);
             Controls.Add(Registerbtn);
             Controls.Add(lbl3);
-            Controls.Add(textBox1);
+            Controls.Add(passtxtbox);
             Controls.Add(lbl2);
             Controls.Add(Usernametxtbox);
             Controls.Add(lbl1);
@@ -189,7 +189,7 @@
         private TextBox nametxtbox;
         private Label lbl2;
         private Label lbl3;
-        private TextBox textBox1;
+        private TextBox passtxtbox;
         private Button Registerbtn;
         private Label lbl4;
         private TextBox emailtxtbox;

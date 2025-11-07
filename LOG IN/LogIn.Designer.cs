@@ -40,6 +40,8 @@
             link2 = new LinkLabel();
             lbl3 = new Label();
             pictureBox2 = new PictureBox();
+            inc = new Label();
+            inc1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -47,7 +49,7 @@
             // 
             H1.AutoSize = true;
             H1.Font = new Font("Poppins", 22F, FontStyle.Bold);
-            H1.Location = new Point(476, 80);
+            H1.Location = new Point(476, 79);
             H1.Name = "H1";
             H1.Size = new Size(392, 53);
             H1.TabIndex = 5;
@@ -125,7 +127,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Arial Rounded MT Bold", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(15, 46, 103);
-            label1.Location = new Point(504, 329);
+            label1.Location = new Point(504, 324);
             label1.Name = "label1";
             label1.Size = new Size(340, 24);
             label1.TabIndex = 17;
@@ -136,7 +138,7 @@
             link2.AutoSize = true;
             link2.Font = new Font("Poppins", 10F);
             link2.LinkColor = Color.FromArgb(15, 46, 103);
-            link2.Location = new Point(720, 361);
+            link2.Location = new Point(720, 356);
             link2.Name = "link2";
             link2.Size = new Size(123, 25);
             link2.TabIndex = 18;
@@ -148,7 +150,7 @@
             // 
             lbl3.AutoSize = true;
             lbl3.Font = new Font("Poppins", 10F);
-            lbl3.Location = new Point(506, 362);
+            lbl3.Location = new Point(506, 357);
             lbl3.Name = "lbl3";
             lbl3.Size = new Size(178, 25);
             lbl3.TabIndex = 19;
@@ -164,12 +166,34 @@
             pictureBox2.TabIndex = 20;
             pictureBox2.TabStop = false;
             // 
+            // inc
+            // 
+            inc.AutoSize = true;
+            inc.Font = new Font("Poppins", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            inc.ForeColor = Color.Transparent;
+            inc.Location = new Point(550, 388);
+            inc.Name = "inc";
+            inc.Size = new Size(0, 23);
+            inc.TabIndex = 21;
+            // 
+            // inc1
+            // 
+            inc1.AutoSize = true;
+            inc1.Font = new Font("Poppins", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            inc1.ForeColor = Color.Transparent;
+            inc1.Location = new Point(575, 388);
+            inc1.Name = "inc1";
+            inc1.Size = new Size(0, 23);
+            inc1.TabIndex = 22;
+            // 
             // LogIn
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(884, 511);
+            Controls.Add(inc1);
+            Controls.Add(inc);
             Controls.Add(pictureBox2);
             Controls.Add(lbl3);
             Controls.Add(link2);
@@ -201,5 +225,7 @@
         private LinkLabel link2;
         private Label lbl3;
         private PictureBox pictureBox2;
+        private Label inc;
+        private Label inc1;
     }
 }
