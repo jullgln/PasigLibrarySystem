@@ -89,6 +89,7 @@
             LogOutbtn.Text = " Log Out";
             LogOutbtn.TextAlign = ContentAlignment.BottomCenter;
             LogOutbtn.UseVisualStyleBackColor = true;
+            LogOutbtn.Click += LogOutbtn_Click;
             // 
             // welcomelbl
             // 
@@ -169,6 +170,7 @@
             Homelbl.TabIndex = 7;
             Homelbl.Text = "Home";
             Homelbl.TextAlign = ContentAlignment.TopCenter;
+            Homelbl.Click += Homelbl_Click;
             // 
             // panel1
             // 
@@ -200,6 +202,7 @@
             memberlbl.Size = new Size(121, 56);
             memberlbl.TabIndex = 7;
             memberlbl.Text = "Member \r\nManagement";
+            memberlbl.Click += memberlbl_Click;
             // 
             // panel2
             // 
@@ -231,6 +234,7 @@
             BookManagelbl.Size = new Size(121, 56);
             BookManagelbl.TabIndex = 7;
             BookManagelbl.Text = "Book\r\nManagement";
+            BookManagelbl.Click += BookManagelbl_Click;
             // 
             // highlightpanel
             // 
@@ -294,6 +298,7 @@
             Settingslbl.TabIndex = 15;
             Settingslbl.Text = "Settings";
             Settingslbl.TextAlign = ContentAlignment.TopCenter;
+            Settingslbl.Click += Settingslbl_Click;
             // 
             // AdminReports_Inventory
             // 

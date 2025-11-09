@@ -37,5 +37,15 @@ namespace PasigLibrarySystem.ADMIN
         {
             UTILS.Action.SwitchForm(this, new AdminMemberManagement());
         }
+
+        private void BookManagelbl_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.SwitchForm(this, new AdminBookManagement());
+        }
+
+        private void rep_invlbl_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.SwitchForm(this, new AdminReports_Inventory());
+        }
     }
 }
