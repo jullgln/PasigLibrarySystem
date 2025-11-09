@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PasigLibrarySystem.USER
+namespace PasigLibrarySystem.UTILS
 {
-    public static class UserAction
+    public static class Action
     {
         public static void SwitchForm(Form currentForm, Form newForm)
         {
@@ -18,6 +18,5 @@ namespace PasigLibrarySystem.USER
             loginForm.Show();
             currentForm.Hide();
         }
-
     }
 }

@@ -24,27 +24,27 @@ namespace PasigLibrarySystem.USER
         }
         private void Homelbl_Click(object sender, EventArgs e)
         {
-            UserAction.SwitchForm(this, new UserDashboard());
+            UTILS.Action.SwitchForm(this, new UserDashboard());
         }
 
         private void MyAcclbl_Click(object sender, EventArgs e)
         {
-            UserAction.SwitchForm(this, new UserMyAcc());
+            UTILS.Action.SwitchForm(this, new UserMyAcc());
         }
 
         private void BookCollectlbl_Click(object sender, EventArgs e)
         {
-            UserAction.SwitchForm(this, new UserBookCollection());
+            UTILS.Action.SwitchForm(this, new UserBookCollection());
         }
 
         private void Settingslbl_Click(object sender, EventArgs e)
         {
-            UserAction.SwitchForm(this, new UserSettings());
+            UTILS.Action.SwitchForm(this, new UserSettings());
         }
 
         private void LogOutbtn_Click(object sender, EventArgs e)
         {
-            UserAction.LogOut(this, new LogIn());
+            UTILS.Action.LogOut(this, new LogIn());
         }
     }
 }

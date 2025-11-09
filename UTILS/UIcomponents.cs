@@ -43,7 +43,7 @@ namespace PasigLibrarySystem
     }
     public static class UIColors
     {
-        //Cplor Palette
+        //Color Palette
         public static readonly Color DarkBlue = ColorTranslator.FromHtml("#0f2e67");
         public static readonly Color VividAzure = ColorTranslator.FromHtml("#148cf0");
         public static readonly Color LightGray = ColorTranslator.FromHtml("#eeeeee");

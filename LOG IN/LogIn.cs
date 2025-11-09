@@ -63,7 +63,7 @@ namespace PasigLibrarySystem
             {
                 db.Open();
 
-                string query = "SELECT * FROM users WHERE username=@Username AND password=@Password";
+                string query = "SELECT * FROM users WHERE  username=@Username AND password=@Password";
                 MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
                 cmd.Parameters.AddWithValue("@Username", username);
                 cmd.Parameters.AddWithValue("@Password", password);
