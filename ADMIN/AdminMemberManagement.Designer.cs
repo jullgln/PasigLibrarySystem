@@ -36,9 +36,6 @@
             H1 = new Label();
             pictureBox1 = new PictureBox();
             taskbarpanel = new Panel();
-            panel = new Panel();
-            pictureBox2 = new PictureBox();
-            Homelbl = new Label();
             highlightpanel = new Panel();
             pictureBox7 = new PictureBox();
             memberlbl = new Label();
@@ -48,9 +45,6 @@
             panel3 = new Panel();
             pictureBox9 = new PictureBox();
             rep_invlbl = new Label();
-            panel4 = new Panel();
-            pictureBox6 = new PictureBox();
-            Settingslbl = new Label();
             filtertxt = new ComboBox();
             searchtxt = new TextBox();
             searchbtn = new Button();
@@ -60,16 +54,12 @@
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             taskbarpanel.SuspendLayout();
-            panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             highlightpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tableview).BeginInit();
             SuspendLayout();
             // 
@@ -137,48 +127,13 @@
             // taskbarpanel
             // 
             taskbarpanel.BackColor = Color.White;
-            taskbarpanel.Controls.Add(panel);
             taskbarpanel.Controls.Add(highlightpanel);
             taskbarpanel.Controls.Add(panel2);
             taskbarpanel.Controls.Add(panel3);
-            taskbarpanel.Controls.Add(panel4);
             taskbarpanel.Location = new Point(-1, 78);
             taskbarpanel.Name = "taskbarpanel";
             taskbarpanel.Size = new Size(236, 602);
             taskbarpanel.TabIndex = 5;
-            // 
-            // panel
-            // 
-            panel.BackColor = Color.Transparent;
-            panel.Controls.Add(pictureBox2);
-            panel.Controls.Add(Homelbl);
-            panel.Location = new Point(-9, 26);
-            panel.Name = "panel";
-            panel.Size = new Size(288, 82);
-            panel.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(33, 19);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(37, 37);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
-            // 
-            // Homelbl
-            // 
-            Homelbl.AutoSize = true;
-            Homelbl.Font = new Font("Poppins", 13F);
-            Homelbl.ForeColor = Color.FromArgb(15, 46, 103);
-            Homelbl.Location = new Point(74, 26);
-            Homelbl.Name = "Homelbl";
-            Homelbl.Size = new Size(68, 31);
-            Homelbl.TabIndex = 7;
-            Homelbl.Text = "Home";
-            Homelbl.TextAlign = ContentAlignment.TopCenter;
-            Homelbl.Click += Homelbl_Click;
             // 
             // highlightpanel
             // 
@@ -275,39 +230,6 @@
             rep_invlbl.Text = "Reports and\r\n Inventory";
             rep_invlbl.Click += rep_invlbl_Click;
             // 
-            // panel4
-            // 
-            panel4.BackColor = Color.Transparent;
-            panel4.Controls.Add(pictureBox6);
-            panel4.Controls.Add(Settingslbl);
-            panel4.Location = new Point(-8, 497);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(288, 82);
-            panel4.TabIndex = 2;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(31, 21);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(37, 37);
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.TabIndex = 14;
-            pictureBox6.TabStop = false;
-            // 
-            // Settingslbl
-            // 
-            Settingslbl.AutoSize = true;
-            Settingslbl.Font = new Font("Poppins", 13F);
-            Settingslbl.ForeColor = Color.FromArgb(15, 46, 103);
-            Settingslbl.Location = new Point(71, 25);
-            Settingslbl.Name = "Settingslbl";
-            Settingslbl.Size = new Size(87, 31);
-            Settingslbl.TabIndex = 15;
-            Settingslbl.Text = "Settings";
-            Settingslbl.TextAlign = ContentAlignment.TopCenter;
-            Settingslbl.Click += Settingslbl_Click;
-            // 
             // filtertxt
             // 
             filtertxt.Font = new Font("Poppins", 10F);
@@ -402,9 +324,6 @@
             headerpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             taskbarpanel.ResumeLayout(false);
-            panel.ResumeLayout(false);
-            panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             highlightpanel.ResumeLayout(false);
             highlightpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
@@ -414,9 +333,6 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)tableview).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -430,9 +346,6 @@
         private Label H1;
         private PictureBox pictureBox1;
         private Panel taskbarpanel;
-        private Panel panel;
-        private PictureBox pictureBox2;
-        private Label Homelbl;
         private Panel highlightpanel;
         private PictureBox pictureBox7;
         private Label memberlbl;
@@ -442,9 +355,6 @@
         private Panel panel3;
         private PictureBox pictureBox9;
         private Label rep_invlbl;
-        private Panel panel4;
-        private PictureBox pictureBox6;
-        private Label Settingslbl;
         private ComboBox filtertxt;
         private TextBox searchtxt;
         private Button searchbtn;
