@@ -13,6 +13,8 @@
             LogOutbtn.ForeColor = UIColors.DarkBlue;
             searchbtn.ForeColor = UIColors.White;
             searchbtn.BackColor = UIColors.VividAzure;
+            addadminbtn.ForeColor = UIColors.White;
+            addadminbtn.BackColor = UIColors.DarkBlue;
         }
         private void LogOutbtn_Click(object sender, EventArgs e)
         {
@@ -37,6 +39,11 @@
         private void Settingslbl_Click(object sender, EventArgs e)
         {
             UTILS.Action.SwitchForm(this, new AdminSettings());
+        }
+
+        private void addadminbtn_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.PopupForm(this, new AddAdmin());
         }
     }
 }

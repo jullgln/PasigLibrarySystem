@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminReports_Inventory));
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             headerpanel = new Panel();
             LogOutbtn = new Button();
             welcomelbl = new Label();
@@ -50,6 +51,10 @@
             panel4 = new Panel();
             pictureBox6 = new PictureBox();
             Settingslbl = new Label();
+            lbl3 = new Label();
+            filtertxt = new ComboBox();
+            tableview = new DataGridView();
+            abstractxt = new TextBox();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             taskbarpanel.SuspendLayout();
@@ -63,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tableview).BeginInit();
             SuspendLayout();
             // 
             // headerpanel
@@ -300,11 +306,66 @@
             Settingslbl.TextAlign = ContentAlignment.TopCenter;
             Settingslbl.Click += Settingslbl_Click;
             // 
+            // lbl3
+            // 
+            lbl3.AutoSize = true;
+            lbl3.Font = new Font("Poppins", 13F);
+            lbl3.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl3.Location = new Point(277, 115);
+            lbl3.Name = "lbl3";
+            lbl3.Size = new Size(87, 31);
+            lbl3.TabIndex = 69;
+            lbl3.Text = "Filter by:";
+            lbl3.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // filtertxt
+            // 
+            filtertxt.Font = new Font("Poppins", 10F);
+            filtertxt.FormattingEnabled = true;
+            filtertxt.Items.AddRange(new object[] { "Books", "Journal" });
+            filtertxt.Location = new Point(382, 113);
+            filtertxt.Name = "filtertxt";
+            filtertxt.Size = new Size(121, 31);
+            filtertxt.TabIndex = 68;
+            // 
+            // tableview
+            // 
+            tableview.AllowUserToAddRows = false;
+            tableview.AllowUserToDeleteRows = false;
+            tableview.BackgroundColor = Color.White;
+            tableview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            tableview.DefaultCellStyle = dataGridViewCellStyle2;
+            tableview.Location = new Point(284, 160);
+            tableview.Name = "tableview";
+            tableview.ReadOnly = true;
+            tableview.Size = new Size(936, 334);
+            tableview.TabIndex = 70;
+            // 
+            // abstractxt
+            // 
+            abstractxt.Font = new Font("Poppins", 9F);
+            abstractxt.Location = new Point(284, 523);
+            abstractxt.Multiline = true;
+            abstractxt.Name = "abstractxt";
+            abstractxt.Size = new Size(936, 134);
+            abstractxt.TabIndex = 71;
+            // 
             // AdminReports_Inventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
+            Controls.Add(abstractxt);
+            Controls.Add(tableview);
+            Controls.Add(lbl3);
+            Controls.Add(filtertxt);
             Controls.Add(headerpanel);
             Controls.Add(taskbarpanel);
             Name = "AdminReports_Inventory";
@@ -329,7 +390,9 @@
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tableview).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -355,5 +418,9 @@
         private Panel panel4;
         private PictureBox pictureBox6;
         private Label Settingslbl;
+        private Label lbl3;
+        private ComboBox filtertxt;
+        private DataGridView tableview;
+        private TextBox abstractxt;
     }
 }

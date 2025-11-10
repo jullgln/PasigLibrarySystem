@@ -52,7 +52,7 @@
             textBox9 = new TextBox();
             statustxt = new TextBox();
             addbookbtn = new Button();
-            label2 = new Label();
+            lbl12 = new Label();
             typecbox = new ComboBox();
             genrecbox = new ComboBox();
             lbl11 = new Label();
@@ -298,16 +298,16 @@
             addbookbtn.UseVisualStyleBackColor = true;
             addbookbtn.Click += addbookbtn_Click;
             // 
-            // label2
+            // lbl12
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(15, 46, 103);
-            label2.Location = new Point(49, 125);
-            label2.Name = "label2";
-            label2.Size = new Size(103, 28);
-            label2.TabIndex = 64;
-            label2.Text = "Book Type";
+            lbl12.AutoSize = true;
+            lbl12.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl12.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl12.Location = new Point(49, 125);
+            lbl12.Name = "lbl12";
+            lbl12.Size = new Size(103, 28);
+            lbl12.TabIndex = 64;
+            lbl12.Text = "Book Type";
             // 
             // typecbox
             // 
@@ -369,7 +369,7 @@
             Controls.Add(lbl11);
             Controls.Add(genrecbox);
             Controls.Add(typecbox);
-            Controls.Add(label2);
+            Controls.Add(lbl12);
             Controls.Add(addbookbtn);
             Controls.Add(textBox9);
             Controls.Add(statustxt);
@@ -426,7 +426,7 @@
         private TextBox textBox9;
         private TextBox statustxt;
         private Button addbookbtn;
-        private Label label2;
+        private Label lbl12;
         private ComboBox typecbox;
         private ComboBox genrecbox;
         private Label lbl11;

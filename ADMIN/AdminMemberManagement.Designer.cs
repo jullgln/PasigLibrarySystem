@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMemberManagement));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             headerpanel = new Panel();
             LogOutbtn = new Button();
             welcomelbl = new Label();
@@ -56,6 +56,7 @@
             searchbtn = new Button();
             lbl3 = new Label();
             tableview = new DataGridView();
+            addadminbtn = new Button();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             taskbarpanel.SuspendLayout();
@@ -312,7 +313,7 @@
             filtertxt.Font = new Font("Poppins", 10F);
             filtertxt.FormattingEnabled = true;
             filtertxt.Items.AddRange(new object[] { "Books", "Journal" });
-            filtertxt.Location = new Point(975, 123);
+            filtertxt.Location = new Point(1095, 123);
             filtertxt.Name = "filtertxt";
             filtertxt.Size = new Size(121, 31);
             filtertxt.TabIndex = 66;
@@ -320,7 +321,7 @@
             // searchtxt
             // 
             searchtxt.Font = new Font("Poppins", 12F);
-            searchtxt.Location = new Point(275, 123);
+            searchtxt.Location = new Point(418, 123);
             searchtxt.Name = "searchtxt";
             searchtxt.PlaceholderText = "Search User";
             searchtxt.Size = new Size(407, 31);
@@ -330,7 +331,7 @@
             // 
             searchbtn.FlatStyle = FlatStyle.Flat;
             searchbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
-            searchbtn.Location = new Point(717, 124);
+            searchbtn.Location = new Point(847, 124);
             searchbtn.Name = "searchbtn";
             searchbtn.Size = new Size(125, 32);
             searchbtn.TabIndex = 64;
@@ -342,7 +343,7 @@
             lbl3.AutoSize = true;
             lbl3.Font = new Font("Poppins", 13F);
             lbl3.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl3.Location = new Point(870, 125);
+            lbl3.Location = new Point(988, 125);
             lbl3.Name = "lbl3";
             lbl3.Size = new Size(87, 31);
             lbl3.TabIndex = 67;
@@ -355,25 +356,38 @@
             tableview.AllowUserToDeleteRows = false;
             tableview.BackgroundColor = Color.White;
             tableview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            tableview.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            tableview.DefaultCellStyle = dataGridViewCellStyle1;
             tableview.Location = new Point(275, 192);
             tableview.Name = "tableview";
             tableview.ReadOnly = true;
             tableview.Size = new Size(941, 462);
             tableview.TabIndex = 68;
             // 
+            // addadminbtn
+            // 
+            addadminbtn.FlatStyle = FlatStyle.Flat;
+            addadminbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            addadminbtn.Location = new Point(275, 123);
+            addadminbtn.Name = "addadminbtn";
+            addadminbtn.Size = new Size(125, 32);
+            addadminbtn.TabIndex = 69;
+            addadminbtn.Text = "Add Admin";
+            addadminbtn.UseVisualStyleBackColor = true;
+            addadminbtn.Click += addadminbtn_Click;
+            // 
             // AdminMemberManagement
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
+            Controls.Add(addadminbtn);
             Controls.Add(tableview);
             Controls.Add(lbl3);
             Controls.Add(filtertxt);
@@ -436,5 +450,6 @@
         private Button searchbtn;
         private Label lbl3;
         private DataGridView tableview;
+        private Button addadminbtn;
     }
 }
