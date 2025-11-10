@@ -50,6 +50,12 @@
             welcomelbl = new Label();
             H1 = new Label();
             pictureBox1 = new PictureBox();
+            label5 = new Label();
+            panel3 = new Panel();
+            label1 = new Label();
+            label2 = new Label();
+            panel5 = new Panel();
+            label3 = new Label();
             taskbarpanel.SuspendLayout();
             panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -63,6 +69,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel3.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // taskbarpanel
@@ -303,13 +311,83 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.White;
+            label5.Font = new Font("Poppins", 13F);
+            label5.ForeColor = Color.FromArgb(15, 46, 103);
+            label5.Location = new Point(97, 18);
+            label5.Name = "label5";
+            label5.Size = new Size(733, 186);
+            label5.TabIndex = 48;
+            label5.Text = resources.GetString("label5.Text");
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.White;
+            panel3.Controls.Add(label5);
+            panel3.Location = new Point(295, 139);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(925, 222);
+            panel3.TabIndex = 49;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Poppins", 13F);
+            label1.ForeColor = Color.FromArgb(15, 46, 103);
+            label1.Location = new Point(298, 105);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 31);
+            label1.TabIndex = 49;
+            label1.Text = "About";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Poppins", 13F);
+            label2.ForeColor = Color.FromArgb(15, 46, 103);
+            label2.Location = new Point(298, 377);
+            label2.Name = "label2";
+            label2.Size = new Size(174, 31);
+            label2.TabIndex = 50;
+            label2.Text = "Borrrowing Terms";
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.White;
+            panel5.Controls.Add(label3);
+            panel5.Location = new Point(295, 411);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(925, 246);
+            panel5.TabIndex = 50;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.White;
+            label3.Font = new Font("Poppins", 13F);
+            label3.ForeColor = Color.FromArgb(15, 46, 103);
+            label3.Location = new Point(97, 18);
+            label3.Name = "label3";
+            label3.Size = new Size(733, 186);
+            label3.TabIndex = 48;
+            label3.Text = resources.GetString("label3.Text");
+            // 
             // UserAbout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
+            Controls.Add(panel5);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(headerpanel);
             Controls.Add(taskbarpanel);
+            Controls.Add(panel3);
             Name = "UserAbout";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UserAbout";
@@ -332,7 +410,12 @@
             headerpanel.ResumeLayout(false);
             headerpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -358,5 +441,11 @@
         private Label welcomelbl;
         private Label H1;
         private PictureBox pictureBox1;
+        private Label label5;
+        private Panel panel3;
+        private Label label1;
+        private Label label2;
+        private Panel panel5;
+        private Label label3;
     }
 }
