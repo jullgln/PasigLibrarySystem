@@ -1,3 +1,4 @@
+using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 using PasigLibrarySystem.DATABASES;
 using System;
@@ -39,11 +40,13 @@ namespace PasigLibrarySystem
         {
             //query for registering new user goes here
             string userID = IDGenerator.GenerateUserID();
+            string role = "Member";
             string name = nametxtbox.Text.Trim();
             string email = emailtxtbox.Text.Trim();
             string username = Usernametxtbox.Text.Trim();
             string password = passtxtbox.Text.Trim();
-            DateTime joined = DateTime.Now;
+            string joined = DateTime.Now.ToString("MM/dd/yyyy");
+
 
             if (name == "" || username == "" || password == "")
             {
@@ -57,16 +60,15 @@ namespace PasigLibrarySystem
             {
                 db.Open();
 
-                string query = "INSERT INTO users (user_id, fullname, username, Email, password, date_registered) " +
-                               "VALUES (@userID, @name, @username, @email, @password, @joined)";
+                string query = "INSERT INTO users (User_ID, role, fullname, username, email, Password, date_registered) VALUES (@userid, @role, @Name, @Username, @email, @Password, @datejoined)";
                 MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
-
-                cmd.Parameters.AddWithValue("@userID", userID);
-                cmd.Parameters.AddWithValue("@name", name);
-                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@userid", userID);
+                cmd.Parameters.AddWithValue("@role", role);
+                cmd.Parameters.AddWithValue("@Name", name);
+                cmd.Parameters.AddWithValue("@Username", username);
                 cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@password", password);
-                cmd.Parameters.AddWithValue("@joined", joined);
+                cmd.Parameters.AddWithValue("@Password", password);
+                cmd.Parameters.AddWithValue("@datejoined", joined);
 
                 int rows = cmd.ExecuteNonQuery();
 
