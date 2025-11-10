@@ -110,7 +110,7 @@
             welcomelbl.AutoSize = true;
             welcomelbl.Font = new Font("Poppins Light", 13F);
             welcomelbl.ForeColor = Color.White;
-            welcomelbl.Location = new Point(1008, 31);
+            welcomelbl.Location = new Point(946, 31);
             welcomelbl.Name = "welcomelbl";
             welcomelbl.Size = new Size(150, 31);
             welcomelbl.TabIndex = 7;

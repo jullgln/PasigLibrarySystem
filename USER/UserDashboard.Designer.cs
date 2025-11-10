@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserDashboard));
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             taskbarpanel = new Panel();
             highlightpanel = new Panel();
             pictureBox2 = new PictureBox();
@@ -284,7 +284,7 @@
             welcomelbl.AutoSize = true;
             welcomelbl.Font = new Font("Poppins Light", 13F);
             welcomelbl.ForeColor = Color.White;
-            welcomelbl.Location = new Point(1008, 31);
+            welcomelbl.Location = new Point(946, 31);
             welcomelbl.Name = "welcomelbl";
             welcomelbl.Size = new Size(150, 31);
             welcomelbl.TabIndex = 7;
@@ -343,14 +343,14 @@
             tableview.AllowUserToDeleteRows = false;
             tableview.BackgroundColor = Color.White;
             tableview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            tableview.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            tableview.DefaultCellStyle = dataGridViewCellStyle1;
             tableview.Location = new Point(289, 235);
             tableview.Name = "tableview";
             tableview.ReadOnly = true;
