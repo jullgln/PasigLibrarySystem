@@ -50,20 +50,20 @@
             highlightpanel = new Panel();
             pictureBox6 = new PictureBox();
             Settingslbl = new Label();
-            label5 = new Label();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            link2 = new LinkLabel();
-            label4 = new Label();
-            label6 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            borrowbtn = new Button();
-            button1 = new Button();
+            lbl1 = new Label();
+            lbl2 = new Label();
+            lbl3 = new Label();
+            lbl4 = new Label();
+            link = new LinkLabel();
+            lbl5 = new Label();
+            lbl6 = new Label();
+            nametxt = new TextBox();
+            usernametxt = new TextBox();
+            emailtxt = new TextBox();
+            newpasstxt = new TextBox();
+            confirmnewpasstxt = new TextBox();
+            confirmbtn = new Button();
+            cancelbtn = new Button();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             taskbarpanel.SuspendLayout();
@@ -317,171 +317,171 @@
             Settingslbl.Text = "Settings";
             Settingslbl.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label5
+            // lbl1
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Poppins Medium", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.FromArgb(15, 46, 103);
-            label5.Location = new Point(284, 113);
-            label5.Name = "label5";
-            label5.Size = new Size(117, 30);
-            label5.TabIndex = 48;
-            label5.Text = "Edit Details";
-            label5.TextAlign = ContentAlignment.TopCenter;
+            lbl1.AutoSize = true;
+            lbl1.Font = new Font("Poppins Medium", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl1.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl1.Location = new Point(284, 113);
+            lbl1.Name = "lbl1";
+            lbl1.Size = new Size(117, 30);
+            lbl1.TabIndex = 48;
+            lbl1.Text = "Edit Details";
+            lbl1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label1
+            // lbl2
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Poppins", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(15, 46, 103);
-            label1.Location = new Point(284, 171);
-            label1.Name = "label1";
-            label1.Size = new Size(65, 30);
-            label1.TabIndex = 49;
-            label1.Text = "Name";
-            label1.TextAlign = ContentAlignment.TopCenter;
+            lbl2.AutoSize = true;
+            lbl2.Font = new Font("Poppins", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl2.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl2.Location = new Point(284, 171);
+            lbl2.Name = "lbl2";
+            lbl2.Size = new Size(65, 30);
+            lbl2.TabIndex = 49;
+            lbl2.Text = "Name";
+            lbl2.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label2
+            // lbl3
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Poppins", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(15, 46, 103);
-            label2.Location = new Point(284, 228);
-            label2.Name = "label2";
-            label2.Size = new Size(101, 30);
-            label2.TabIndex = 50;
-            label2.Text = "Username";
-            label2.TextAlign = ContentAlignment.TopCenter;
+            lbl3.AutoSize = true;
+            lbl3.Font = new Font("Poppins", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl3.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl3.Location = new Point(284, 228);
+            lbl3.Name = "lbl3";
+            lbl3.Size = new Size(101, 30);
+            lbl3.TabIndex = 50;
+            lbl3.Text = "Username";
+            lbl3.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label3
+            // lbl4
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Poppins", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(15, 46, 103);
-            label3.Location = new Point(284, 294);
-            label3.Name = "label3";
-            label3.Size = new Size(59, 30);
-            label3.TabIndex = 51;
-            label3.Text = "Email";
-            label3.TextAlign = ContentAlignment.TopCenter;
+            lbl4.AutoSize = true;
+            lbl4.Font = new Font("Poppins", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl4.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl4.Location = new Point(284, 294);
+            lbl4.Name = "lbl4";
+            lbl4.Size = new Size(59, 30);
+            lbl4.TabIndex = 51;
+            lbl4.Text = "Email";
+            lbl4.TextAlign = ContentAlignment.TopCenter;
             // 
-            // link2
+            // link
             // 
-            link2.AutoSize = true;
-            link2.Font = new Font("Poppins", 12.75F);
-            link2.LinkColor = Color.FromArgb(15, 46, 103);
-            link2.Location = new Point(284, 353);
-            link2.Name = "link2";
-            link2.Size = new Size(176, 30);
-            link2.TabIndex = 52;
-            link2.TabStop = true;
-            link2.Text = "Change Password?";
+            link.AutoSize = true;
+            link.Font = new Font("Poppins", 12.75F);
+            link.LinkColor = Color.FromArgb(15, 46, 103);
+            link.Location = new Point(284, 353);
+            link.Name = "link";
+            link.Size = new Size(176, 30);
+            link.TabIndex = 52;
+            link.TabStop = true;
+            link.Text = "Change Password?";
             // 
-            // label4
+            // lbl5
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Poppins", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.FromArgb(15, 46, 103);
-            label4.Location = new Point(290, 403);
-            label4.Name = "label4";
-            label4.Size = new Size(136, 30);
-            label4.TabIndex = 53;
-            label4.Text = "New Password";
-            label4.TextAlign = ContentAlignment.TopCenter;
+            lbl5.AutoSize = true;
+            lbl5.Font = new Font("Poppins", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl5.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl5.Location = new Point(290, 403);
+            lbl5.Name = "lbl5";
+            lbl5.Size = new Size(136, 30);
+            lbl5.TabIndex = 53;
+            lbl5.Text = "New Password";
+            lbl5.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label6
+            // lbl6
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Poppins", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.FromArgb(15, 46, 103);
-            label6.Location = new Point(290, 455);
-            label6.Name = "label6";
-            label6.Size = new Size(210, 30);
-            label6.TabIndex = 54;
-            label6.Text = "Confirm New Password";
-            label6.TextAlign = ContentAlignment.TopCenter;
+            lbl6.AutoSize = true;
+            lbl6.Font = new Font("Poppins", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl6.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl6.Location = new Point(290, 455);
+            lbl6.Name = "lbl6";
+            lbl6.Size = new Size(210, 30);
+            lbl6.TabIndex = 54;
+            lbl6.Text = "Confirm New Password";
+            lbl6.TextAlign = ContentAlignment.TopCenter;
             // 
-            // textBox1
+            // nametxt
             // 
-            textBox1.Font = new Font("Poppins", 12F);
-            textBox1.Location = new Point(548, 169);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(577, 31);
-            textBox1.TabIndex = 55;
+            nametxt.Font = new Font("Poppins", 12F);
+            nametxt.Location = new Point(548, 169);
+            nametxt.Name = "nametxt";
+            nametxt.Size = new Size(577, 31);
+            nametxt.TabIndex = 55;
             // 
-            // textBox2
+            // usernametxt
             // 
-            textBox2.Font = new Font("Poppins", 12F);
-            textBox2.Location = new Point(548, 226);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(577, 31);
-            textBox2.TabIndex = 56;
+            usernametxt.Font = new Font("Poppins", 12F);
+            usernametxt.Location = new Point(548, 226);
+            usernametxt.Name = "usernametxt";
+            usernametxt.Size = new Size(577, 31);
+            usernametxt.TabIndex = 56;
             // 
-            // textBox3
+            // emailtxt
             // 
-            textBox3.Font = new Font("Poppins", 12F);
-            textBox3.Location = new Point(548, 292);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(577, 31);
-            textBox3.TabIndex = 57;
+            emailtxt.Font = new Font("Poppins", 12F);
+            emailtxt.Location = new Point(548, 292);
+            emailtxt.Name = "emailtxt";
+            emailtxt.Size = new Size(577, 31);
+            emailtxt.TabIndex = 57;
             // 
-            // textBox4
+            // newpasstxt
             // 
-            textBox4.Font = new Font("Poppins", 12F);
-            textBox4.Location = new Point(548, 401);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(577, 31);
-            textBox4.TabIndex = 58;
+            newpasstxt.Font = new Font("Poppins", 12F);
+            newpasstxt.Location = new Point(548, 401);
+            newpasstxt.Name = "newpasstxt";
+            newpasstxt.Size = new Size(577, 31);
+            newpasstxt.TabIndex = 58;
             // 
-            // textBox5
+            // confirmnewpasstxt
             // 
-            textBox5.Font = new Font("Poppins", 12F);
-            textBox5.Location = new Point(548, 453);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(577, 31);
-            textBox5.TabIndex = 59;
+            confirmnewpasstxt.Font = new Font("Poppins", 12F);
+            confirmnewpasstxt.Location = new Point(548, 453);
+            confirmnewpasstxt.Name = "confirmnewpasstxt";
+            confirmnewpasstxt.Size = new Size(577, 31);
+            confirmnewpasstxt.TabIndex = 59;
             // 
-            // borrowbtn
+            // confirmbtn
             // 
-            borrowbtn.FlatStyle = FlatStyle.Flat;
-            borrowbtn.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            borrowbtn.Location = new Point(1022, 529);
-            borrowbtn.Name = "borrowbtn";
-            borrowbtn.Size = new Size(103, 32);
-            borrowbtn.TabIndex = 60;
-            borrowbtn.Text = "Confirm";
-            borrowbtn.UseVisualStyleBackColor = true;
+            confirmbtn.FlatStyle = FlatStyle.Flat;
+            confirmbtn.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            confirmbtn.Location = new Point(1022, 529);
+            confirmbtn.Name = "confirmbtn";
+            confirmbtn.Size = new Size(103, 32);
+            confirmbtn.TabIndex = 60;
+            confirmbtn.Text = "Confirm";
+            confirmbtn.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // cancelbtn
             // 
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(871, 529);
-            button1.Name = "button1";
-            button1.Size = new Size(103, 32);
-            button1.TabIndex = 61;
-            button1.Text = "Cancel";
-            button1.UseVisualStyleBackColor = true;
+            cancelbtn.FlatStyle = FlatStyle.Flat;
+            cancelbtn.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cancelbtn.Location = new Point(871, 529);
+            cancelbtn.Name = "cancelbtn";
+            cancelbtn.Size = new Size(103, 32);
+            cancelbtn.TabIndex = 61;
+            cancelbtn.Text = "Cancel";
+            cancelbtn.UseVisualStyleBackColor = true;
             // 
             // UserSettings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
-            Controls.Add(button1);
-            Controls.Add(borrowbtn);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label6);
-            Controls.Add(label4);
-            Controls.Add(link2);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(label5);
+            Controls.Add(cancelbtn);
+            Controls.Add(confirmbtn);
+            Controls.Add(confirmnewpasstxt);
+            Controls.Add(newpasstxt);
+            Controls.Add(emailtxt);
+            Controls.Add(usernametxt);
+            Controls.Add(nametxt);
+            Controls.Add(lbl6);
+            Controls.Add(lbl5);
+            Controls.Add(link);
+            Controls.Add(lbl4);
+            Controls.Add(lbl3);
+            Controls.Add(lbl2);
+            Controls.Add(lbl1);
             Controls.Add(headerpanel);
             Controls.Add(taskbarpanel);
             Name = "UserSettings";
@@ -533,19 +533,19 @@
         private Panel highlightpanel;
         private PictureBox pictureBox6;
         private Label Settingslbl;
-        private Label label5;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private LinkLabel link2;
-        private Label label4;
-        private Label label6;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private Button borrowbtn;
-        private Button button1;
+        private Label lbl1;
+        private Label lbl2;
+        private Label lbl3;
+        private Label lbl4;
+        private LinkLabel link;
+        private Label lbl5;
+        private Label lbl6;
+        private TextBox nametxt;
+        private TextBox usernametxt;
+        private TextBox emailtxt;
+        private TextBox newpasstxt;
+        private TextBox confirmnewpasstxt;
+        private Button confirmbtn;
+        private Button cancelbtn;
     }
 }
