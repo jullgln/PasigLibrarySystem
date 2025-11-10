@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using PasigLibrarySystem.DATABASES;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,6 +54,32 @@ namespace PasigLibrarySystem.USER
 
         private void UserMyAcc_Load(object sender, EventArgs e)
         {
+            //DBConnector class
+            DBConnect db = new DBConnect();
+
+            db.Open();
+
+            string query = "SELECT fullname, Username, date_registered FROM users WHERE User_ID = @userID";
+            MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
+            cmd.Parameters.AddWithValue("@userID", user_data.user_id);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                nametxt.Text = reader["fullname"].ToString();
+                usernametxt.Text = reader["Username"].ToString();
+
+                if (reader["date_registered"] != DBNull.Value)
+                {
+                    datejoinedtxt.Text = reader["date_registered"].ToString();
+                    ;
+                }
+                else
+                {
+                    datejoinedtxt.Text = "N/A";
+                }
+            }
 
         }
     }
