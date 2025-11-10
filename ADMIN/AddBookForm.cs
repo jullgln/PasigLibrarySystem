@@ -19,9 +19,12 @@ namespace PasigLibrarySystem.ADMIN
             UIRounder.FormRounder(this, 30);
             //for button rounder
             UIRounder.RoundBtn(addbookbtn, 20);
+            UIRounder.RoundBtn(Cancelbtn, 20);
             //for colors
             addbookbtn.BackColor = UIColors.VividAzure;
             addbookbtn.ForeColor = UIColors.White;
+            Cancelbtn.BackColor = UIColors.Crimson;
+            Cancelbtn.ForeColor = UIColors.White;
         }
 
         private void Cancelbtn_Click(object sender, EventArgs e)

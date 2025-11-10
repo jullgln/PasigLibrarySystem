@@ -54,10 +54,10 @@
             searchtxt = new TextBox();
             searchbtn = new Button();
             tableview = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            editbtn = new Button();
+            deletebtn = new Button();
+            addbtn = new Button();
+            viewdetailsbtn = new Button();
             filtertxt = new ComboBox();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -345,57 +345,58 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             tableview.DefaultCellStyle = dataGridViewCellStyle1;
-            tableview.Location = new Point(279, 204);
+            tableview.Location = new Point(279, 188);
             tableview.Name = "tableview";
             tableview.ReadOnly = true;
-            tableview.Size = new Size(941, 359);
+            tableview.Size = new Size(941, 381);
             tableview.TabIndex = 58;
             // 
-            // button1
+            // editbtn
             // 
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
-            button1.Location = new Point(1095, 596);
-            button1.Name = "button1";
-            button1.Size = new Size(125, 32);
-            button1.TabIndex = 59;
-            button1.Text = "Edit";
-            button1.UseVisualStyleBackColor = true;
+            editbtn.FlatStyle = FlatStyle.Flat;
+            editbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            editbtn.Location = new Point(1095, 596);
+            editbtn.Name = "editbtn";
+            editbtn.Size = new Size(125, 32);
+            editbtn.TabIndex = 59;
+            editbtn.Text = "Edit";
+            editbtn.UseVisualStyleBackColor = true;
+            editbtn.Click += editbtn_Click;
             // 
-            // button2
+            // deletebtn
             // 
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
-            button2.Location = new Point(936, 596);
-            button2.Name = "button2";
-            button2.Size = new Size(125, 32);
-            button2.TabIndex = 60;
-            button2.Text = "Delete";
-            button2.UseVisualStyleBackColor = true;
+            deletebtn.FlatStyle = FlatStyle.Flat;
+            deletebtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            deletebtn.Location = new Point(936, 596);
+            deletebtn.Name = "deletebtn";
+            deletebtn.Size = new Size(125, 32);
+            deletebtn.TabIndex = 60;
+            deletebtn.Text = "Delete";
+            deletebtn.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // addbtn
             // 
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
-            button3.Location = new Point(279, 596);
-            button3.Name = "button3";
-            button3.Size = new Size(125, 32);
-            button3.TabIndex = 61;
-            button3.Text = "Add Book";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            addbtn.FlatStyle = FlatStyle.Flat;
+            addbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            addbtn.Location = new Point(279, 596);
+            addbtn.Name = "addbtn";
+            addbtn.Size = new Size(125, 32);
+            addbtn.TabIndex = 61;
+            addbtn.Text = "Add Book";
+            addbtn.UseVisualStyleBackColor = true;
+            addbtn.Click += button3_Click;
             // 
-            // button4
+            // viewdetailsbtn
             // 
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
-            button4.Location = new Point(443, 596);
-            button4.Name = "button4";
-            button4.Size = new Size(125, 32);
-            button4.TabIndex = 62;
-            button4.Text = "View Details";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            viewdetailsbtn.FlatStyle = FlatStyle.Flat;
+            viewdetailsbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            viewdetailsbtn.Location = new Point(443, 596);
+            viewdetailsbtn.Name = "viewdetailsbtn";
+            viewdetailsbtn.Size = new Size(125, 32);
+            viewdetailsbtn.TabIndex = 62;
+            viewdetailsbtn.Text = "View Details";
+            viewdetailsbtn.UseVisualStyleBackColor = true;
+            viewdetailsbtn.Click += button4_Click;
             // 
             // filtertxt
             // 
@@ -413,10 +414,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
             Controls.Add(filtertxt);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(viewdetailsbtn);
+            Controls.Add(addbtn);
+            Controls.Add(deletebtn);
+            Controls.Add(editbtn);
             Controls.Add(tableview);
             Controls.Add(searchtxt);
             Controls.Add(searchbtn);
@@ -475,10 +476,10 @@
         private TextBox searchtxt;
         private Button searchbtn;
         private DataGridView tableview;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
+        private Button editbtn;
+        private Button deletebtn;
+        private Button addbtn;
+        private Button viewdetailsbtn;
         private ComboBox filtertxt;
     }
 }

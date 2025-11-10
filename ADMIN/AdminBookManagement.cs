@@ -22,6 +22,16 @@ namespace PasigLibrarySystem.ADMIN
             UIRounder.RoundBtn(LogOutbtn, 30);
             LogOutbtn.BackColor = UIColors.White;
             LogOutbtn.ForeColor = UIColors.DarkBlue;
+            addbtn.ForeColor = UIColors.White;
+            addbtn.BackColor = UIColors.VividAzure;
+            viewdetailsbtn.ForeColor = UIColors.White;
+            viewdetailsbtn.BackColor = UIColors.VividAzure;
+            editbtn.ForeColor = UIColors.White;
+            editbtn.BackColor = UIColors.VividAzure;
+            deletebtn.ForeColor = UIColors.White;
+            deletebtn.BackColor = UIColors.VividAzure;
+            searchbtn.ForeColor = UIColors.White;
+            searchbtn.BackColor = UIColors.VividAzure;
         }
         private void LogOutbtn_Click(object sender, EventArgs e)
         {
@@ -53,6 +63,11 @@ namespace PasigLibrarySystem.ADMIN
         private void button3_Click(object sender, EventArgs e)
         {
             UTILS.Action.PopupForm(this, new AddBookForm());
+        }
+
+        private void editbtn_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.PopupForm(this, new EditForm());
         }
     }
 }

@@ -38,7 +38,7 @@
             genrecbox = new ComboBox();
             typecbox = new ComboBox();
             label2 = new Label();
-            addbookbtn = new Button();
+            savebtn = new Button();
             textBox9 = new TextBox();
             ISBNtxt = new TextBox();
             pagecounttxt = new TextBox();
@@ -106,6 +106,7 @@
             Cancelbtn.TabIndex = 95;
             Cancelbtn.Text = "Cancel";
             Cancelbtn.UseVisualStyleBackColor = true;
+            Cancelbtn.Click += Cancelbtn_Click;
             // 
             // abstractxt
             // 
@@ -156,16 +157,17 @@
             label2.TabIndex = 90;
             label2.Text = "Book Type";
             // 
-            // addbookbtn
+            // savebtn
             // 
-            addbookbtn.FlatStyle = FlatStyle.Flat;
-            addbookbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
-            addbookbtn.Location = new Point(727, 459);
-            addbookbtn.Name = "addbookbtn";
-            addbookbtn.Size = new Size(109, 32);
-            addbookbtn.TabIndex = 89;
-            addbookbtn.Text = "Save";
-            addbookbtn.UseVisualStyleBackColor = true;
+            savebtn.FlatStyle = FlatStyle.Flat;
+            savebtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            savebtn.Location = new Point(727, 459);
+            savebtn.Name = "savebtn";
+            savebtn.Size = new Size(109, 32);
+            savebtn.TabIndex = 89;
+            savebtn.Text = "Save";
+            savebtn.UseVisualStyleBackColor = true;
+            savebtn.Click += savebtn_Click;
             // 
             // textBox9
             // 
@@ -368,7 +370,7 @@
             Controls.Add(genrecbox);
             Controls.Add(typecbox);
             Controls.Add(label2);
-            Controls.Add(addbookbtn);
+            Controls.Add(savebtn);
             Controls.Add(textBox9);
             Controls.Add(ISBNtxt);
             Controls.Add(pagecounttxt);
@@ -389,6 +391,7 @@
             Controls.Add(lbl1);
             Controls.Add(headerpanel);
             Name = "EditForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EditForm";
             headerpanel.ResumeLayout(false);
             headerpanel.PerformLayout();
@@ -408,7 +411,7 @@
         private ComboBox genrecbox;
         private ComboBox typecbox;
         private Label label2;
-        private Button addbookbtn;
+        private Button savebtn;
         private TextBox textBox9;
         private TextBox ISBNtxt;
         private TextBox pagecounttxt;
