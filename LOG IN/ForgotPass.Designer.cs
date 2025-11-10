@@ -174,14 +174,11 @@
 
         #endregion
 
-        private Label lbl4;
-        private TextBox emailtxtbox;
         private Button Resetbtn;
         private TextBox NewPasstxtbox;
         private Label lbl1;
         private TextBox Usernametxtbox;
         private Label H1;
-        private TextBox nametxtbox;
         private PictureBox pictureBox1;
         private Label lbl3;
         private TextBox CNewPasstxtbox;

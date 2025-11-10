@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using PasigLibrarySystem.DATABASES;
 using PasigLibrarySystem.LOG_IN;
 using System;
@@ -49,6 +50,7 @@ namespace PasigLibrarySystem
         private void LogInbtn_Click(object sender, EventArgs e)
         {
             string username = Usernametxtbox.Text.Trim();
+            UTILS.Session.CurrentUser = username;
             string password = passtxtbox.Text.Trim();
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
@@ -74,7 +76,7 @@ namespace PasigLibrarySystem
 
                 if (reader.HasRows)
                 {
-                    USER.UserDashboard Dashboard = new USER.UserDashboard();
+                    USER.UserDashboard Dashboard = new USER.UserDashboard(UTILS.Session.CurrentUser);
                     Dashboard.Show();
                     this.Hide();
                 }

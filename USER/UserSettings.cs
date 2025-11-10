@@ -21,10 +21,11 @@ namespace PasigLibrarySystem.USER
             UIRounder.RoundBtn(LogOutbtn, 30);
             LogOutbtn.BackColor = UIColors.White;
             LogOutbtn.ForeColor = UIColors.DarkBlue;
+            welcomelbl.Text = "Welcome, " + UTILS.Session.CurrentUser + "!";
         }
         private void Homelbl_Click(object sender, EventArgs e)
         {
-            UTILS.Action.SwitchForm(this, new UserDashboard());
+            UTILS.Action.SwitchForm(this, new UserDashboard(UTILS.Session.CurrentUser));
         }
 
         private void MyAcclbl_Click(object sender, EventArgs e)

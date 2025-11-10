@@ -19,4 +19,8 @@ namespace PasigLibrarySystem.UTILS
             currentForm.Hide();
         }
     }
+    public static class Session
+    {
+        public static string CurrentUser;
+    }
 }
