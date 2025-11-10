@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using PasigLibrarySystem.DATABASES;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,9 +31,62 @@ namespace PasigLibrarySystem.LOG_IN
 
         private void Resetbtn_Click(object sender, EventArgs e)
         {
-            LogIn LogInForm = new LogIn();
-            LogInForm.Show();
-            this.Hide();
+            string user = Usernametxtbox.Text.Trim();
+            string newpass = NewPasstxtbox.Text.Trim();
+            string confirmpass = CNewPasstxtbox.Text.Trim();
+
+            if (user == "")
+            {
+                MessageBox.Show("Enter username");
+                return;
+            }
+            if (newpass == "")
+            {
+                MessageBox.Show("Enter new password");
+                return;
+            }
+            if (confirmpass == "")
+            {
+                MessageBox.Show("Confirm your password");
+                return;
+            }
+            if (newpass != confirmpass)
+            {
+                MessageBox.Show("Password not match");
+                return;
+            }
+            //DBConnector class
+            DBConnect db = new DBConnect();
+            try
+            {
+                db.Open();
+                string check = "SELECT COUNT(*) FROM users WHERE Username=@user";
+                MySqlCommand cmd = new MySqlCommand(check, db.GetConnection());
+                cmd.Parameters.AddWithValue("@user", user);
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                if (count > 0)
+                {
+                    string update = "UPDATE users SET Password=@pass WHERE Username=@user";
+                    MySqlCommand upcmd = new MySqlCommand(update, db.GetConnection());
+                    upcmd.Parameters.AddWithValue("@pass", newpass);
+                    upcmd.Parameters.AddWithValue("@user", user);
+                    upcmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Password changed!");
+                    LogIn LogInForm = new LogIn();
+                    LogInForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Username not found");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

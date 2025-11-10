@@ -42,6 +42,8 @@
             pictureBox2 = new PictureBox();
             inc = new Label();
             inc1 = new Label();
+            mnmzbtn = new Label();
+            exitbtn = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -186,12 +188,36 @@
             inc1.Size = new Size(0, 23);
             inc1.TabIndex = 22;
             // 
+            // mnmzbtn
+            // 
+            mnmzbtn.AutoSize = true;
+            mnmzbtn.Font = new Font("Poppins SemiBold", 14F, FontStyle.Bold);
+            mnmzbtn.Location = new Point(809, 17);
+            mnmzbtn.Name = "mnmzbtn";
+            mnmzbtn.Size = new Size(26, 34);
+            mnmzbtn.TabIndex = 28;
+            mnmzbtn.Text = "-";
+            mnmzbtn.Click += mnmzbtn_Click;
+            // 
+            // exitbtn
+            // 
+            exitbtn.AutoSize = true;
+            exitbtn.Font = new Font("Poppins SemiBold", 14F, FontStyle.Bold);
+            exitbtn.Location = new Point(841, 15);
+            exitbtn.Name = "exitbtn";
+            exitbtn.Size = new Size(25, 34);
+            exitbtn.TabIndex = 27;
+            exitbtn.Text = "x";
+            exitbtn.Click += exitbtn_Click;
+            // 
             // LogIn
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(884, 511);
+            Controls.Add(mnmzbtn);
+            Controls.Add(exitbtn);
             Controls.Add(inc1);
             Controls.Add(inc);
             Controls.Add(pictureBox2);
@@ -227,5 +253,7 @@
         private PictureBox pictureBox2;
         private Label inc;
         private Label inc1;
+        private Label mnmzbtn;
+        private Label exitbtn;
     }
 }

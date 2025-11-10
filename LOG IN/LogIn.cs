@@ -30,6 +30,8 @@ namespace PasigLibrarySystem
             UIRounder.RoundBtn(LogInbtn, 20);
             LogInbtn.BackColor = UIColors.VividAzure;
             LogInbtn.ForeColor = UIColors.White;
+            exitbtn.ForeColor = UIColors.DarkBlue;
+            mnmzbtn.ForeColor = UIColors.DarkBlue;
         }
         private void link1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -46,8 +48,8 @@ namespace PasigLibrarySystem
 
         private void LogInbtn_Click(object sender, EventArgs e)
         {
-            string username =Usernametxtbox.Text.Trim();
-            string password =passtxtbox.Text.Trim();
+            string username = Usernametxtbox.Text.Trim();
+            string password = passtxtbox.Text.Trim();
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
@@ -89,10 +91,20 @@ namespace PasigLibrarySystem
             {
                 MessageBox.Show("Error" + ex.Message);
             }
-            finally 
-            { 
-                db.Close(); 
+            finally
+            {
+                db.Close();
             }
+        }
+
+        private void exitbtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void mnmzbtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
