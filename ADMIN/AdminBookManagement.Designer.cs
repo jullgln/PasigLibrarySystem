@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminBookManagement));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             headerpanel = new Panel();
             LogOutbtn = new Button();
             welcomelbl = new Label();
@@ -50,6 +51,14 @@
             panel4 = new Panel();
             pictureBox6 = new PictureBox();
             Settingslbl = new Label();
+            searchtxt = new TextBox();
+            searchbtn = new Button();
+            tableview = new DataGridView();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            filtertxt = new ComboBox();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             taskbarpanel.SuspendLayout();
@@ -63,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tableview).BeginInit();
             SuspendLayout();
             // 
             // headerpanel
@@ -301,16 +311,120 @@
             Settingslbl.TextAlign = ContentAlignment.TopCenter;
             Settingslbl.Click += Settingslbl_Click;
             // 
+            // searchtxt
+            // 
+            searchtxt.Font = new Font("Poppins", 12F);
+            searchtxt.Location = new Point(279, 123);
+            searchtxt.Name = "searchtxt";
+            searchtxt.PlaceholderText = "Search by Title, Author, Category or ISBN";
+            searchtxt.Size = new Size(407, 31);
+            searchtxt.TabIndex = 57;
+            // 
+            // searchbtn
+            // 
+            searchbtn.FlatStyle = FlatStyle.Flat;
+            searchbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            searchbtn.Location = new Point(721, 124);
+            searchbtn.Name = "searchbtn";
+            searchbtn.Size = new Size(125, 32);
+            searchbtn.TabIndex = 56;
+            searchbtn.Text = "Search";
+            searchbtn.UseVisualStyleBackColor = true;
+            // 
+            // tableview
+            // 
+            tableview.AllowUserToAddRows = false;
+            tableview.AllowUserToDeleteRows = false;
+            tableview.BackgroundColor = Color.White;
+            tableview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            tableview.DefaultCellStyle = dataGridViewCellStyle1;
+            tableview.Location = new Point(279, 204);
+            tableview.Name = "tableview";
+            tableview.ReadOnly = true;
+            tableview.Size = new Size(941, 359);
+            tableview.TabIndex = 58;
+            // 
+            // button1
+            // 
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            button1.Location = new Point(1095, 596);
+            button1.Name = "button1";
+            button1.Size = new Size(125, 32);
+            button1.TabIndex = 59;
+            button1.Text = "Edit";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            button2.Location = new Point(936, 596);
+            button2.Name = "button2";
+            button2.Size = new Size(125, 32);
+            button2.TabIndex = 60;
+            button2.Text = "Delete";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            button3.Location = new Point(279, 596);
+            button3.Name = "button3";
+            button3.Size = new Size(125, 32);
+            button3.TabIndex = 61;
+            button3.Text = "Add Book";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            button4.Location = new Point(443, 596);
+            button4.Name = "button4";
+            button4.Size = new Size(125, 32);
+            button4.TabIndex = 62;
+            button4.Text = "View Details";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // filtertxt
+            // 
+            filtertxt.Font = new Font("Poppins", 10F);
+            filtertxt.FormattingEnabled = true;
+            filtertxt.Items.AddRange(new object[] { "Books", "Journal" });
+            filtertxt.Location = new Point(874, 123);
+            filtertxt.Name = "filtertxt";
+            filtertxt.Size = new Size(121, 31);
+            filtertxt.TabIndex = 63;
+            // 
             // AdminBookManagement
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
+            Controls.Add(filtertxt);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(tableview);
+            Controls.Add(searchtxt);
+            Controls.Add(searchbtn);
             Controls.Add(headerpanel);
             Controls.Add(taskbarpanel);
             Name = "AdminBookManagement";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AdminBookManagement";
+            Text = "S";
             headerpanel.ResumeLayout(false);
             headerpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -330,7 +444,9 @@
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tableview).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -356,5 +472,13 @@
         private Panel panel4;
         private PictureBox pictureBox6;
         private Label Settingslbl;
+        private TextBox searchtxt;
+        private Button searchbtn;
+        private DataGridView tableview;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private ComboBox filtertxt;
     }
 }

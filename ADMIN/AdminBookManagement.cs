@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PasigLibrarySystem.USER;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,6 +43,16 @@ namespace PasigLibrarySystem.ADMIN
         private void Settingslbl_Click(object sender, EventArgs e)
         {
             UTILS.Action.SwitchForm(this, new AdminSettings());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.PopupForm(this, new ViewDetails());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.PopupForm(this, new AddBookForm());
         }
     }
 }

@@ -51,15 +51,15 @@
             welcomelbl = new Label();
             H1 = new Label();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
+            searchtxt = new TextBox();
             search = new Button();
             tableview = new DataGridView();
-            label1 = new Label();
+            lbl2 = new Label();
             reservebtn = new Button();
             borrowbtn = new Button();
             ViewDetails = new Button();
-            label2 = new Label();
-            comboBox1 = new ComboBox();
+            lbl1 = new Label();
+            filtertxt = new ComboBox();
             taskbarpanel.SuspendLayout();
             highlightpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -314,14 +314,14 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // searchtxt
             // 
-            textBox1.Font = new Font("Poppins", 12F);
-            textBox1.Location = new Point(289, 123);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Search by Title, Author, Category or ISBN";
-            textBox1.Size = new Size(902, 31);
-            textBox1.TabIndex = 41;
+            searchtxt.Font = new Font("Poppins", 12F);
+            searchtxt.Location = new Point(289, 123);
+            searchtxt.Name = "searchtxt";
+            searchtxt.PlaceholderText = "Search by Title, Author, Category or ISBN";
+            searchtxt.Size = new Size(902, 31);
+            searchtxt.TabIndex = 41;
             // 
             // search
             // 
@@ -357,17 +357,17 @@
             tableview.Size = new Size(941, 359);
             tableview.TabIndex = 43;
             // 
-            // label1
+            // lbl2
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(15, 46, 103);
-            label1.Location = new Point(287, 206);
-            label1.Name = "label1";
-            label1.Size = new Size(60, 26);
-            label1.TabIndex = 18;
-            label1.Text = "Books:";
-            label1.TextAlign = ContentAlignment.TopCenter;
+            lbl2.AutoSize = true;
+            lbl2.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl2.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl2.Location = new Point(287, 206);
+            lbl2.Name = "lbl2";
+            lbl2.Size = new Size(60, 26);
+            lbl2.TabIndex = 18;
+            lbl2.Text = "Books:";
+            lbl2.TextAlign = ContentAlignment.TopCenter;
             // 
             // reservebtn
             // 
@@ -405,26 +405,27 @@
             ViewDetails.UseVisualStyleBackColor = true;
             ViewDetails.Click += ViewDetails_Click;
             // 
-            // label2
+            // lbl1
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(15, 46, 103);
-            label2.Location = new Point(284, 171);
-            label2.Name = "label2";
-            label2.Size = new Size(73, 26);
-            label2.TabIndex = 47;
-            label2.Text = "Filter by:";
-            label2.TextAlign = ContentAlignment.TopCenter;
+            lbl1.AutoSize = true;
+            lbl1.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl1.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl1.Location = new Point(284, 171);
+            lbl1.Name = "lbl1";
+            lbl1.Size = new Size(73, 26);
+            lbl1.TabIndex = 47;
+            lbl1.Text = "Filter by:";
+            lbl1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // comboBox1
+            // filtertxt
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Books", "Journal" });
-            comboBox1.Location = new Point(362, 171);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 48;
+            filtertxt.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            filtertxt.FormattingEnabled = true;
+            filtertxt.Items.AddRange(new object[] { "Books", "Journal" });
+            filtertxt.Location = new Point(362, 171);
+            filtertxt.Name = "filtertxt";
+            filtertxt.Size = new Size(121, 30);
+            filtertxt.TabIndex = 48;
             // 
             // UserDashboard
             // 
@@ -432,15 +433,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 238, 238);
             ClientSize = new Size(1264, 681);
-            Controls.Add(comboBox1);
-            Controls.Add(label2);
+            Controls.Add(filtertxt);
+            Controls.Add(lbl1);
             Controls.Add(ViewDetails);
             Controls.Add(borrowbtn);
             Controls.Add(reservebtn);
-            Controls.Add(label1);
+            Controls.Add(lbl2);
             Controls.Add(tableview);
             Controls.Add(search);
-            Controls.Add(textBox1);
+            Controls.Add(searchtxt);
             Controls.Add(headerpanel);
             Controls.Add(taskbarpanel);
             ForeColor = SystemColors.ControlText;
@@ -494,14 +495,14 @@
         private PictureBox pictureBox9;
         private Label Aboutlbl;
         private Panel panel4;
-        private TextBox textBox1;
+        private TextBox searchtxt;
         private Button search;
         private DataGridView tableview;
-        private Label label1;
+        private Label lbl2;
         private Button reservebtn;
         private Button borrowbtn;
         private Button ViewDetails;
-        private Label label2;
-        private ComboBox comboBox1;
+        private Label lbl1;
+        private ComboBox filtertxt;
     }
 }

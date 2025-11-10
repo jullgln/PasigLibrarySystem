@@ -53,6 +53,8 @@
             ISBNtxt = new Label();
             pagectxt = new Label();
             backtosearch = new Button();
+            lbl11 = new Label();
+            abstractxt = new TextBox();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -95,7 +97,7 @@
             // 
             idtxt.AutoSize = true;
             idtxt.Font = new Font("Poppins Light", 12F);
-            idtxt.Location = new Point(212, 124);
+            idtxt.Location = new Point(200, 115);
             idtxt.Name = "idtxt";
             idtxt.Size = new Size(70, 28);
             idtxt.TabIndex = 24;
@@ -106,7 +108,7 @@
             lbl1.AutoSize = true;
             lbl1.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl1.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl1.Location = new Point(51, 124);
+            lbl1.Location = new Point(39, 115);
             lbl1.Name = "lbl1";
             lbl1.Size = new Size(29, 28);
             lbl1.TabIndex = 23;
@@ -116,7 +118,7 @@
             // 
             titletxt.AutoSize = true;
             titletxt.Font = new Font("Poppins Light", 12F);
-            titletxt.Location = new Point(212, 174);
+            titletxt.Location = new Point(200, 165);
             titletxt.Name = "titletxt";
             titletxt.Size = new Size(70, 28);
             titletxt.TabIndex = 26;
@@ -127,7 +129,7 @@
             lbl2.AutoSize = true;
             lbl2.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl2.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl2.Location = new Point(51, 174);
+            lbl2.Location = new Point(39, 165);
             lbl2.Name = "lbl2";
             lbl2.Size = new Size(98, 28);
             lbl2.TabIndex = 25;
@@ -138,7 +140,7 @@
             lbl3.AutoSize = true;
             lbl3.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl3.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl3.Location = new Point(51, 223);
+            lbl3.Location = new Point(39, 214);
             lbl3.Name = "lbl3";
             lbl3.Size = new Size(71, 28);
             lbl3.TabIndex = 27;
@@ -149,7 +151,7 @@
             lbl4.AutoSize = true;
             lbl4.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl4.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl4.Location = new Point(51, 274);
+            lbl4.Location = new Point(39, 265);
             lbl4.Name = "lbl4";
             lbl4.Size = new Size(65, 28);
             lbl4.TabIndex = 28;
@@ -160,7 +162,7 @@
             lbl5.AutoSize = true;
             lbl5.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl5.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl5.Location = new Point(52, 321);
+            lbl5.Location = new Point(40, 312);
             lbl5.Name = "lbl5";
             lbl5.Size = new Size(124, 28);
             lbl5.TabIndex = 29;
@@ -171,7 +173,7 @@
             lbl7.AutoSize = true;
             lbl7.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl7.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl7.Location = new Point(455, 153);
+            lbl7.Location = new Point(42, 413);
             lbl7.Name = "lbl7";
             lbl7.Size = new Size(116, 28);
             lbl7.TabIndex = 30;
@@ -182,7 +184,7 @@
             lbl6.AutoSize = true;
             lbl6.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl6.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl6.Location = new Point(54, 365);
+            lbl6.Location = new Point(42, 356);
             lbl6.Name = "lbl6";
             lbl6.Size = new Size(95, 28);
             lbl6.TabIndex = 31;
@@ -193,7 +195,7 @@
             lbl8.AutoSize = true;
             lbl8.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl8.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl8.Location = new Point(455, 203);
+            lbl8.Location = new Point(404, 115);
             lbl8.Name = "lbl8";
             lbl8.Size = new Size(52, 28);
             lbl8.TabIndex = 32;
@@ -204,7 +206,7 @@
             lbl9.AutoSize = true;
             lbl9.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl9.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl9.Location = new Point(455, 252);
+            lbl9.Location = new Point(404, 164);
             lbl9.Name = "lbl9";
             lbl9.Size = new Size(70, 28);
             lbl9.TabIndex = 33;
@@ -215,7 +217,7 @@
             lbl10.AutoSize = true;
             lbl10.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbl10.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl10.Location = new Point(455, 303);
+            lbl10.Location = new Point(404, 215);
             lbl10.Name = "lbl10";
             lbl10.Size = new Size(133, 28);
             lbl10.TabIndex = 34;
@@ -225,7 +227,7 @@
             // 
             genretxt.AutoSize = true;
             genretxt.Font = new Font("Poppins Light", 12F);
-            genretxt.Location = new Point(212, 273);
+            genretxt.Location = new Point(200, 264);
             genretxt.Name = "genretxt";
             genretxt.Size = new Size(70, 28);
             genretxt.TabIndex = 36;
@@ -235,7 +237,7 @@
             // 
             authortxt.AutoSize = true;
             authortxt.Font = new Font("Poppins Light", 12F);
-            authortxt.Location = new Point(212, 223);
+            authortxt.Location = new Point(200, 214);
             authortxt.Name = "authortxt";
             authortxt.Size = new Size(70, 28);
             authortxt.TabIndex = 35;
@@ -245,7 +247,7 @@
             // 
             shelfnotxt.AutoSize = true;
             shelfnotxt.Font = new Font("Poppins Light", 12F);
-            shelfnotxt.Location = new Point(621, 302);
+            shelfnotxt.Location = new Point(570, 214);
             shelfnotxt.Name = "shelfnotxt";
             shelfnotxt.Size = new Size(70, 28);
             shelfnotxt.TabIndex = 38;
@@ -255,7 +257,7 @@
             // 
             statustxt.AutoSize = true;
             statustxt.Font = new Font("Poppins Light", 12F);
-            statustxt.Location = new Point(621, 252);
+            statustxt.Location = new Point(570, 164);
             statustxt.Name = "statustxt";
             statustxt.Size = new Size(70, 28);
             statustxt.TabIndex = 37;
@@ -265,7 +267,7 @@
             // 
             pubdatetxt.AutoSize = true;
             pubdatetxt.Font = new Font("Poppins Light", 12F);
-            pubdatetxt.Location = new Point(212, 321);
+            pubdatetxt.Location = new Point(200, 312);
             pubdatetxt.Name = "pubdatetxt";
             pubdatetxt.Size = new Size(70, 28);
             pubdatetxt.TabIndex = 37;
@@ -275,7 +277,7 @@
             // 
             pubtxt.AutoSize = true;
             pubtxt.Font = new Font("Poppins Light", 12F);
-            pubtxt.Location = new Point(212, 371);
+            pubtxt.Location = new Point(200, 362);
             pubtxt.Name = "pubtxt";
             pubtxt.Size = new Size(70, 28);
             pubtxt.TabIndex = 38;
@@ -285,7 +287,7 @@
             // 
             ISBNtxt.AutoSize = true;
             ISBNtxt.Font = new Font("Poppins Light", 12F);
-            ISBNtxt.Location = new Point(621, 203);
+            ISBNtxt.Location = new Point(570, 115);
             ISBNtxt.Name = "ISBNtxt";
             ISBNtxt.Size = new Size(70, 28);
             ISBNtxt.TabIndex = 40;
@@ -295,7 +297,7 @@
             // 
             pagectxt.AutoSize = true;
             pagectxt.Font = new Font("Poppins Light", 12F);
-            pagectxt.Location = new Point(621, 153);
+            pagectxt.Location = new Point(200, 413);
             pagectxt.Name = "pagectxt";
             pagectxt.Size = new Size(70, 28);
             pagectxt.TabIndex = 39;
@@ -313,11 +315,33 @@
             backtosearch.UseVisualStyleBackColor = true;
             backtosearch.Click += backtosearch_Click;
             // 
+            // lbl11
+            // 
+            lbl11.AutoSize = true;
+            lbl11.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl11.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl11.Location = new Point(404, 258);
+            lbl11.Name = "lbl11";
+            lbl11.Size = new Size(90, 28);
+            lbl11.TabIndex = 48;
+            lbl11.Text = "Abstract";
+            // 
+            // abstractxt
+            // 
+            abstractxt.Font = new Font("Poppins", 9F);
+            abstractxt.Location = new Point(404, 294);
+            abstractxt.Multiline = true;
+            abstractxt.Name = "abstractxt";
+            abstractxt.Size = new Size(419, 141);
+            abstractxt.TabIndex = 69;
+            // 
             // ViewDetails
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(884, 511);
+            Controls.Add(abstractxt);
+            Controls.Add(lbl11);
             Controls.Add(backtosearch);
             Controls.Add(ISBNtxt);
             Controls.Add(pagectxt);
@@ -376,5 +400,7 @@
         private Label ISBNtxt;
         private Label pagectxt;
         private Button backtosearch;
+        private Label lbl11;
+        private TextBox abstractxt;
     }
 }
