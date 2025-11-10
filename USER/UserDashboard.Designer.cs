@@ -53,7 +53,7 @@
             pictureBox1 = new PictureBox();
             textBox1 = new TextBox();
             search = new Button();
-            dataGridView1 = new DataGridView();
+            tableview = new DataGridView();
             label1 = new Label();
             reservebtn = new Button();
             borrowbtn = new Button();
@@ -73,7 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tableview).BeginInit();
             SuspendLayout();
             // 
             // taskbarpanel
@@ -337,12 +337,12 @@
             search.TabIndex = 42;
             search.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // tableview
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tableview.AllowUserToAddRows = false;
+            tableview.AllowUserToDeleteRows = false;
+            tableview.BackgroundColor = Color.White;
+            tableview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -350,12 +350,12 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.Location = new Point(289, 235);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(941, 359);
-            dataGridView1.TabIndex = 43;
+            tableview.DefaultCellStyle = dataGridViewCellStyle2;
+            tableview.Location = new Point(289, 235);
+            tableview.Name = "tableview";
+            tableview.ReadOnly = true;
+            tableview.Size = new Size(941, 359);
+            tableview.TabIndex = 43;
             // 
             // label1
             // 
@@ -438,7 +438,7 @@
             Controls.Add(borrowbtn);
             Controls.Add(reservebtn);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(tableview);
             Controls.Add(search);
             Controls.Add(textBox1);
             Controls.Add(headerpanel);
@@ -466,7 +466,7 @@
             headerpanel.ResumeLayout(false);
             headerpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tableview).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -496,7 +496,7 @@
         private Panel panel4;
         private TextBox textBox1;
         private Button search;
-        private DataGridView dataGridView1;
+        private DataGridView tableview;
         private Label label1;
         private Button reservebtn;
         private Button borrowbtn;
