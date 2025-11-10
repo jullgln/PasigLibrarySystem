@@ -24,5 +24,17 @@ namespace PasigLibrarySystem.USER
             reservebtn.BackColor = UIColors.VividAzure;
             reservebtn.ForeColor = UIColors.White;
         }
+
+        private void Cancelbtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void reservebtn_Click(object sender, EventArgs e)
+        {
+            //validation can be added here
+            MessageBox.Show("Book Reserved Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);//placeholder
+            Close();
+        }
     }
 }

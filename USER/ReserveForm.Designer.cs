@@ -216,6 +216,7 @@
             Cancelbtn.TabIndex = 28;
             Cancelbtn.Text = "Cancel";
             Cancelbtn.UseVisualStyleBackColor = true;
+            Cancelbtn.Click += Cancelbtn_Click;
             // 
             // reservebtn
             // 
@@ -227,8 +228,9 @@
             reservebtn.TabIndex = 27;
             reservebtn.Text = "Reserve";
             reservebtn.UseVisualStyleBackColor = true;
+            reservebtn.Click += reservebtn_Click;
             // 
-            // ReserveBookForm
+            // ReserveForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -239,7 +241,7 @@
             Controls.Add(lbl1);
             Controls.Add(groupBox1);
             Controls.Add(headerpanel);
-            Name = "ReserveBookForm";
+            Name = "ReserveForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ReserveBooks";
             headerpanel.ResumeLayout(false);

@@ -28,5 +28,17 @@ namespace PasigLibrarySystem.USER
             //others
 
         }
+
+        private void Cancelbtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void borrowbtn_Click(object sender, EventArgs e)
+        {
+            //validation can be added here
+            MessageBox.Show("Book Borrowed Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);//placeholder
+            Close();
+        }
     }
 }

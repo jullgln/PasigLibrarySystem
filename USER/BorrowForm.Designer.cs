@@ -37,6 +37,7 @@
             displayname = new Label();
             displayemail = new Label();
             groupBox1 = new GroupBox();
+            displayauthor = new Label();
             displaybooktitle = new Label();
             displaybookid = new Label();
             lbl5 = new Label();
@@ -48,7 +49,6 @@
             Cancelbtn = new Button();
             displayborrowdate = new Label();
             dateTimePicker1 = new DateTimePicker();
-            displayauthor = new Label();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
@@ -145,6 +145,16 @@
             groupBox1.TabIndex = 18;
             groupBox1.TabStop = false;
             // 
+            // displayauthor
+            // 
+            displayauthor.AutoSize = true;
+            displayauthor.Font = new Font("Poppins Light", 12F);
+            displayauthor.Location = new Point(156, 128);
+            displayauthor.Name = "displayauthor";
+            displayauthor.Size = new Size(69, 28);
+            displayauthor.TabIndex = 24;
+            displayauthor.Text = "Book ID";
+            // 
             // displaybooktitle
             // 
             displaybooktitle.AutoSize = true;
@@ -230,6 +240,7 @@
             borrowbtn.TabIndex = 24;
             borrowbtn.Text = "Borrow";
             borrowbtn.UseVisualStyleBackColor = true;
+            borrowbtn.Click += borrowbtn_Click;
             // 
             // Cancelbtn
             // 
@@ -241,6 +252,7 @@
             Cancelbtn.TabIndex = 25;
             Cancelbtn.Text = "Cancel";
             Cancelbtn.UseVisualStyleBackColor = true;
+            Cancelbtn.Click += Cancelbtn_Click;
             // 
             // displayborrowdate
             // 
@@ -262,17 +274,7 @@
             dateTimePicker1.Size = new Size(237, 25);
             dateTimePicker1.TabIndex = 27;
             // 
-            // displayauthor
-            // 
-            displayauthor.AutoSize = true;
-            displayauthor.Font = new Font("Poppins Light", 12F);
-            displayauthor.Location = new Point(156, 128);
-            displayauthor.Name = "displayauthor";
-            displayauthor.Size = new Size(69, 28);
-            displayauthor.TabIndex = 24;
-            displayauthor.Text = "Book ID";
-            // 
-            // UserBorrowForm
+            // BorrowForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -289,7 +291,7 @@
             Controls.Add(lbl2);
             Controls.Add(lbl1);
             Controls.Add(headerpanel);
-            Name = "UserBorrowForm";
+            Name = "BorrowForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UserBorrowForm";
             headerpanel.ResumeLayout(false);

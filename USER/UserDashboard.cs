@@ -60,12 +60,17 @@ namespace PasigLibrarySystem.USER
 
         private void borrowbtn_Click(object sender, EventArgs e)
         {
-            UTILS.Action.SwitchForm(this, new BorrowForm());
+            UTILS.Action.PopupForm(this, new BorrowForm());
         }
 
         private void reservebtn_Click(object sender, EventArgs e)
         {
-            UTILS.Action.SwitchForm(this, new BorrowForm());
+            UTILS.Action.PopupForm(this, new ReserveForm());
+        }
+
+        private void ViewDetails_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.PopupForm(this, new ViewDetails());
         }
     }
 }

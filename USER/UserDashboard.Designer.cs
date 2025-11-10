@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserDashboard));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             taskbarpanel = new Panel();
             highlightpanel = new Panel();
             pictureBox2 = new PictureBox();
@@ -58,6 +58,8 @@
             reservebtn = new Button();
             borrowbtn = new Button();
             ViewDetails = new Button();
+            label2 = new Label();
+            comboBox1 = new ComboBox();
             taskbarpanel.SuspendLayout();
             highlightpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -317,9 +319,9 @@
             textBox1.Font = new Font("Poppins", 12F);
             textBox1.Location = new Point(289, 123);
             textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Search by Title, Author, Category or ISBN";
             textBox1.Size = new Size(902, 31);
             textBox1.TabIndex = 41;
-            textBox1.Text = "Search";
             // 
             // search
             // 
@@ -341,15 +343,15 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.Location = new Point(289, 227);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.Location = new Point(289, 235);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(941, 359);
@@ -360,7 +362,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(15, 46, 103);
-            label1.Location = new Point(289, 198);
+            label1.Location = new Point(287, 206);
             label1.Name = "label1";
             label1.Size = new Size(60, 26);
             label1.TabIndex = 18;
@@ -371,7 +373,7 @@
             // 
             reservebtn.FlatStyle = FlatStyle.Flat;
             reservebtn.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reservebtn.Location = new Point(984, 612);
+            reservebtn.Location = new Point(984, 617);
             reservebtn.Name = "reservebtn";
             reservebtn.Size = new Size(103, 32);
             reservebtn.TabIndex = 44;
@@ -383,7 +385,7 @@
             // 
             borrowbtn.FlatStyle = FlatStyle.Flat;
             borrowbtn.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            borrowbtn.Location = new Point(1127, 612);
+            borrowbtn.Location = new Point(1127, 617);
             borrowbtn.Name = "borrowbtn";
             borrowbtn.Size = new Size(103, 32);
             borrowbtn.TabIndex = 45;
@@ -395,12 +397,34 @@
             // 
             ViewDetails.FlatStyle = FlatStyle.Flat;
             ViewDetails.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewDetails.Location = new Point(800, 612);
+            ViewDetails.Location = new Point(800, 617);
             ViewDetails.Name = "ViewDetails";
             ViewDetails.Size = new Size(145, 32);
             ViewDetails.TabIndex = 46;
             ViewDetails.Text = "View Details";
             ViewDetails.UseVisualStyleBackColor = true;
+            ViewDetails.Click += ViewDetails_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(15, 46, 103);
+            label2.Location = new Point(284, 171);
+            label2.Name = "label2";
+            label2.Size = new Size(73, 26);
+            label2.TabIndex = 47;
+            label2.Text = "Filter by:";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Books", "Journal" });
+            comboBox1.Location = new Point(362, 171);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 48;
             // 
             // UserDashboard
             // 
@@ -408,6 +432,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 238, 238);
             ClientSize = new Size(1264, 681);
+            Controls.Add(comboBox1);
+            Controls.Add(label2);
             Controls.Add(ViewDetails);
             Controls.Add(borrowbtn);
             Controls.Add(reservebtn);
@@ -475,5 +501,7 @@
         private Button reservebtn;
         private Button borrowbtn;
         private Button ViewDetails;
+        private Label label2;
+        private ComboBox comboBox1;
     }
 }
