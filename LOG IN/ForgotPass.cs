@@ -25,8 +25,11 @@ namespace PasigLibrarySystem.LOG_IN
             lbl2.ForeColor = UIColors.DarkBlue;
             lbl3.ForeColor = UIColors.DarkBlue;
             UIRounder.RoundBtn(Resetbtn, 20);
+            UIRounder.RoundBtn(Cancelbtn, 20);
             Resetbtn.BackColor = UIColors.VividAzure;
             Resetbtn.ForeColor = UIColors.White;
+            Cancelbtn.BackColor = UIColors.Crimson;
+            Cancelbtn.ForeColor = UIColors.White;
         }
 
         private void Resetbtn_Click(object sender, EventArgs e)
@@ -87,6 +90,13 @@ namespace PasigLibrarySystem.LOG_IN
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void Cancelbtn_Click(object sender, EventArgs e)
+        {
+            LogIn LogInForm = new LogIn();
+            LogInForm.Show();
+            this.Hide();
         }
     }
 }

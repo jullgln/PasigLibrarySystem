@@ -38,6 +38,7 @@
             lbl3 = new Label();
             CNewPasstxtbox = new TextBox();
             lbl2 = new Label();
+            Cancelbtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             // 
             Resetbtn.FlatStyle = FlatStyle.Flat;
             Resetbtn.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Resetbtn.Location = new Point(583, 402);
+            Resetbtn.Location = new Point(655, 402);
             Resetbtn.Name = "Resetbtn";
             Resetbtn.Size = new Size(187, 36);
             Resetbtn.TabIndex = 21;
@@ -62,6 +63,7 @@
             NewPasstxtbox.Name = "NewPasstxtbox";
             NewPasstxtbox.Size = new Size(331, 26);
             NewPasstxtbox.TabIndex = 19;
+            NewPasstxtbox.UseSystemPasswordChar = true;
             // 
             // lbl1
             // 
@@ -122,6 +124,7 @@
             CNewPasstxtbox.Name = "CNewPasstxtbox";
             CNewPasstxtbox.Size = new Size(331, 26);
             CNewPasstxtbox.TabIndex = 22;
+            CNewPasstxtbox.UseSystemPasswordChar = true;
             // 
             // lbl2
             // 
@@ -133,12 +136,25 @@
             lbl2.TabIndex = 24;
             lbl2.Text = "New Password";
             // 
+            // Cancelbtn
+            // 
+            Cancelbtn.FlatStyle = FlatStyle.Flat;
+            Cancelbtn.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Cancelbtn.Location = new Point(508, 402);
+            Cancelbtn.Name = "Cancelbtn";
+            Cancelbtn.Size = new Size(126, 36);
+            Cancelbtn.TabIndex = 26;
+            Cancelbtn.Text = "Cancel";
+            Cancelbtn.UseVisualStyleBackColor = true;
+            Cancelbtn.Click += Cancelbtn_Click;
+            // 
             // ForgotPass
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(884, 511);
+            Controls.Add(Cancelbtn);
             Controls.Add(lbl2);
             Controls.Add(lbl3);
             Controls.Add(CNewPasstxtbox);
@@ -170,5 +186,6 @@
         private Label lbl3;
         private TextBox CNewPasstxtbox;
         private Label lbl2;
+        private Button Cancelbtn;
     }
 }

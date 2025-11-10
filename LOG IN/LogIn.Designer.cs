@@ -77,6 +77,7 @@
             passtxtbox.Name = "passtxtbox";
             passtxtbox.Size = new Size(331, 26);
             passtxtbox.TabIndex = 12;
+            passtxtbox.UseSystemPasswordChar = true;
             // 
             // lbl1
             // 

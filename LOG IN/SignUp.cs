@@ -28,8 +28,11 @@ namespace PasigLibrarySystem
             lbl3.ForeColor = UIColors.DarkBlue;
             lbl4.ForeColor = UIColors.DarkBlue;
             UIRounder.RoundBtn(Registerbtn, 20);
+            UIRounder.RoundBtn(Cancelbtn, 20);
             Registerbtn.BackColor = UIColors.VividAzure;
             Registerbtn.ForeColor = UIColors.White;
+            Cancelbtn.BackColor = UIColors.Crimson;
+            Cancelbtn.ForeColor = UIColors.White;
         }
 
         private void Registerbtn_Click(object sender, EventArgs e)
@@ -81,8 +84,15 @@ namespace PasigLibrarySystem
                 db.Close();
             }
 
-        // To go back to LogIn form after registering
-        LogIn LogInForm = new LogIn();
+            // To go back to LogIn form after registering
+            LogIn LogInForm = new LogIn();
+            LogInForm.Show();
+            this.Hide();
+        }
+
+        private void Cancelbtn_Click(object sender, EventArgs e)
+        {
+            LogIn LogInForm = new LogIn();
             LogInForm.Show();
             this.Hide();
         }

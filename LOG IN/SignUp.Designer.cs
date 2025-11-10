@@ -40,6 +40,7 @@
             Registerbtn = new Button();
             lbl4 = new Label();
             emailtxtbox = new TextBox();
+            Cancelbtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -122,12 +123,13 @@
             passtxtbox.Name = "passtxtbox";
             passtxtbox.Size = new Size(331, 26);
             passtxtbox.TabIndex = 8;
+            passtxtbox.UseSystemPasswordChar = true;
             // 
             // Registerbtn
             // 
             Registerbtn.FlatStyle = FlatStyle.Flat;
             Registerbtn.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Registerbtn.Location = new Point(618, 438);
+            Registerbtn.Location = new Point(720, 438);
             Registerbtn.Name = "Registerbtn";
             Registerbtn.Size = new Size(123, 36);
             Registerbtn.TabIndex = 10;
@@ -155,12 +157,25 @@
             emailtxtbox.Size = new Size(331, 26);
             emailtxtbox.TabIndex = 11;
             // 
+            // Cancelbtn
+            // 
+            Cancelbtn.FlatStyle = FlatStyle.Flat;
+            Cancelbtn.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Cancelbtn.Location = new Point(568, 438);
+            Cancelbtn.Name = "Cancelbtn";
+            Cancelbtn.Size = new Size(126, 36);
+            Cancelbtn.TabIndex = 27;
+            Cancelbtn.Text = "Cancel";
+            Cancelbtn.UseVisualStyleBackColor = true;
+            Cancelbtn.Click += Cancelbtn_Click;
+            // 
             // SignUp
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(884, 511);
+            Controls.Add(Cancelbtn);
             Controls.Add(lbl4);
             Controls.Add(emailtxtbox);
             Controls.Add(Registerbtn);
@@ -193,5 +208,6 @@
         private Button Registerbtn;
         private Label lbl4;
         private TextBox emailtxtbox;
+        private Button Cancelbtn;
     }
 }
