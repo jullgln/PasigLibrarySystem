@@ -11,6 +11,8 @@
             UIRounder.RoundBtn(LogOutbtn, 30);
             LogOutbtn.BackColor = UIColors.White;
             LogOutbtn.ForeColor = UIColors.DarkBlue;
+            searchbtn.ForeColor = UIColors.White;
+            searchbtn.BackColor = UIColors.VividAzure;
         }
         private void LogOutbtn_Click(object sender, EventArgs e)
         {
