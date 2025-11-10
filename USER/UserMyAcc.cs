@@ -49,5 +49,10 @@ namespace PasigLibrarySystem.USER
         {
             UTILS.Action.LogOut(this, new LogIn());
         }
+
+        private void UserMyAcc_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

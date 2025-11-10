@@ -376,6 +376,7 @@
             link.TabIndex = 52;
             link.TabStop = true;
             link.Text = "Change Password?";
+            link.LinkClicked += link_LinkClicked;
             // 
             // lbl5
             // 
@@ -388,6 +389,7 @@
             lbl5.TabIndex = 53;
             lbl5.Text = "New Password";
             lbl5.TextAlign = ContentAlignment.TopCenter;
+            lbl5.Visible = false;
             // 
             // lbl6
             // 
@@ -400,6 +402,7 @@
             lbl6.TabIndex = 54;
             lbl6.Text = "Confirm New Password";
             lbl6.TextAlign = ContentAlignment.TopCenter;
+            lbl6.Visible = false;
             // 
             // nametxt
             // 
@@ -432,6 +435,7 @@
             newpasstxt.Name = "newpasstxt";
             newpasstxt.Size = new Size(577, 31);
             newpasstxt.TabIndex = 58;
+            newpasstxt.Visible = false;
             // 
             // confirmnewpasstxt
             // 
@@ -440,6 +444,7 @@
             confirmnewpasstxt.Name = "confirmnewpasstxt";
             confirmnewpasstxt.Size = new Size(577, 31);
             confirmnewpasstxt.TabIndex = 59;
+            confirmnewpasstxt.Visible = false;
             // 
             // confirmbtn
             // 
@@ -451,6 +456,7 @@
             confirmbtn.TabIndex = 60;
             confirmbtn.Text = "Confirm";
             confirmbtn.UseVisualStyleBackColor = true;
+            confirmbtn.Click += confirmbtn_Click;
             // 
             // cancelbtn
             // 
@@ -487,6 +493,7 @@
             Name = "UserSettings";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UserSettings";
+            Load += UserSettings_Load;
             headerpanel.ResumeLayout(false);
             headerpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -478,6 +478,7 @@
             Name = "UserMyAcc";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UserMyAcc";
+            Load += UserMyAcc_Load;
             headerpanel.ResumeLayout(false);
             headerpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
