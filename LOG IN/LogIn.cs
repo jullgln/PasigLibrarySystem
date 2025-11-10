@@ -49,11 +49,11 @@ namespace PasigLibrarySystem
 
         private void LogInbtn_Click(object sender, EventArgs e)
         {
-            string username = Usernametxtbox.Text.Trim();
-            UTILS.Session.CurrentUser = username;
+            user_data.currentuser = Usernametxtbox.Text.Trim();
+            UTILS.Session.CurrentUser = user_data.currentuser;
             string password = passtxtbox.Text.Trim();
 
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            if (user_data.currentuser == "" || password == "")
             {
                 inc.ForeColor = UIColors.Crimson;
                 inc.Text = "Please enter username and password";
@@ -67,18 +67,33 @@ namespace PasigLibrarySystem
             {
                 db.Open();
 
-                string query = "SELECT * FROM users WHERE  username=@Username AND password=@Password";
+                string query = "SELECT * FROM users WHERE username=@Username AND Password=@Password";
                 MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
-                cmd.Parameters.AddWithValue("@Username", username);
+                cmd.Parameters.AddWithValue("@Username", user_data.currentuser);
                 cmd.Parameters.AddWithValue("@Password", password);
 
                 MySqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows)
+                if (reader.Read())
                 {
-                    USER.UserDashboard Dashboard = new USER.UserDashboard(UTILS.Session.CurrentUser);
-                    Dashboard.Show();
-                    this.Hide();
+                    user_data.user_id = reader.GetString("User_ID");
+                    user_data.email = reader.GetString("email");
+                    user_data.real_name = reader.GetString("fullname");
+                    string role = reader.GetString("role");
+                    MessageBox.Show("Login successful!");
+
+                    if (role == "Admin")
+                    {
+                        ADMIN.AdminMemberManagement MemManagementForm = new ADMIN.AdminMemberManagement();
+                        MemManagementForm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        USER.UserDashboard Dashboard = new USER.UserDashboard(UTILS.Session.CurrentUser);
+                        Dashboard.Show();
+                        this.Hide();
+                    }
                 }
                 else
                 {
