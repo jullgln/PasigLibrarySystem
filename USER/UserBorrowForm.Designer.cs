@@ -37,7 +37,6 @@
             displayname = new Label();
             displayemail = new Label();
             groupBox1 = new GroupBox();
-            displayauthor = new Label();
             displaybooktitle = new Label();
             displaybookid = new Label();
             lbl5 = new Label();
@@ -49,6 +48,7 @@
             Cancelbtn = new Button();
             displayborrowdate = new Label();
             dateTimePicker1 = new DateTimePicker();
+            displayauthor = new Label();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
@@ -144,16 +144,6 @@
             groupBox1.Size = new Size(827, 177);
             groupBox1.TabIndex = 18;
             groupBox1.TabStop = false;
-            // 
-            // displayauthor
-            // 
-            displayauthor.AutoSize = true;
-            displayauthor.Font = new Font("Poppins Light", 12F);
-            displayauthor.Location = new Point(156, 128);
-            displayauthor.Name = "displayauthor";
-            displayauthor.Size = new Size(69, 28);
-            displayauthor.TabIndex = 24;
-            displayauthor.Text = "Book ID";
             // 
             // displaybooktitle
             // 
@@ -272,6 +262,16 @@
             dateTimePicker1.Size = new Size(237, 25);
             dateTimePicker1.TabIndex = 27;
             // 
+            // displayauthor
+            // 
+            displayauthor.AutoSize = true;
+            displayauthor.Font = new Font("Poppins Light", 12F);
+            displayauthor.Location = new Point(156, 128);
+            displayauthor.Name = "displayauthor";
+            displayauthor.Size = new Size(69, 28);
+            displayauthor.TabIndex = 24;
+            displayauthor.Text = "Book ID";
+            // 
             // UserBorrowForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -318,10 +318,10 @@
         private Label lbl7;
         private Button borrowbtn;
         private Button Cancelbtn;
-        private Label displayauthor;
         private Label displaybooktitle;
         private Label displaybookid;
         private Label displayborrowdate;
         private DateTimePicker dateTimePicker1;
+        private Label displayauthor;
     }
 }
