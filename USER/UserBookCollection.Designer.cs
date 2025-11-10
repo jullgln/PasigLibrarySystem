@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserBookCollection));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             taskbarpanel = new Panel();
             panel = new Panel();
             pictureBox2 = new PictureBox();
@@ -50,6 +51,16 @@
             welcomelbl = new Label();
             H1 = new Label();
             pictureBox1 = new PictureBox();
+            dataGridView1 = new DataGridView();
+            borrowbtn = new Button();
+            button1 = new Button();
+            label5 = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
             taskbarpanel.SuspendLayout();
             panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -63,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // taskbarpanel
@@ -303,12 +315,145 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.Location = new Point(286, 254);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(941, 347);
+            dataGridView1.TabIndex = 44;
+            // 
+            // borrowbtn
+            // 
+            borrowbtn.FlatStyle = FlatStyle.Flat;
+            borrowbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            borrowbtn.Location = new Point(1102, 618);
+            borrowbtn.Name = "borrowbtn";
+            borrowbtn.Size = new Size(125, 32);
+            borrowbtn.TabIndex = 45;
+            borrowbtn.Text = "Return Book";
+            borrowbtn.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            button1.Location = new Point(948, 618);
+            button1.Name = "button1";
+            button1.Size = new Size(125, 32);
+            button1.TabIndex = 46;
+            button1.Text = "Mark as Lost";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Poppins", 13F);
+            label5.ForeColor = Color.FromArgb(15, 46, 103);
+            label5.Location = new Point(286, 113);
+            label5.Name = "label5";
+            label5.Size = new Size(159, 31);
+            label5.TabIndex = 47;
+            label5.Text = "Borrowed Books";
+            label5.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Poppins", 13F);
+            label1.ForeColor = Color.FromArgb(15, 46, 103);
+            label1.Location = new Point(532, 113);
+            label1.Name = "label1";
+            label1.Size = new Size(155, 31);
+            label1.TabIndex = 48;
+            label1.Text = "Returned Books";
+            label1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Poppins", 16F);
+            label2.ForeColor = Color.FromArgb(15, 46, 103);
+            label2.Location = new Point(472, 108);
+            label2.Name = "label2";
+            label2.Size = new Size(35, 39);
+            label2.TabIndex = 49;
+            label2.Text = "#";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Poppins", 16F);
+            label3.ForeColor = Color.FromArgb(15, 46, 103);
+            label3.Location = new Point(702, 108);
+            label3.Name = "label3";
+            label3.Size = new Size(35, 39);
+            label3.TabIndex = 50;
+            label3.Text = "#";
+            label3.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Poppins", 13F);
+            label4.ForeColor = Color.FromArgb(15, 46, 103);
+            label4.Location = new Point(286, 207);
+            label4.Name = "label4";
+            label4.Size = new Size(87, 31);
+            label4.TabIndex = 51;
+            label4.Text = "Filter by:";
+            label4.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // comboBox1
+            // 
+            comboBox1.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "All Books Collected", "Borrowed Book", "Reserved", "Category" });
+            comboBox1.Location = new Point(379, 207);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(314, 31);
+            comboBox1.TabIndex = 52;
+            // 
+            // comboBox2
+            // 
+            comboBox2.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "All Books Collected", "Borrowed Book", "Reserved", "Category" });
+            comboBox2.Location = new Point(718, 207);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(156, 31);
+            comboBox2.TabIndex = 53;
+            comboBox2.Text = "Category";
+            // 
             // UserBookCollection
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 238, 238);
             ClientSize = new Size(1264, 681);
+            Controls.Add(comboBox2);
+            Controls.Add(comboBox1);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(label5);
+            Controls.Add(button1);
+            Controls.Add(borrowbtn);
+            Controls.Add(dataGridView1);
             Controls.Add(headerpanel);
             Controls.Add(taskbarpanel);
             Name = "UserBookCollection";
@@ -333,7 +478,9 @@
             headerpanel.ResumeLayout(false);
             headerpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -359,5 +506,15 @@
         private Label welcomelbl;
         private Label H1;
         private PictureBox pictureBox1;
+        private DataGridView dataGridView1;
+        private Button borrowbtn;
+        private Button button1;
+        private Label label5;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
     }
 }
