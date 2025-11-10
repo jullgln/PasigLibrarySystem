@@ -52,15 +52,19 @@
             H1 = new Label();
             pictureBox1 = new PictureBox();
             dataGridView1 = new DataGridView();
-            borrowbtn = new Button();
-            button1 = new Button();
-            label5 = new Label();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
+            returnbtn = new Button();
+            lostbtn = new Button();
+            lbl1 = new Label();
+            lbl2 = new Label();
+            borrowno = new Label();
+            returnno = new Label();
+            lbl3 = new Label();
+            filtercbx = new ComboBox();
+            categorycbx = new ComboBox();
+            searchbtn = new Button();
+            searchtxt = new TextBox();
+            lbl5 = new Label();
+            timetxt = new Label();
             taskbarpanel.SuspendLayout();
             panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -335,108 +339,155 @@
             dataGridView1.Size = new Size(941, 347);
             dataGridView1.TabIndex = 44;
             // 
-            // borrowbtn
+            // returnbtn
             // 
-            borrowbtn.FlatStyle = FlatStyle.Flat;
-            borrowbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
-            borrowbtn.Location = new Point(1102, 618);
-            borrowbtn.Name = "borrowbtn";
-            borrowbtn.Size = new Size(125, 32);
-            borrowbtn.TabIndex = 45;
-            borrowbtn.Text = "Return Book";
-            borrowbtn.UseVisualStyleBackColor = true;
+            returnbtn.FlatStyle = FlatStyle.Flat;
+            returnbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            returnbtn.Location = new Point(1102, 618);
+            returnbtn.Name = "returnbtn";
+            returnbtn.Size = new Size(125, 32);
+            returnbtn.TabIndex = 45;
+            returnbtn.Text = "Return Book";
+            returnbtn.UseVisualStyleBackColor = true;
+            returnbtn.Click += returnbtn_Click;
             // 
-            // button1
+            // lostbtn
             // 
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
-            button1.Location = new Point(948, 618);
-            button1.Name = "button1";
-            button1.Size = new Size(125, 32);
-            button1.TabIndex = 46;
-            button1.Text = "Mark as Lost";
-            button1.UseVisualStyleBackColor = true;
+            lostbtn.FlatStyle = FlatStyle.Flat;
+            lostbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            lostbtn.Location = new Point(948, 618);
+            lostbtn.Name = "lostbtn";
+            lostbtn.Size = new Size(125, 32);
+            lostbtn.TabIndex = 46;
+            lostbtn.Text = "Mark as Lost";
+            lostbtn.UseVisualStyleBackColor = true;
+            lostbtn.Click += lostbtn_Click;
             // 
-            // label5
+            // lbl1
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Poppins", 13F);
-            label5.ForeColor = Color.FromArgb(15, 46, 103);
-            label5.Location = new Point(286, 113);
-            label5.Name = "label5";
-            label5.Size = new Size(159, 31);
-            label5.TabIndex = 47;
-            label5.Text = "Borrowed Books";
-            label5.TextAlign = ContentAlignment.TopCenter;
+            lbl1.AutoSize = true;
+            lbl1.Font = new Font("Poppins", 13F);
+            lbl1.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl1.Location = new Point(286, 113);
+            lbl1.Name = "lbl1";
+            lbl1.Size = new Size(159, 31);
+            lbl1.TabIndex = 47;
+            lbl1.Text = "Borrowed Books";
+            lbl1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label1
+            // lbl2
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Poppins", 13F);
-            label1.ForeColor = Color.FromArgb(15, 46, 103);
-            label1.Location = new Point(532, 113);
-            label1.Name = "label1";
-            label1.Size = new Size(155, 31);
-            label1.TabIndex = 48;
-            label1.Text = "Returned Books";
-            label1.TextAlign = ContentAlignment.TopCenter;
+            lbl2.AutoSize = true;
+            lbl2.Font = new Font("Poppins", 13F);
+            lbl2.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl2.Location = new Point(532, 113);
+            lbl2.Name = "lbl2";
+            lbl2.Size = new Size(155, 31);
+            lbl2.TabIndex = 48;
+            lbl2.Text = "Returned Books";
+            lbl2.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label2
+            // borrowno
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Poppins", 16F);
-            label2.ForeColor = Color.FromArgb(15, 46, 103);
-            label2.Location = new Point(472, 108);
-            label2.Name = "label2";
-            label2.Size = new Size(35, 39);
-            label2.TabIndex = 49;
-            label2.Text = "#";
-            label2.TextAlign = ContentAlignment.TopCenter;
+            borrowno.AutoSize = true;
+            borrowno.Font = new Font("Poppins", 16F);
+            borrowno.ForeColor = Color.FromArgb(15, 46, 103);
+            borrowno.Location = new Point(472, 108);
+            borrowno.Name = "borrowno";
+            borrowno.Size = new Size(35, 39);
+            borrowno.TabIndex = 49;
+            borrowno.Text = "#";
+            borrowno.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label3
+            // returnno
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Poppins", 16F);
-            label3.ForeColor = Color.FromArgb(15, 46, 103);
-            label3.Location = new Point(702, 108);
-            label3.Name = "label3";
-            label3.Size = new Size(35, 39);
-            label3.TabIndex = 50;
-            label3.Text = "#";
-            label3.TextAlign = ContentAlignment.TopCenter;
+            returnno.AutoSize = true;
+            returnno.Font = new Font("Poppins", 16F);
+            returnno.ForeColor = Color.FromArgb(15, 46, 103);
+            returnno.Location = new Point(702, 108);
+            returnno.Name = "returnno";
+            returnno.Size = new Size(35, 39);
+            returnno.TabIndex = 50;
+            returnno.Text = "#";
+            returnno.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label4
+            // lbl3
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Poppins", 13F);
-            label4.ForeColor = Color.FromArgb(15, 46, 103);
-            label4.Location = new Point(286, 207);
-            label4.Name = "label4";
-            label4.Size = new Size(87, 31);
-            label4.TabIndex = 51;
-            label4.Text = "Filter by:";
-            label4.TextAlign = ContentAlignment.TopCenter;
+            lbl3.AutoSize = true;
+            lbl3.Font = new Font("Poppins", 13F);
+            lbl3.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl3.Location = new Point(286, 207);
+            lbl3.Name = "lbl3";
+            lbl3.Size = new Size(87, 31);
+            lbl3.TabIndex = 51;
+            lbl3.Text = "Filter by:";
+            lbl3.TextAlign = ContentAlignment.TopCenter;
             // 
-            // comboBox1
+            // filtercbx
             // 
-            comboBox1.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "All Books Collected", "Borrowed Book", "Reserved", "Category" });
-            comboBox1.Location = new Point(379, 207);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(314, 31);
-            comboBox1.TabIndex = 52;
+            filtercbx.DropDownStyle = ComboBoxStyle.DropDownList;
+            filtercbx.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            filtercbx.FormattingEnabled = true;
+            filtercbx.Items.AddRange(new object[] { "All Books Collected", "Borrowed Book", "Reserved", "Category" });
+            filtercbx.Location = new Point(379, 207);
+            filtercbx.Name = "filtercbx";
+            filtercbx.Size = new Size(314, 31);
+            filtercbx.TabIndex = 52;
             // 
-            // comboBox2
+            // categorycbx
             // 
-            comboBox2.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "All Books Collected", "Borrowed Book", "Reserved", "Category" });
-            comboBox2.Location = new Point(718, 207);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(156, 31);
-            comboBox2.TabIndex = 53;
-            comboBox2.Text = "Category";
+            categorycbx.DropDownStyle = ComboBoxStyle.DropDownList;
+            categorycbx.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            categorycbx.FormattingEnabled = true;
+            categorycbx.Items.AddRange(new object[] { "Category", "Thriller", "Eme", "Lorem Ipsum" });
+            categorycbx.Location = new Point(718, 207);
+            categorycbx.Name = "categorycbx";
+            categorycbx.Size = new Size(156, 31);
+            categorycbx.TabIndex = 53;
+            // 
+            // searchbtn
+            // 
+            searchbtn.FlatStyle = FlatStyle.Flat;
+            searchbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
+            searchbtn.Location = new Point(718, 158);
+            searchbtn.Name = "searchbtn";
+            searchbtn.Size = new Size(125, 32);
+            searchbtn.TabIndex = 54;
+            searchbtn.Text = "Search";
+            searchbtn.UseVisualStyleBackColor = true;
+            // 
+            // searchtxt
+            // 
+            searchtxt.Font = new Font("Poppins", 12F);
+            searchtxt.Location = new Point(286, 157);
+            searchtxt.Name = "searchtxt";
+            searchtxt.PlaceholderText = "Search by Title, Author, Category or ISBN";
+            searchtxt.Size = new Size(407, 31);
+            searchtxt.TabIndex = 55;
+            // 
+            // lbl5
+            // 
+            lbl5.AutoSize = true;
+            lbl5.Font = new Font("Poppins", 13F);
+            lbl5.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl5.Location = new Point(886, 113);
+            lbl5.Name = "lbl5";
+            lbl5.Size = new Size(137, 31);
+            lbl5.TabIndex = 56;
+            lbl5.Text = "Last Updated:";
+            lbl5.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // timetxt
+            // 
+            timetxt.AutoSize = true;
+            timetxt.Font = new Font("Poppins", 13F);
+            timetxt.ForeColor = Color.FromArgb(15, 46, 103);
+            timetxt.Location = new Point(1029, 113);
+            timetxt.Name = "timetxt";
+            timetxt.Size = new Size(114, 31);
+            timetxt.TabIndex = 57;
+            timetxt.Text = "timestamp";
+            timetxt.TextAlign = ContentAlignment.TopCenter;
             // 
             // UserBookCollection
             // 
@@ -444,15 +495,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 238, 238);
             ClientSize = new Size(1264, 681);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(label5);
-            Controls.Add(button1);
-            Controls.Add(borrowbtn);
+            Controls.Add(timetxt);
+            Controls.Add(lbl5);
+            Controls.Add(searchtxt);
+            Controls.Add(searchbtn);
+            Controls.Add(categorycbx);
+            Controls.Add(filtercbx);
+            Controls.Add(lbl3);
+            Controls.Add(returnno);
+            Controls.Add(borrowno);
+            Controls.Add(lbl2);
+            Controls.Add(lbl1);
+            Controls.Add(lostbtn);
+            Controls.Add(returnbtn);
             Controls.Add(dataGridView1);
             Controls.Add(headerpanel);
             Controls.Add(taskbarpanel);
@@ -507,14 +562,18 @@
         private Label H1;
         private PictureBox pictureBox1;
         private DataGridView dataGridView1;
-        private Button borrowbtn;
-        private Button button1;
-        private Label label5;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private Button returnbtn;
+        private Button lostbtn;
+        private Label lbl1;
+        private Label lbl2;
+        private Label borrowno;
+        private Label returnno;
+        private Label lbl3;
+        private ComboBox filtercbx;
+        private ComboBox categorycbx;
+        private Button searchbtn;
+        private TextBox searchtxt;
+        private Label lbl5;
+        private Label timetxt;
     }
 }

@@ -37,9 +37,9 @@
             displayname = new Label();
             displayemail = new Label();
             groupBox1 = new GroupBox();
-            displayauthor = new Label();
-            displaybooktitle = new Label();
-            displaybookid = new Label();
+            authortxt = new Label();
+            titletxt = new Label();
+            idtxt = new Label();
             lbl5 = new Label();
             lbl4 = new Label();
             lbl3 = new Label();
@@ -47,8 +47,8 @@
             lbl7 = new Label();
             borrowbtn = new Button();
             Cancelbtn = new Button();
-            displayborrowdate = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            borrowdatetxt = new Label();
+            datepicker = new DateTimePicker();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
@@ -133,9 +133,9 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Transparent;
-            groupBox1.Controls.Add(displayauthor);
-            groupBox1.Controls.Add(displaybooktitle);
-            groupBox1.Controls.Add(displaybookid);
+            groupBox1.Controls.Add(authortxt);
+            groupBox1.Controls.Add(titletxt);
+            groupBox1.Controls.Add(idtxt);
             groupBox1.Controls.Add(lbl5);
             groupBox1.Controls.Add(lbl4);
             groupBox1.Controls.Add(lbl3);
@@ -145,35 +145,35 @@
             groupBox1.TabIndex = 18;
             groupBox1.TabStop = false;
             // 
-            // displayauthor
+            // authortxt
             // 
-            displayauthor.AutoSize = true;
-            displayauthor.Font = new Font("Poppins Light", 12F);
-            displayauthor.Location = new Point(156, 128);
-            displayauthor.Name = "displayauthor";
-            displayauthor.Size = new Size(69, 28);
-            displayauthor.TabIndex = 24;
-            displayauthor.Text = "Book ID";
+            authortxt.AutoSize = true;
+            authortxt.Font = new Font("Poppins Light", 12F);
+            authortxt.Location = new Point(156, 128);
+            authortxt.Name = "authortxt";
+            authortxt.Size = new Size(69, 28);
+            authortxt.TabIndex = 24;
+            authortxt.Text = "Book ID";
             // 
-            // displaybooktitle
+            // titletxt
             // 
-            displaybooktitle.AutoSize = true;
-            displaybooktitle.Font = new Font("Poppins Light", 12F);
-            displaybooktitle.Location = new Point(156, 76);
-            displaybooktitle.Name = "displaybooktitle";
-            displaybooktitle.Size = new Size(69, 28);
-            displaybooktitle.TabIndex = 23;
-            displaybooktitle.Text = "Book ID";
+            titletxt.AutoSize = true;
+            titletxt.Font = new Font("Poppins Light", 12F);
+            titletxt.Location = new Point(156, 76);
+            titletxt.Name = "titletxt";
+            titletxt.Size = new Size(69, 28);
+            titletxt.TabIndex = 23;
+            titletxt.Text = "Book ID";
             // 
-            // displaybookid
+            // idtxt
             // 
-            displaybookid.AutoSize = true;
-            displaybookid.Font = new Font("Poppins Light", 12F);
-            displaybookid.Location = new Point(156, 24);
-            displaybookid.Name = "displaybookid";
-            displaybookid.Size = new Size(69, 28);
-            displaybookid.TabIndex = 22;
-            displaybookid.Text = "Book ID";
+            idtxt.AutoSize = true;
+            idtxt.Font = new Font("Poppins Light", 12F);
+            idtxt.Location = new Point(156, 24);
+            idtxt.Name = "idtxt";
+            idtxt.Size = new Size(69, 28);
+            idtxt.TabIndex = 22;
+            idtxt.Text = "Book ID";
             // 
             // lbl5
             // 
@@ -254,33 +254,33 @@
             Cancelbtn.UseVisualStyleBackColor = true;
             Cancelbtn.Click += Cancelbtn_Click;
             // 
-            // displayborrowdate
+            // borrowdatetxt
             // 
-            displayborrowdate.AutoSize = true;
-            displayborrowdate.Font = new Font("Poppins Light", 12F);
-            displayborrowdate.Location = new Point(185, 373);
-            displayborrowdate.Name = "displayborrowdate";
-            displayborrowdate.Size = new Size(109, 28);
-            displayborrowdate.TabIndex = 26;
-            displayborrowdate.Text = "Borrow Date";
+            borrowdatetxt.AutoSize = true;
+            borrowdatetxt.Font = new Font("Poppins Light", 12F);
+            borrowdatetxt.Location = new Point(185, 373);
+            borrowdatetxt.Name = "borrowdatetxt";
+            borrowdatetxt.Size = new Size(109, 28);
+            borrowdatetxt.TabIndex = 26;
+            borrowdatetxt.Text = "Borrow Date";
             // 
-            // dateTimePicker1
+            // datepicker
             // 
-            dateTimePicker1.CalendarFont = new Font("Poppins Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dateTimePicker1.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Location = new Point(185, 417);
-            dateTimePicker1.MinDate = new DateTime(2025, 11, 10, 0, 0, 0, 0);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(237, 25);
-            dateTimePicker1.TabIndex = 27;
+            datepicker.CalendarFont = new Font("Poppins Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            datepicker.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            datepicker.Location = new Point(185, 417);
+            datepicker.MinDate = new DateTime(2025, 11, 10, 0, 0, 0, 0);
+            datepicker.Name = "datepicker";
+            datepicker.Size = new Size(237, 25);
+            datepicker.TabIndex = 27;
             // 
             // BorrowForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(884, 511);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(displayborrowdate);
+            Controls.Add(datepicker);
+            Controls.Add(borrowdatetxt);
             Controls.Add(Cancelbtn);
             Controls.Add(borrowbtn);
             Controls.Add(lbl7);
@@ -320,10 +320,10 @@
         private Label lbl7;
         private Button borrowbtn;
         private Button Cancelbtn;
-        private Label displaybooktitle;
-        private Label displaybookid;
-        private Label displayborrowdate;
-        private DateTimePicker dateTimePicker1;
-        private Label displayauthor;
+        private Label titletxt;
+        private Label idtxt;
+        private Label borrowdatetxt;
+        private DateTimePicker datepicker;
+        private Label authortxt;
     }
 }

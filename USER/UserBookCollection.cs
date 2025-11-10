@@ -16,11 +16,20 @@ namespace PasigLibrarySystem.USER
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
+            // for button rounder
             UIRounder.FormRounder(this, 30);
-            highlightpanel.BackColor = UIColors.VividAzure;
             UIRounder.RoundBtn(LogOutbtn, 30);
+            // for colors
             LogOutbtn.BackColor = UIColors.White;
             LogOutbtn.ForeColor = UIColors.DarkBlue;
+            lostbtn.BackColor = UIColors.VividAzure;
+            lostbtn.ForeColor = UIColors.White;
+            returnbtn.BackColor = UIColors.VividAzure;
+            returnbtn.ForeColor = UIColors.White;
+            searchbtn.BackColor = UIColors.VividAzure;
+            searchbtn.ForeColor = UIColors.White;
+            highlightpanel.BackColor = UIColors.VividAzure;
+            // others
             welcomelbl.Text = "Welcome, " + UTILS.Session.CurrentUser + "!";
         }
 
@@ -47,6 +56,16 @@ namespace PasigLibrarySystem.USER
         private void LogOutbtn_Click(object sender, EventArgs e)
         {
             UTILS.Action.LogOut(this, new LogIn());
+        }
+
+        private void lostbtn_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.PopupForm(this, new LostForm());
+        }
+
+        private void returnbtn_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.PopupForm(this, new ReturnForm());
         }
     }
 }

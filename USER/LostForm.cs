@@ -24,5 +24,16 @@ namespace PasigLibrarySystem.USER
             settleaccbtn.BackColor = UIColors.DarkBlue;
             settleaccbtn.ForeColor = UIColors.White;
         }
+
+        private void Cancelbtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void settleaccbtn_Click(object sender, EventArgs e)
+        {
+            //validation
+            Close();
+        }
     }
 }

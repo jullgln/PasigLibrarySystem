@@ -37,25 +37,25 @@
             lbl2 = new Label();
             lbl1 = new Label();
             groupBox1 = new GroupBox();
-            label8 = new Label();
-            label1 = new Label();
-            label6 = new Label();
+            changetxt = new Label();
+            ogreturndatetxt = new Label();
+            lbl11 = new Label();
             lbl7 = new Label();
             settleaccbtn = new Button();
-            textBox1 = new TextBox();
-            displayborrowdate = new Label();
-            label7 = new Label();
+            amounttxt = new TextBox();
+            borrowdatetxt = new Label();
+            lbl10 = new Label();
             lbl6 = new Label();
-            displaybooktitle = new Label();
-            displaybookid = new Label();
-            label5 = new Label();
+            titletxt = new Label();
+            idtxt = new Label();
+            finetxt = new Label();
             lbl4 = new Label();
-            label4 = new Label();
+            lbl9 = new Label();
             lbl3 = new Label();
-            label2 = new Label();
-            label3 = new Label();
+            lbl8 = new Label();
+            returneddatetxt = new Label();
             Cancelbtn = new Button();
-            borrowbtn = new Button();
+            returnbtn = new Button();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
@@ -140,20 +140,20 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.Transparent;
-            groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(changetxt);
+            groupBox1.Controls.Add(ogreturndatetxt);
+            groupBox1.Controls.Add(lbl11);
             groupBox1.Controls.Add(lbl7);
             groupBox1.Controls.Add(settleaccbtn);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(displayborrowdate);
-            groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(amounttxt);
+            groupBox1.Controls.Add(borrowdatetxt);
+            groupBox1.Controls.Add(lbl10);
             groupBox1.Controls.Add(lbl6);
-            groupBox1.Controls.Add(displaybooktitle);
-            groupBox1.Controls.Add(displaybookid);
-            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(titletxt);
+            groupBox1.Controls.Add(idtxt);
+            groupBox1.Controls.Add(finetxt);
             groupBox1.Controls.Add(lbl4);
-            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(lbl9);
             groupBox1.Controls.Add(lbl3);
             groupBox1.Location = new Point(31, 150);
             groupBox1.Name = "groupBox1";
@@ -161,36 +161,36 @@
             groupBox1.TabIndex = 22;
             groupBox1.TabStop = false;
             // 
-            // label8
+            // changetxt
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Poppins Light", 12F);
-            label8.Location = new Point(547, 170);
-            label8.Name = "label8";
-            label8.Size = new Size(23, 28);
-            label8.TabIndex = 41;
-            label8.Text = "_";
+            changetxt.AutoSize = true;
+            changetxt.Font = new Font("Poppins Light", 12F);
+            changetxt.Location = new Point(547, 170);
+            changetxt.Name = "changetxt";
+            changetxt.Size = new Size(23, 28);
+            changetxt.TabIndex = 41;
+            changetxt.Text = "_";
             // 
-            // label1
+            // ogreturndatetxt
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Poppins Light", 12F);
-            label1.Location = new Point(182, 187);
-            label1.Name = "label1";
-            label1.Size = new Size(105, 28);
-            label1.TabIndex = 30;
-            label1.Text = "Return Date";
+            ogreturndatetxt.AutoSize = true;
+            ogreturndatetxt.Font = new Font("Poppins Light", 12F);
+            ogreturndatetxt.Location = new Point(182, 187);
+            ogreturndatetxt.Name = "ogreturndatetxt";
+            ogreturndatetxt.Size = new Size(105, 28);
+            ogreturndatetxt.TabIndex = 30;
+            ogreturndatetxt.Text = "Return Date";
             // 
-            // label6
+            // lbl11
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.FromArgb(15, 46, 103);
-            label6.Location = new Point(450, 170);
-            label6.Name = "label6";
-            label6.Size = new Size(82, 28);
-            label6.TabIndex = 40;
-            label6.Text = "Change";
+            lbl11.AutoSize = true;
+            lbl11.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl11.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl11.Location = new Point(450, 170);
+            lbl11.Name = "lbl11";
+            lbl11.Size = new Size(82, 28);
+            lbl11.TabIndex = 40;
+            lbl11.Text = "Change";
             // 
             // lbl7
             // 
@@ -213,35 +213,36 @@
             settleaccbtn.TabIndex = 39;
             settleaccbtn.Text = "Settle Account";
             settleaccbtn.UseVisualStyleBackColor = true;
+            settleaccbtn.Click += settleaccbtn_Click;
             // 
-            // textBox1
+            // amounttxt
             // 
-            textBox1.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(547, 86);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(243, 25);
-            textBox1.TabIndex = 38;
+            amounttxt.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            amounttxt.Location = new Point(547, 86);
+            amounttxt.Name = "amounttxt";
+            amounttxt.Size = new Size(243, 25);
+            amounttxt.TabIndex = 38;
             // 
-            // displayborrowdate
+            // borrowdatetxt
             // 
-            displayborrowdate.AutoSize = true;
-            displayborrowdate.Font = new Font("Poppins Light", 12F);
-            displayborrowdate.Location = new Point(182, 134);
-            displayborrowdate.Name = "displayborrowdate";
-            displayborrowdate.Size = new Size(109, 28);
-            displayborrowdate.TabIndex = 28;
-            displayborrowdate.Text = "Borrow Date";
+            borrowdatetxt.AutoSize = true;
+            borrowdatetxt.Font = new Font("Poppins Light", 12F);
+            borrowdatetxt.Location = new Point(182, 134);
+            borrowdatetxt.Name = "borrowdatetxt";
+            borrowdatetxt.Size = new Size(109, 28);
+            borrowdatetxt.TabIndex = 28;
+            borrowdatetxt.Text = "Borrow Date";
             // 
-            // label7
+            // lbl10
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.FromArgb(15, 46, 103);
-            label7.Location = new Point(450, 85);
-            label7.Name = "label7";
-            label7.Size = new Size(82, 28);
-            label7.TabIndex = 37;
-            label7.Text = "Amount";
+            lbl10.AutoSize = true;
+            lbl10.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl10.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl10.Location = new Point(450, 85);
+            lbl10.Name = "lbl10";
+            lbl10.Size = new Size(82, 28);
+            lbl10.TabIndex = 37;
+            lbl10.Text = "Amount";
             // 
             // lbl6
             // 
@@ -254,35 +255,35 @@
             lbl6.TabIndex = 27;
             lbl6.Text = "Borrowed Date";
             // 
-            // displaybooktitle
+            // titletxt
             // 
-            displaybooktitle.AutoSize = true;
-            displaybooktitle.Font = new Font("Poppins Light", 12F);
-            displaybooktitle.Location = new Point(182, 76);
-            displaybooktitle.Name = "displaybooktitle";
-            displaybooktitle.Size = new Size(69, 28);
-            displaybooktitle.TabIndex = 23;
-            displaybooktitle.Text = "Book ID";
+            titletxt.AutoSize = true;
+            titletxt.Font = new Font("Poppins Light", 12F);
+            titletxt.Location = new Point(182, 76);
+            titletxt.Name = "titletxt";
+            titletxt.Size = new Size(69, 28);
+            titletxt.TabIndex = 23;
+            titletxt.Text = "Book ID";
             // 
-            // displaybookid
+            // idtxt
             // 
-            displaybookid.AutoSize = true;
-            displaybookid.Font = new Font("Poppins Light", 12F);
-            displaybookid.Location = new Point(182, 24);
-            displaybookid.Name = "displaybookid";
-            displaybookid.Size = new Size(69, 28);
-            displaybookid.TabIndex = 22;
-            displaybookid.Text = "Book ID";
+            idtxt.AutoSize = true;
+            idtxt.Font = new Font("Poppins Light", 12F);
+            idtxt.Location = new Point(182, 24);
+            idtxt.Name = "idtxt";
+            idtxt.Size = new Size(69, 28);
+            idtxt.TabIndex = 22;
+            idtxt.Text = "Book ID";
             // 
-            // label5
+            // finetxt
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Poppins Light", 12F);
-            label5.Location = new Point(547, 34);
-            label5.Name = "label5";
-            label5.Size = new Size(34, 28);
-            label5.TabIndex = 33;
-            label5.Text = "__";
+            finetxt.AutoSize = true;
+            finetxt.Font = new Font("Poppins Light", 12F);
+            finetxt.Location = new Point(547, 34);
+            finetxt.Name = "finetxt";
+            finetxt.Size = new Size(34, 28);
+            finetxt.TabIndex = 33;
+            finetxt.Text = "__";
             // 
             // lbl4
             // 
@@ -295,16 +296,16 @@
             lbl4.TabIndex = 20;
             lbl4.Text = "Book Title";
             // 
-            // label4
+            // lbl9
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.FromArgb(15, 46, 103);
-            label4.Location = new Point(450, 34);
-            label4.Name = "label4";
-            label4.Size = new Size(48, 28);
-            label4.TabIndex = 32;
-            label4.Text = "Fine";
+            lbl9.AutoSize = true;
+            lbl9.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl9.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl9.Location = new Point(450, 34);
+            lbl9.Name = "lbl9";
+            lbl9.Size = new Size(48, 28);
+            lbl9.TabIndex = 32;
+            lbl9.Text = "Fine";
             // 
             // lbl3
             // 
@@ -317,26 +318,26 @@
             lbl3.TabIndex = 19;
             lbl3.Text = "Book ID";
             // 
-            // label2
+            // lbl8
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(15, 46, 103);
-            label2.Location = new Point(53, 409);
-            label2.Name = "label2";
-            label2.Size = new Size(117, 28);
-            label2.TabIndex = 31;
-            label2.Text = "Return Date";
+            lbl8.AutoSize = true;
+            lbl8.Font = new Font("Poppins Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl8.ForeColor = Color.FromArgb(15, 46, 103);
+            lbl8.Location = new Point(53, 409);
+            lbl8.Name = "lbl8";
+            lbl8.Size = new Size(117, 28);
+            lbl8.TabIndex = 31;
+            lbl8.Text = "Return Date";
             // 
-            // label3
+            // returneddatetxt
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Poppins Light", 12F);
-            label3.Location = new Point(213, 409);
-            label3.Name = "label3";
-            label3.Size = new Size(105, 28);
-            label3.TabIndex = 31;
-            label3.Text = "Return Date";
+            returneddatetxt.AutoSize = true;
+            returneddatetxt.Font = new Font("Poppins Light", 12F);
+            returneddatetxt.Location = new Point(213, 409);
+            returneddatetxt.Name = "returneddatetxt";
+            returneddatetxt.Size = new Size(105, 28);
+            returneddatetxt.TabIndex = 31;
+            returneddatetxt.Text = "Return Date";
             // 
             // Cancelbtn
             // 
@@ -348,17 +349,19 @@
             Cancelbtn.TabIndex = 36;
             Cancelbtn.Text = "Cancel";
             Cancelbtn.UseVisualStyleBackColor = true;
+            Cancelbtn.Click += Cancelbtn_Click;
             // 
-            // borrowbtn
+            // returnbtn
             // 
-            borrowbtn.FlatStyle = FlatStyle.Flat;
-            borrowbtn.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            borrowbtn.Location = new Point(755, 451);
-            borrowbtn.Name = "borrowbtn";
-            borrowbtn.Size = new Size(103, 32);
-            borrowbtn.TabIndex = 35;
-            borrowbtn.Text = "Return";
-            borrowbtn.UseVisualStyleBackColor = true;
+            returnbtn.FlatStyle = FlatStyle.Flat;
+            returnbtn.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            returnbtn.Location = new Point(755, 451);
+            returnbtn.Name = "returnbtn";
+            returnbtn.Size = new Size(103, 32);
+            returnbtn.TabIndex = 35;
+            returnbtn.Text = "Return";
+            returnbtn.UseVisualStyleBackColor = true;
+            returnbtn.Click += returnbtn_Click;
             // 
             // ReturnForm
             // 
@@ -366,9 +369,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(884, 511);
             Controls.Add(Cancelbtn);
-            Controls.Add(borrowbtn);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(returnbtn);
+            Controls.Add(returneddatetxt);
+            Controls.Add(lbl8);
             Controls.Add(groupBox1);
             Controls.Add(displayemail);
             Controls.Add(displayname);
@@ -397,24 +400,24 @@
         private Label lbl2;
         private Label lbl1;
         private GroupBox groupBox1;
-        private Label displaybooktitle;
-        private Label displaybookid;
+        private Label titletxt;
+        private Label idtxt;
         private Label lbl4;
         private Label lbl3;
-        private Label displayborrowdate;
+        private Label borrowdatetxt;
         private Label lbl6;
-        private Label label1;
+        private Label ogreturndatetxt;
         private Label lbl7;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
+        private Label lbl8;
+        private Label returneddatetxt;
+        private Label lbl9;
+        private Label finetxt;
         private Button Cancelbtn;
-        private Button borrowbtn;
-        private Label label7;
-        private TextBox textBox1;
+        private Button returnbtn;
+        private Label lbl10;
+        private TextBox amounttxt;
         private Button settleaccbtn;
-        private Label label6;
-        private Label label8;
+        private Label lbl11;
+        private Label changetxt;
     }
 }

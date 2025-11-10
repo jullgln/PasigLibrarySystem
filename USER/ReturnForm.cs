@@ -17,14 +17,31 @@ namespace PasigLibrarySystem.USER
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             UIRounder.FormRounder(this, 30);
-            UIRounder.RoundBtn(borrowbtn, 25);
+            UIRounder.RoundBtn(returnbtn, 25);
             UIRounder.RoundBtn(Cancelbtn, 20);
-            borrowbtn.BackColor = UIColors.VividAzure;
-            borrowbtn.ForeColor = UIColors.White;
+            returnbtn.BackColor = UIColors.VividAzure;
+            returnbtn.ForeColor = UIColors.White;
             Cancelbtn.BackColor = UIColors.Crimson;
             Cancelbtn.ForeColor = UIColors.White;
             settleaccbtn.BackColor = UIColors.DarkBlue;
             settleaccbtn.ForeColor = UIColors.White;
+        }
+
+        private void settleaccbtn_Click(object sender, EventArgs e)
+        {
+            //validation
+            //change display if there is change
+        }
+
+        private void Cancelbtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void returnbtn_Click(object sender, EventArgs e)
+        {
+            //validation
+            Close();
         }
     }
 }
