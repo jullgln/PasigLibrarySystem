@@ -37,10 +37,7 @@ namespace PasigLibrarySystem.ADMIN
         {
             UTILS.Action.LogOut(this, new LogIn());
         }
-        private void Homelbl_Click(object sender, EventArgs e)
-        {
-            UTILS.Action.SwitchForm(this, new AdminDashboard());
-        }
+
         private void rep_invlbl_Click(object sender, EventArgs e)
         {
             UTILS.Action.SwitchForm(this, new AdminReports_Inventory());
@@ -48,11 +45,6 @@ namespace PasigLibrarySystem.ADMIN
         private void memberlbl_Click(object sender, EventArgs e)
         {
             UTILS.Action.SwitchForm(this, new AdminMemberManagement());
-        }
-
-        private void Settingslbl_Click(object sender, EventArgs e)
-        {
-            UTILS.Action.SwitchForm(this, new AdminSettings());
         }
 
         private void button4_Click(object sender, EventArgs e)

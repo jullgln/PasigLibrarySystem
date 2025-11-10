@@ -21,11 +21,6 @@
             UTILS.Action.LogOut(this, new LogIn());
         }
 
-        private void Homelbl_Click(object sender, EventArgs e)
-        {
-            UTILS.Action.SwitchForm(this, new AdminDashboard());
-        }
-
         private void BookManagelbl_Click(object sender, EventArgs e)
         {
             UTILS.Action.SwitchForm(this, new AdminBookManagement());
@@ -34,11 +29,6 @@
         private void rep_invlbl_Click(object sender, EventArgs e)
         {
             UTILS.Action.SwitchForm(this, new AdminReports_Inventory());
-        }
-
-        private void Settingslbl_Click(object sender, EventArgs e)
-        {
-            UTILS.Action.SwitchForm(this, new AdminSettings());
         }
 
         private void addadminbtn_Click(object sender, EventArgs e)
