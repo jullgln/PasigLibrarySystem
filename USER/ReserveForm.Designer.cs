@@ -1,6 +1,6 @@
 ﻿namespace PasigLibrarySystem.USER
 {
-    partial class ReserveBookForm
+    partial class ReserveForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReserveBookForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReserveForm));
             headerpanel = new Panel();
             H1 = new Label();
             pictureBox1 = new PictureBox();

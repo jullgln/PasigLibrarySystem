@@ -1,6 +1,6 @@
 ﻿namespace PasigLibrarySystem.USER
 {
-    partial class UserBorrowForm
+    partial class BorrowForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserBorrowForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BorrowForm));
             headerpanel = new Panel();
             H1 = new Label();
             pictureBox1 = new PictureBox();

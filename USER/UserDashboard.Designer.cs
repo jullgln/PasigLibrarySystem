@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserDashboard));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             taskbarpanel = new Panel();
             highlightpanel = new Panel();
             pictureBox2 = new PictureBox();
@@ -50,6 +51,13 @@
             welcomelbl = new Label();
             H1 = new Label();
             pictureBox1 = new PictureBox();
+            textBox1 = new TextBox();
+            search = new Button();
+            dataGridView1 = new DataGridView();
+            label1 = new Label();
+            reservebtn = new Button();
+            borrowbtn = new Button();
+            ViewDetails = new Button();
             taskbarpanel.SuspendLayout();
             highlightpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -63,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // taskbarpanel
@@ -303,12 +312,109 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Poppins", 12F);
+            textBox1.Location = new Point(289, 123);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(902, 31);
+            textBox1.TabIndex = 41;
+            textBox1.Text = "Search";
+            // 
+            // search
+            // 
+            search.AutoEllipsis = true;
+            search.BackColor = Color.FromArgb(15, 46, 103);
+            search.BackgroundImage = (Image)resources.GetObject("search.BackgroundImage");
+            search.BackgroundImageLayout = ImageLayout.Zoom;
+            search.FlatStyle = FlatStyle.Popup;
+            search.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            search.Location = new Point(1191, 123);
+            search.Name = "search";
+            search.Size = new Size(39, 31);
+            search.TabIndex = 42;
+            search.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.Location = new Point(289, 227);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(941, 359);
+            dataGridView1.TabIndex = 43;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(15, 46, 103);
+            label1.Location = new Point(289, 198);
+            label1.Name = "label1";
+            label1.Size = new Size(60, 26);
+            label1.TabIndex = 18;
+            label1.Text = "Books:";
+            label1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // reservebtn
+            // 
+            reservebtn.FlatStyle = FlatStyle.Flat;
+            reservebtn.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            reservebtn.Location = new Point(984, 612);
+            reservebtn.Name = "reservebtn";
+            reservebtn.Size = new Size(103, 32);
+            reservebtn.TabIndex = 44;
+            reservebtn.Text = "Reserve";
+            reservebtn.UseVisualStyleBackColor = true;
+            reservebtn.Click += reservebtn_Click;
+            // 
+            // borrowbtn
+            // 
+            borrowbtn.FlatStyle = FlatStyle.Flat;
+            borrowbtn.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            borrowbtn.Location = new Point(1127, 612);
+            borrowbtn.Name = "borrowbtn";
+            borrowbtn.Size = new Size(103, 32);
+            borrowbtn.TabIndex = 45;
+            borrowbtn.Text = "Borrow";
+            borrowbtn.UseVisualStyleBackColor = true;
+            borrowbtn.Click += borrowbtn_Click;
+            // 
+            // ViewDetails
+            // 
+            ViewDetails.FlatStyle = FlatStyle.Flat;
+            ViewDetails.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ViewDetails.Location = new Point(800, 612);
+            ViewDetails.Name = "ViewDetails";
+            ViewDetails.Size = new Size(145, 32);
+            ViewDetails.TabIndex = 46;
+            ViewDetails.Text = "View Details";
+            ViewDetails.UseVisualStyleBackColor = true;
+            // 
             // UserDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 238, 238);
             ClientSize = new Size(1264, 681);
+            Controls.Add(ViewDetails);
+            Controls.Add(borrowbtn);
+            Controls.Add(reservebtn);
+            Controls.Add(label1);
+            Controls.Add(dataGridView1);
+            Controls.Add(search);
+            Controls.Add(textBox1);
             Controls.Add(headerpanel);
             Controls.Add(taskbarpanel);
             ForeColor = SystemColors.ControlText;
@@ -334,7 +440,9 @@
             headerpanel.ResumeLayout(false);
             headerpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -360,5 +468,12 @@
         private PictureBox pictureBox9;
         private Label Aboutlbl;
         private Panel panel4;
+        private TextBox textBox1;
+        private Button search;
+        private DataGridView dataGridView1;
+        private Label label1;
+        private Button reservebtn;
+        private Button borrowbtn;
+        private Button ViewDetails;
     }
 }

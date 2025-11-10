@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace PasigLibrarySystem.USER
 {
-    public partial class UserBorrowForm : Form
+    public partial class ReserveForm : Form
     {
-        public UserBorrowForm()
+        public ReserveForm()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             UIRounder.FormRounder(this, 30);
-            UIRounder.RoundBtn(borrowbtn, 25);
             UIRounder.RoundBtn(Cancelbtn, 20);
-            borrowbtn.BackColor = UIColors.VividAzure;
-            borrowbtn.ForeColor = UIColors.White;
+            UIRounder.RoundBtn(reservebtn, 25);
             Cancelbtn.BackColor = UIColors.Crimson;
             Cancelbtn.ForeColor = UIColors.White;
+            reservebtn.BackColor = UIColors.VividAzure;
+            reservebtn.ForeColor = UIColors.White;
         }
     }
 }

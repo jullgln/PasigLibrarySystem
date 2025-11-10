@@ -18,6 +18,10 @@ namespace PasigLibrarySystem.UTILS
             loginForm.Show();
             currentForm.Hide();
         }
+        public static void PopupForm(Form currentForm, Form newForm)
+        {
+            newForm.Show();
+        }
     }
     public static class Session
     {
