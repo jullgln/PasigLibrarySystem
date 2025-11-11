@@ -121,7 +121,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAxaSURBVHhe7d17
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAxaSURBVHhe7d17
         jB1lGcfxs/WG7O7MbGkpeIk1MSlmd2Z2XbEhGCXEYL3Ff6wlmGJb2Hlnt6lCFDXxttHQ8IdBEq/4h4lK
         YqLBRKNQiEBqjAaJQTSaCMZEqQoCLStobavVd/a8Z7o75937ucz7Pt9f8qG0Z8/Z8z7d57fbs5fTIP5n
         cHTmojBVe4JE3RYm6kiYZo/pX49rp43i/x/V7g7S7Fb963uGJvZvNVcnhLiWkcks1As/o5f5Z9pZ7X9r
@@ -317,7 +317,7 @@
   <data name="pictureBox9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAqnSURBVHhe7Z15
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAqnSURBVHhe7Z15
         7F1FFce7UAqlIEGgtVCLBSuLSyC4xRa1lNCyRBEri8YlaAQiMRoS/3BJVZRaakU0RGNlD2ti2QSMWrZW
         XHCpLIpoXKhLxBTF1shm/XzvPT+fv19/y3tz731v5tz5JN/09b47586Zeb+7zD1zZpI3tm/fPhnNRyeg
         c9Dn0Q3oLvQA+hPagraiIfRZ2/Sd9tG+1yOVlY3jkWxOtsNkYoFO2Q+9DX0RfQ89iZpCtjeiC9FyNMeq
@@ -919,13 +919,23 @@ discussion and collaborations, bringing together an extraordinary richness of
 resources and opportunities available to all.
 </value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>The Pasig City Library has been an essential provider of free books, information, 
-ideas, and education for all Pasigueños for more than 2 years. 
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Borrowing Policy 
+Books may be reserved for up to 3 days. If not claimed within this period, 
+they will be made available to other users.
+Borrowed books must be returned within 7 days 
+from the date of borrowing.
 
-Founded in 2018, PCHL promotes access to information, as well as spaces for 
-discussion and collaborations, bringing together an extraordinary richness of 
-resources and opportunities available to all.
+Fines and Penalties
+A ₱10 fine per day will be automatically applied to books returned late.
+A ₱250 fine will be charged for each lost book.
+Users with unsettled fines are not allowed to borrow until all dues are fully paid.
+
+Reminders
+Always check your due dates to avoid penalties.
+Claim reserved books on time to keep your hold.
+Report lost books immediately to prevent further issues.
+No borrowing allowed until fines are settled
 </value>
   </data>
 </root>

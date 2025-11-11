@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using PasigLibrarySystem.DATABASES;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +25,10 @@ namespace PasigLibrarySystem.USER
             Cancelbtn.ForeColor = UIColors.White;
             reservebtn.BackColor = UIColors.VividAzure;
             reservebtn.ForeColor = UIColors.White;
+            displaybooktitle.Text = $"{book_data.currentbookname}";
+            //lblAuthor.Text = $"Author : {book_data.currentbookauthor}";
+            displayborrowdate.Text = $"{DateTime.Now.ToShortDateString()}";
+            label1.Text = $"{DateTime.Now.AddDays(7)}";
         }
 
         private void Cancelbtn_Click(object sender, EventArgs e)
@@ -32,7 +38,60 @@ namespace PasigLibrarySystem.USER
 
         private void reservebtn_Click(object sender, EventArgs e)
         {
-            //validation can be added here
+            DBConnect db = new DBConnect();
+                db.Open();
+
+                // Check the current book status
+                MySqlCommand checkCmd = new MySqlCommand("SELECT Status FROM books WHERE BookID=@bookId", db.GetConnection());
+                checkCmd.Parameters.AddWithValue("@bookId", book_data.currentbookid);
+                string currentStatus = checkCmd.ExecuteScalar()?.ToString();
+
+                if (string.IsNullOrEmpty(currentStatus))
+                {
+                    MessageBox.Show("Book not found in the database.");
+                    return;
+                }
+
+                // Only allow reservation if book is AVAILABLE or BORROWED
+                if (currentStatus.ToUpper() == "RESERVED")
+                {
+                    MessageBox.Show("This book is already reserved by another user.");
+                    return;
+                }
+                else if (currentStatus.ToUpper() != "AVAILABLE" && currentStatus.ToUpper() != "BORROWED")
+                {
+                    MessageBox.Show("This book cannot be reserved right now.");
+                    return;
+                }
+
+                // Insert reservation into status table
+                MySqlCommand cmd = new MySqlCommand(
+                    "INSERT INTO status (book_id, journal_id, user_id, status, borrowed_date, return_date, reserved_date) " +
+                    "VALUES (@bookId, NULL, @userId, 'RESERVED', NULL, NULL, @reservedDate)", db.GetConnection());
+                cmd.Parameters.AddWithValue("@bookId", book_data.currentbookid);
+                cmd.Parameters.AddWithValue("@userId", user_data.user_id);
+                cmd.Parameters.AddWithValue("@reservedDate", label1.Text.ToString());
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    // Only update book status if it's currently AVAILABLE
+                    if (currentStatus.ToUpper() == "AVAILABLE")
+                    {
+                        MySqlCommand updateBookCmd = new MySqlCommand(
+                            "UPDATE books SET Status='RESERVED' WHERE BookID=@bookId", db.GetConnection());
+                        updateBookCmd.Parameters.AddWithValue("@bookId", book_data.currentbookid);
+                        updateBookCmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Book reserved successfully!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to reserve the book. Please try again.");
+                }
+
+                db.Close();
             MessageBox.Show("Book Reserved Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);//placeholder
             Close();
         }

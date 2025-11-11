@@ -449,6 +449,7 @@
             Name = "UserDashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UserDashboard";
+            Load += UserDashboard_Load;
             taskbarpanel.ResumeLayout(false);
             highlightpanel.ResumeLayout(false);
             highlightpanel.PerformLayout();

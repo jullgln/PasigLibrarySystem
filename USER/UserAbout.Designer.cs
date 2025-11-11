@@ -55,7 +55,7 @@
             label1 = new Label();
             label2 = new Label();
             panel5 = new Panel();
-            label3 = new Label();
+            textBox1 = new TextBox();
             taskbarpanel.SuspendLayout();
             panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -359,23 +359,24 @@
             // panel5
             // 
             panel5.BackColor = Color.White;
-            panel5.Controls.Add(label3);
+            panel5.Controls.Add(textBox1);
+            panel5.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             panel5.Location = new Point(295, 411);
             panel5.Name = "panel5";
             panel5.Size = new Size(925, 246);
             panel5.TabIndex = 50;
             // 
-            // label3
+            // textBox1
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.White;
-            label3.Font = new Font("Poppins", 13F);
-            label3.ForeColor = Color.FromArgb(15, 46, 103);
-            label3.Location = new Point(97, 18);
-            label3.Name = "label3";
-            label3.Size = new Size(733, 186);
-            label3.TabIndex = 48;
-            label3.Text = resources.GetString("label3.Text");
+            textBox1.ForeColor = Color.FromArgb(15, 46, 103);
+            textBox1.Location = new Point(17, 18);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.ScrollBars = ScrollBars.Vertical;
+            textBox1.Size = new Size(888, 211);
+            textBox1.TabIndex = 0;
+            textBox1.Text = resources.GetString("textBox1.Text");
             // 
             // UserAbout
             // 
@@ -391,6 +392,7 @@
             Name = "UserAbout";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UserAbout";
+            TopMost = true;
             taskbarpanel.ResumeLayout(false);
             panel.ResumeLayout(false);
             panel.PerformLayout();
@@ -446,6 +448,6 @@
         private Label label1;
         private Label label2;
         private Panel panel5;
-        private Label label3;
+        private TextBox textBox1;
     }
 }
