@@ -103,43 +103,41 @@ namespace PasigLibrarySystem.USER
         private void LoadBookCounts()
         {
             DBConnect db = new DBConnect();
-
             db.Open();
 
-            int returnedBooks = 0;
-
-            string getUserQuery = "SELECT returned_books FROM users WHERE user_id=@userid";
-            MySqlCommand cmd = new MySqlCommand(getUserQuery, db.GetConnection());
-
-            cmd.Parameters.AddWithValue("@userid", user_data.user_id);
-            using (MySqlDataReader reader = cmd.ExecuteReader())
+            try
             {
-                if (reader.Read())
-                {
+                int returnedBooks = 0;
+                string getUserQuery = "SELECT returned_books FROM users WHERE user_id=@userid";
+                MySqlCommand cmd = new MySqlCommand(getUserQuery, db.GetConnection());
 
-                    returnedBooks = Convert.ToInt32(reader["returned_books"]);
-
-                }
-                else
+                cmd.Parameters.AddWithValue("@userid", user_data.user_id);
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    borrowno.Text = "0";
-                    returnno.Text = "0";
-                    reader.Close();
-                    return;
+                    if (reader.Read())
+                    {
+                        returnedBooks = Convert.ToInt32(reader["returned_books"]);
+                    }
                 }
+                string borrowedQuery = "SELECT COUNT(*) FROM status WHERE user_id=@id AND (status = 'BORROWED' OR status = 'RESERVED')";
+                MySqlCommand cmd1 = new MySqlCommand(borrowedQuery, db.GetConnection());
+
+                cmd1.Parameters.AddWithValue("@id", user_data.user_id);
+                int borrowedCount = Convert.ToInt32(cmd1.ExecuteScalar());
+
+                borrowno.Text = borrowedCount.ToString();
+                returnno.Text = returnedBooks.ToString();
             }
-
-
-            string borrowedQuery = "SELECT borrowed_books FROM users WHERE user_id=@id";
-            MySqlCommand cmd1 = new MySqlCommand(borrowedQuery, db.GetConnection());
-
-            cmd1.Parameters.AddWithValue("@id", user_data.user_id);
-            int borrowedCount = Convert.ToInt32(cmd1.ExecuteScalar());
-
-            borrowno.Text = borrowedCount.ToString();
-            returnno.Text = returnedBooks.ToString();
-
-            db.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading book counts: " + ex.Message);
+                borrowno.Text = "0";
+                returnno.Text = "0";
+            }
+            finally
+            {
+                db.Close();
+            }
         }
 
 
