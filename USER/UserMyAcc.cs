@@ -82,5 +82,30 @@ namespace PasigLibrarySystem.USER
             }
 
         }
+        private void LoadBorrowedBooks()
+        {
+            DBConnect db = new DBConnect();
+            {
+                db.Open();
+
+                // Fetch borrowed books from status + books tables
+                MySqlCommand cmd = new MySqlCommand(
+                    "SELECT b.BookID, b.BookTitle, b.Author, s.borrowed_date, s.return_date " +
+                    "FROM status s " +
+                    "JOIN books b ON s.book_id = b.BookID " +
+                    "WHERE s.user_id = @borrowerId AND s.status = 'BORROWED'", db.GetConnection());
+                cmd.Parameters.AddWithValue("@borrowerId", user_data.user_id);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                tableview.DataSource = dt;
+                tableview.ClearSelection();
+
+
+                db.Close();
+            }
+        }
     }
 }
