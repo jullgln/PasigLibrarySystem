@@ -186,9 +186,9 @@
             BookCollectlbl.ForeColor = Color.FromArgb(15, 46, 103);
             BookCollectlbl.Location = new Point(85, 35);
             BookCollectlbl.Name = "BookCollectlbl";
-            BookCollectlbl.Size = new Size(184, 39);
+            BookCollectlbl.Size = new Size(163, 39);
             BookCollectlbl.TabIndex = 7;
-            BookCollectlbl.Text = "Book Collection";
+            BookCollectlbl.Text = "Book Records";
             BookCollectlbl.TextAlign = ContentAlignment.TopCenter;
             BookCollectlbl.Click += BookCollectlbl_Click;
             // 

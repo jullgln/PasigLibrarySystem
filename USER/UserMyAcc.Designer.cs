@@ -86,18 +86,20 @@
             headerpanel.Controls.Add(H1);
             headerpanel.Controls.Add(pictureBox1);
             headerpanel.ForeColor = SystemColors.ControlText;
-            headerpanel.Location = new Point(-33, 0);
+            headerpanel.Location = new Point(-38, 0);
+            headerpanel.Margin = new Padding(3, 4, 3, 4);
             headerpanel.Name = "headerpanel";
-            headerpanel.Size = new Size(1316, 88);
+            headerpanel.Size = new Size(1504, 117);
             headerpanel.TabIndex = 2;
             // 
             // LogOutbtn
             // 
             LogOutbtn.FlatStyle = FlatStyle.Flat;
             LogOutbtn.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LogOutbtn.Location = new Point(1160, 27);
+            LogOutbtn.Location = new Point(1326, 36);
+            LogOutbtn.Margin = new Padding(3, 4, 3, 4);
             LogOutbtn.Name = "LogOutbtn";
-            LogOutbtn.Size = new Size(93, 35);
+            LogOutbtn.Size = new Size(106, 47);
             LogOutbtn.TabIndex = 17;
             LogOutbtn.Text = " Log Out";
             LogOutbtn.TextAlign = ContentAlignment.BottomCenter;
@@ -109,9 +111,9 @@
             welcomelbl.AutoSize = true;
             welcomelbl.Font = new Font("Poppins Light", 13F);
             welcomelbl.ForeColor = Color.White;
-            welcomelbl.Location = new Point(946, 31);
+            welcomelbl.Location = new Point(1081, 41);
             welcomelbl.Name = "welcomelbl";
-            welcomelbl.Size = new Size(150, 31);
+            welcomelbl.Size = new Size(184, 39);
             welcomelbl.TabIndex = 7;
             welcomelbl.Text = "Welcome, User!";
             welcomelbl.TextAlign = ContentAlignment.TopCenter;
@@ -121,9 +123,9 @@
             H1.AutoSize = true;
             H1.Font = new Font("Poppins", 22F, FontStyle.Bold);
             H1.ForeColor = Color.White;
-            H1.Location = new Point(157, 18);
+            H1.Location = new Point(179, 24);
             H1.Name = "H1";
-            H1.Size = new Size(354, 53);
+            H1.Size = new Size(439, 65);
             H1.TabIndex = 6;
             H1.Text = "Public Library System";
             H1.TextAlign = ContentAlignment.TopCenter;
@@ -132,9 +134,10 @@
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(34, -18);
+            pictureBox1.Location = new Point(39, -24);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(137, 116);
+            pictureBox1.Size = new Size(157, 155);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -147,9 +150,10 @@
             taskbarpanel.Controls.Add(panel2);
             taskbarpanel.Controls.Add(panel3);
             taskbarpanel.Controls.Add(panel4);
-            taskbarpanel.Location = new Point(-1, 78);
+            taskbarpanel.Location = new Point(-1, 104);
+            taskbarpanel.Margin = new Padding(3, 4, 3, 4);
             taskbarpanel.Name = "taskbarpanel";
-            taskbarpanel.Size = new Size(236, 602);
+            taskbarpanel.Size = new Size(270, 803);
             taskbarpanel.TabIndex = 3;
             // 
             // panel
@@ -157,17 +161,19 @@
             panel.BackColor = Color.Transparent;
             panel.Controls.Add(pictureBox2);
             panel.Controls.Add(Homelbl);
-            panel.Location = new Point(-9, 26);
+            panel.Location = new Point(-10, 35);
+            panel.Margin = new Padding(3, 4, 3, 4);
             panel.Name = "panel";
-            panel.Size = new Size(288, 82);
+            panel.Size = new Size(329, 109);
             panel.TabIndex = 1;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(33, 19);
+            pictureBox2.Location = new Point(38, 25);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(37, 37);
+            pictureBox2.Size = new Size(42, 49);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
@@ -177,9 +183,9 @@
             Homelbl.AutoSize = true;
             Homelbl.Font = new Font("Poppins", 13F);
             Homelbl.ForeColor = Color.FromArgb(15, 46, 103);
-            Homelbl.Location = new Point(74, 26);
+            Homelbl.Location = new Point(85, 35);
             Homelbl.Name = "Homelbl";
-            Homelbl.Size = new Size(68, 31);
+            Homelbl.Size = new Size(83, 39);
             Homelbl.TabIndex = 7;
             Homelbl.Text = "Home";
             Homelbl.TextAlign = ContentAlignment.TopCenter;
@@ -190,17 +196,19 @@
             highlightpanel.BackColor = Color.Black;
             highlightpanel.Controls.Add(pictureBox7);
             highlightpanel.Controls.Add(MyAcclbl);
-            highlightpanel.Location = new Point(-8, 126);
+            highlightpanel.Location = new Point(-9, 168);
+            highlightpanel.Margin = new Padding(3, 4, 3, 4);
             highlightpanel.Name = "highlightpanel";
-            highlightpanel.Size = new Size(288, 82);
+            highlightpanel.Size = new Size(329, 109);
             highlightpanel.TabIndex = 8;
             // 
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(33, 19);
+            pictureBox7.Location = new Point(38, 25);
+            pictureBox7.Margin = new Padding(3, 4, 3, 4);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(37, 37);
+            pictureBox7.Size = new Size(42, 49);
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox7.TabIndex = 0;
             pictureBox7.TabStop = false;
@@ -210,9 +218,9 @@
             MyAcclbl.AutoSize = true;
             MyAcclbl.Font = new Font("Poppins", 13F);
             MyAcclbl.ForeColor = Color.White;
-            MyAcclbl.Location = new Point(74, 26);
+            MyAcclbl.Location = new Point(85, 35);
             MyAcclbl.Name = "MyAcclbl";
-            MyAcclbl.Size = new Size(122, 31);
+            MyAcclbl.Size = new Size(145, 39);
             MyAcclbl.TabIndex = 7;
             MyAcclbl.Text = "My Account";
             MyAcclbl.TextAlign = ContentAlignment.TopCenter;
@@ -222,17 +230,19 @@
             panel2.BackColor = Color.Transparent;
             panel2.Controls.Add(pictureBox8);
             panel2.Controls.Add(BookCollectlbl);
-            panel2.Location = new Point(-11, 227);
+            panel2.Location = new Point(-13, 303);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(288, 82);
+            panel2.Size = new Size(329, 109);
             panel2.TabIndex = 2;
             // 
             // pictureBox8
             // 
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(33, 19);
+            pictureBox8.Location = new Point(38, 25);
+            pictureBox8.Margin = new Padding(3, 4, 3, 4);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(37, 37);
+            pictureBox8.Size = new Size(42, 49);
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 0;
             pictureBox8.TabStop = false;
@@ -242,11 +252,11 @@
             BookCollectlbl.AutoSize = true;
             BookCollectlbl.Font = new Font("Poppins", 13F);
             BookCollectlbl.ForeColor = Color.FromArgb(15, 46, 103);
-            BookCollectlbl.Location = new Point(74, 26);
+            BookCollectlbl.Location = new Point(85, 35);
             BookCollectlbl.Name = "BookCollectlbl";
-            BookCollectlbl.Size = new Size(154, 31);
+            BookCollectlbl.Size = new Size(163, 39);
             BookCollectlbl.TabIndex = 7;
-            BookCollectlbl.Text = "Book Collection";
+            BookCollectlbl.Text = "Book Records";
             BookCollectlbl.TextAlign = ContentAlignment.TopCenter;
             BookCollectlbl.Click += BookCollectlbl_Click;
             // 
@@ -255,17 +265,19 @@
             panel3.BackColor = Color.Transparent;
             panel3.Controls.Add(pictureBox9);
             panel3.Controls.Add(Aboutlbl);
-            panel3.Location = new Point(-7, 325);
+            panel3.Location = new Point(-8, 433);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(288, 82);
+            panel3.Size = new Size(329, 109);
             panel3.TabIndex = 2;
             // 
             // pictureBox9
             // 
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(33, 19);
+            pictureBox9.Location = new Point(38, 25);
+            pictureBox9.Margin = new Padding(3, 4, 3, 4);
             pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(37, 37);
+            pictureBox9.Size = new Size(42, 49);
             pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox9.TabIndex = 0;
             pictureBox9.TabStop = false;
@@ -275,9 +287,9 @@
             Aboutlbl.AutoSize = true;
             Aboutlbl.Font = new Font("Poppins", 13F);
             Aboutlbl.ForeColor = Color.FromArgb(15, 46, 103);
-            Aboutlbl.Location = new Point(74, 26);
+            Aboutlbl.Location = new Point(85, 35);
             Aboutlbl.Name = "Aboutlbl";
-            Aboutlbl.Size = new Size(69, 31);
+            Aboutlbl.Size = new Size(83, 39);
             Aboutlbl.TabIndex = 7;
             Aboutlbl.Text = "About";
             Aboutlbl.TextAlign = ContentAlignment.TopCenter;
@@ -288,17 +300,19 @@
             panel4.BackColor = Color.Transparent;
             panel4.Controls.Add(pictureBox6);
             panel4.Controls.Add(Settingslbl);
-            panel4.Location = new Point(-8, 497);
+            panel4.Location = new Point(-9, 663);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(288, 82);
+            panel4.Size = new Size(329, 109);
             panel4.TabIndex = 2;
             // 
             // pictureBox6
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(31, 21);
+            pictureBox6.Location = new Point(35, 28);
+            pictureBox6.Margin = new Padding(3, 4, 3, 4);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(37, 37);
+            pictureBox6.Size = new Size(42, 49);
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.TabIndex = 14;
             pictureBox6.TabStop = false;
@@ -308,9 +322,9 @@
             Settingslbl.AutoSize = true;
             Settingslbl.Font = new Font("Poppins", 13F);
             Settingslbl.ForeColor = Color.FromArgb(15, 46, 103);
-            Settingslbl.Location = new Point(71, 25);
+            Settingslbl.Location = new Point(81, 33);
             Settingslbl.Name = "Settingslbl";
-            Settingslbl.Size = new Size(87, 31);
+            Settingslbl.Size = new Size(105, 39);
             Settingslbl.TabIndex = 15;
             Settingslbl.Text = "Settings";
             Settingslbl.TextAlign = ContentAlignment.TopCenter;
@@ -321,9 +335,9 @@
             lbl1.AutoSize = true;
             lbl1.Font = new Font("Poppins", 13F);
             lbl1.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl1.Location = new Point(284, 123);
+            lbl1.Location = new Point(325, 164);
             lbl1.Name = "lbl1";
-            lbl1.Size = new Size(122, 31);
+            lbl1.Size = new Size(145, 39);
             lbl1.TabIndex = 8;
             lbl1.Text = "My Account";
             lbl1.TextAlign = ContentAlignment.TopCenter;
@@ -334,9 +348,9 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Arial Rounded MT Bold", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(15, 46, 103);
-            label2.Location = new Point(284, 137);
+            label2.Location = new Point(325, 183);
             label2.Name = "label2";
-            label2.Size = new Size(945, 24);
+            label2.Size = new Size(1204, 32);
             label2.TabIndex = 18;
             label2.Text = "_____________________________________________________________________________________";
             // 
@@ -345,9 +359,9 @@
             lbl5.AutoSize = true;
             lbl5.Font = new Font("Poppins", 13F);
             lbl5.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl5.Location = new Point(284, 324);
+            lbl5.Location = new Point(325, 432);
             lbl5.Name = "lbl5";
-            lbl5.Size = new Size(124, 31);
+            lbl5.Size = new Size(148, 39);
             lbl5.TabIndex = 19;
             lbl5.Text = "Book History";
             lbl5.TextAlign = ContentAlignment.TopCenter;
@@ -358,9 +372,9 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Arial Rounded MT Bold", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(15, 46, 103);
-            label4.Location = new Point(284, 338);
+            label4.Location = new Point(325, 451);
             label4.Name = "label4";
-            label4.Size = new Size(945, 24);
+            label4.Size = new Size(1204, 32);
             label4.TabIndex = 20;
             label4.Text = "_____________________________________________________________________________________";
             // 
@@ -369,9 +383,9 @@
             lbl2.AutoSize = true;
             lbl2.Font = new Font("Poppins", 13F);
             lbl2.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl2.Location = new Point(281, 201);
+            lbl2.Location = new Point(321, 268);
             lbl2.Name = "lbl2";
-            lbl2.Size = new Size(69, 31);
+            lbl2.Size = new Size(84, 39);
             lbl2.TabIndex = 21;
             lbl2.Text = "Name";
             lbl2.TextAlign = ContentAlignment.TopCenter;
@@ -381,9 +395,9 @@
             lbl3.AutoSize = true;
             lbl3.Font = new Font("Poppins", 13F);
             lbl3.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl3.Location = new Point(281, 262);
+            lbl3.Location = new Point(321, 349);
             lbl3.Name = "lbl3";
-            lbl3.Size = new Size(107, 31);
+            lbl3.Size = new Size(131, 39);
             lbl3.TabIndex = 22;
             lbl3.Text = "Username";
             lbl3.TextAlign = ContentAlignment.TopCenter;
@@ -393,9 +407,9 @@
             lbl4.AutoSize = true;
             lbl4.Font = new Font("Poppins", 13F);
             lbl4.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl4.Location = new Point(822, 201);
+            lbl4.Location = new Point(939, 268);
             lbl4.Name = "lbl4";
-            lbl4.Size = new Size(123, 31);
+            lbl4.Size = new Size(150, 39);
             lbl4.TabIndex = 23;
             lbl4.Text = "Date Joined";
             lbl4.TextAlign = ContentAlignment.TopCenter;
@@ -414,10 +428,12 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             tableview.DefaultCellStyle = dataGridViewCellStyle1;
-            tableview.Location = new Point(285, 382);
+            tableview.Location = new Point(326, 509);
+            tableview.Margin = new Padding(3, 4, 3, 4);
             tableview.Name = "tableview";
             tableview.ReadOnly = true;
-            tableview.Size = new Size(941, 259);
+            tableview.RowHeadersWidth = 51;
+            tableview.Size = new Size(1075, 345);
             tableview.TabIndex = 44;
             // 
             // nametxt
@@ -425,9 +441,9 @@
             nametxt.AutoSize = true;
             nametxt.Font = new Font("Poppins", 13F);
             nametxt.ForeColor = Color.FromArgb(15, 46, 103);
-            nametxt.Location = new Point(421, 201);
+            nametxt.Location = new Point(481, 268);
             nametxt.Name = "nametxt";
-            nametxt.Size = new Size(77, 31);
+            nametxt.Size = new Size(95, 39);
             nametxt.TabIndex = 45;
             nametxt.Text = "display";
             nametxt.TextAlign = ContentAlignment.TopCenter;
@@ -437,9 +453,9 @@
             usernametxt.AutoSize = true;
             usernametxt.Font = new Font("Poppins", 13F);
             usernametxt.ForeColor = Color.FromArgb(15, 46, 103);
-            usernametxt.Location = new Point(421, 262);
+            usernametxt.Location = new Point(481, 349);
             usernametxt.Name = "usernametxt";
-            usernametxt.Size = new Size(77, 31);
+            usernametxt.Size = new Size(95, 39);
             usernametxt.TabIndex = 46;
             usernametxt.Text = "display";
             usernametxt.TextAlign = ContentAlignment.TopCenter;
@@ -449,19 +465,19 @@
             datejoinedtxt.AutoSize = true;
             datejoinedtxt.Font = new Font("Poppins", 13F);
             datejoinedtxt.ForeColor = Color.FromArgb(15, 46, 103);
-            datejoinedtxt.Location = new Point(975, 201);
+            datejoinedtxt.Location = new Point(1114, 268);
             datejoinedtxt.Name = "datejoinedtxt";
-            datejoinedtxt.Size = new Size(77, 31);
+            datejoinedtxt.Size = new Size(95, 39);
             datejoinedtxt.TabIndex = 47;
             datejoinedtxt.Text = "display";
             datejoinedtxt.TextAlign = ContentAlignment.TopCenter;
             // 
             // UserMyAcc
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 238, 238);
-            ClientSize = new Size(1264, 681);
+            ClientSize = new Size(1445, 908);
             Controls.Add(datejoinedtxt);
             Controls.Add(usernametxt);
             Controls.Add(nametxt);
@@ -475,6 +491,7 @@
             Controls.Add(label2);
             Controls.Add(headerpanel);
             Controls.Add(taskbarpanel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "UserMyAcc";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UserMyAcc";
