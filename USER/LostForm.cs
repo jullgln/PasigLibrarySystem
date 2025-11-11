@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PasigLibrarySystem.DATABASES;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,9 @@ namespace PasigLibrarySystem.USER
 {
     public partial class LostForm : Form
     {
-        public LostForm()
+        private string dateBorrowed;
+        private decimal fineAmount = 250.00m;
+        public LostForm(string dateBorrowed)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -23,6 +26,18 @@ namespace PasigLibrarySystem.USER
             Cancelbtn.ForeColor = UIColors.White;
             settleaccbtn.BackColor = UIColors.DarkBlue;
             settleaccbtn.ForeColor = UIColors.White;
+
+            // Store the date borrowed
+            this.dateBorrowed = dateBorrowed;
+
+            titletxt.Text = book_data.currentbookname;
+            idtxt.Text = book_data.currentbookid;
+            displayname.Text = user_data.real_name;
+            borrowdatetxt.Text = dateBorrowed;
+
+            lostdatetxt.Text = DateTime.Now.ToString("yyyy-MM-dd");
+
+            finetxt.Text = fineAmount.ToString("0.00");
         }
 
         private void Cancelbtn_Click(object sender, EventArgs e)
@@ -34,6 +49,14 @@ namespace PasigLibrarySystem.USER
         {
             //validation
             Close();
+        }
+
+        private void amounttxt_TextChanged(object sender, EventArgs e)
+        {
+            double amountPaid=amounttxt.Text.Length;
+            
+            double amount=amountPaid- (double)fineAmount;
+            changetxt.Text = amount.ToString("0.00");
         }
     }
 }

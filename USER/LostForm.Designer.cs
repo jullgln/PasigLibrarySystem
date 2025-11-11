@@ -242,6 +242,7 @@
             amounttxt.Name = "amounttxt";
             amounttxt.Size = new Size(243, 25);
             amounttxt.TabIndex = 40;
+            amounttxt.TextChanged += amounttxt_TextChanged;
             // 
             // lbl7
             // 

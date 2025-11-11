@@ -35,6 +35,75 @@ namespace PasigLibrarySystem.USER
             // others
             welcomelbl.Text = "Welcome, " + UTILS.Session.CurrentUser + "!";
         }
+        private void LoadBook(string keyword = "", string category = "All")
+        {
+            string sql = $"SELECT b.BookID, b.BookTitle, b.Author, b.Genre, b.Pub_Date " +
+                         $"FROM books b";
+
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                if (category == "All")
+                {
+                    sql += " WHERE b.BookTitle LIKE @keyword OR b.Author LIKE @keyword OR b.Genre LIKE @keyword";
+                }
+                else if (category == "Title")
+                {
+                    sql += " WHERE b.BookTitle LIKE @keyword";
+                }
+                else if (category == "Author")
+                {
+                    sql += " WHERE b.Author LIKE @keyword";
+                }
+                else if (category == "Genre")
+                {
+                    sql += " WHERE b.Genre LIKE @keyword";
+                }
+            }
+            DBConnect db = new DBConnect();
+            db.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, db.GetConnection());
+
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                cmd.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
+            }
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            // Add Summary column if missing
+            if (!dt.Columns.Contains("Summary"))
+                dt.Columns.Add("Summary", typeof(string));
+
+            // Generate simple summaries
+            foreach (DataRow row in dt.Rows)
+            {
+                book_data.currentbookname = row["BookTitle"].ToString();
+                string genre = row["Genre"].ToString().ToLower();
+                string summary = "";
+
+                if (genre.Contains("horror"))
+                    summary = $"A chilling horror story titled '{book_data.currentbookname}', filled with suspense and mystery.";
+                else if (genre.Contains("romance"))
+                    summary = $"A heartwarming romance novel about love and destiny in '{book_data.currentbookname}'.";
+                else if (genre.Contains("fantasy"))
+                    summary = $"An imaginative fantasy tale with adventure and magic in '{book_data.currentbookname}'.";
+                else if (genre.Contains("science"))
+                    summary = $"A fascinating science-themed book exploring discoveries in '{book_data.currentbookname}'.";
+                else if (genre.Contains("fiction"))
+                    summary = $"A captivating fiction story that brings imagination to life in '{book_data.currentbookname}'.";
+                else
+                    summary = $"An interesting book titled '{book_data.currentbookname}' from the {genre} genre.";
+
+                row["Summary"] = summary;
+            }
+
+
+            dataGridView1.DataSource = dt;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
         private void LoadBookCounts()
         {
             DBConnect db = new DBConnect();
@@ -70,7 +139,7 @@ namespace PasigLibrarySystem.USER
 
             cmd1.Parameters.AddWithValue("@id", user_data.user_id);
             int borrowedCount = Convert.ToInt32(cmd1.ExecuteScalar());
-            
+
             borrowno.Text = borrowedCount.ToString();
             returnno.Text = returnedBooks.ToString();
 
@@ -105,7 +174,15 @@ namespace PasigLibrarySystem.USER
 
         private void lostbtn_Click(object sender, EventArgs e)
         {
-            UTILS.Action.PopupForm(this, new LostForm());
+            if (dataGridView1.SelectedRows.Count == 0) return;
+
+            DataGridViewRow row = dataGridView1.SelectedRows[0];
+            book_data.currentbookid = row.Cells["BookID"].Value.ToString();
+            book_data.currentbookname = row.Cells["BookTitle"].Value.ToString();
+            book_data.currentbookauthor = row.Cells["Author"].Value.ToString();
+            string dateBorrowed = row.Cells["borrowed_date"].Value.ToString();
+
+            UTILS.Action.PopupForm(this, new LostForm(dateBorrowed));
         }
 
         private void returnbtn_Click(object sender, EventArgs e)
@@ -142,8 +219,16 @@ namespace PasigLibrarySystem.USER
 
         private void UserBookCollection_Load(object sender, EventArgs e)
         {
+            LoadBook();
             LoadBookCounts();
+            timetxt.Text = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
 
+        }
+
+        private void searchbtn_Click(object sender, EventArgs e)
+        {
+            string keyword = searchtxt.Text.Trim();
+            LoadBook(keyword);
         }
     }
 }

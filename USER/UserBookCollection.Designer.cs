@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserBookCollection));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             taskbarpanel = new Panel();
             panel = new Panel();
             pictureBox2 = new PictureBox();
@@ -59,8 +59,6 @@
             borrowno = new Label();
             returnno = new Label();
             lbl3 = new Label();
-            filtercbx = new ComboBox();
-            categorycbx = new ComboBox();
             searchbtn = new Button();
             searchtxt = new TextBox();
             lbl5 = new Label();
@@ -325,14 +323,14 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.Location = new Point(286, 254);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -416,34 +414,12 @@
             lbl3.AutoSize = true;
             lbl3.Font = new Font("Poppins", 13F);
             lbl3.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl3.Location = new Point(286, 207);
+            lbl3.Location = new Point(286, 220);
             lbl3.Name = "lbl3";
-            lbl3.Size = new Size(87, 31);
+            lbl3.Size = new Size(187, 31);
             lbl3.TabIndex = 51;
-            lbl3.Text = "Filter by:";
+            lbl3.Text = "All Books Collected:";
             lbl3.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // filtercbx
-            // 
-            filtercbx.DropDownStyle = ComboBoxStyle.DropDownList;
-            filtercbx.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            filtercbx.FormattingEnabled = true;
-            filtercbx.Items.AddRange(new object[] { "All Books Collected", "Borrowed Book", "Reserved", "Category" });
-            filtercbx.Location = new Point(379, 207);
-            filtercbx.Name = "filtercbx";
-            filtercbx.Size = new Size(314, 31);
-            filtercbx.TabIndex = 52;
-            // 
-            // categorycbx
-            // 
-            categorycbx.DropDownStyle = ComboBoxStyle.DropDownList;
-            categorycbx.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            categorycbx.FormattingEnabled = true;
-            categorycbx.Items.AddRange(new object[] { "Category", "Thriller", "Eme", "Lorem Ipsum" });
-            categorycbx.Location = new Point(718, 207);
-            categorycbx.Name = "categorycbx";
-            categorycbx.Size = new Size(156, 31);
-            categorycbx.TabIndex = 53;
             // 
             // searchbtn
             // 
@@ -455,6 +431,7 @@
             searchbtn.TabIndex = 54;
             searchbtn.Text = "Search";
             searchbtn.UseVisualStyleBackColor = true;
+            searchbtn.Click += searchbtn_Click;
             // 
             // searchtxt
             // 
@@ -499,8 +476,6 @@
             Controls.Add(lbl5);
             Controls.Add(searchtxt);
             Controls.Add(searchbtn);
-            Controls.Add(categorycbx);
-            Controls.Add(filtercbx);
             Controls.Add(lbl3);
             Controls.Add(returnno);
             Controls.Add(borrowno);
@@ -570,8 +545,6 @@
         private Label borrowno;
         private Label returnno;
         private Label lbl3;
-        private ComboBox filtercbx;
-        private ComboBox categorycbx;
         private Button searchbtn;
         private TextBox searchtxt;
         private Label lbl5;
