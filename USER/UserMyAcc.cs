@@ -61,7 +61,7 @@ namespace PasigLibrarySystem.USER
 
             string query = "SELECT fullname, Username, date_registered FROM users WHERE User_ID = @userID";
             MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
-            cmd.Parameters.AddWithValue("@userID", user_data.user_id);
+            cmd.Parameters.AddWithValue("@userID", DATABASES.user_data.user_id);
 
             MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -73,28 +73,53 @@ namespace PasigLibrarySystem.USER
                 if (reader["date_registered"] != DBNull.Value)
                 {
                     datejoinedtxt.Text = reader["date_registered"].ToString();
-                    ;
                 }
                 else
                 {
                     datejoinedtxt.Text = "N/A";
                 }
             }
+            reader.Close();
+            db.Close();
 
+            LoadHistory();
         }
-        private void LoadBorrowedBooks()
+        private void LoadHistory()
         {
             DBConnect db = new DBConnect();
             {
                 db.Open();
+                string query = @"
+            SELECT
+                s.StatusID,
+                s.status AS 'Status',
+                s.borrowed_date AS 'Borrowed Date',
+                s.return_date AS 'Due Date',
+                s.Actual_Return_Date AS 'Returned Date',
+                COALESCE(s.book_id, s.journal_id) AS 'Item ID',
+                CASE
+                    WHEN s.book_id IS NOT NULL THEN COALESCE(b.BookTitle, 'N/A')
+                    WHEN s.journal_id IS NOT NULL THEN COALESCE(j.JournalTitle, 'N/A')
+                    ELSE 'Item Deleted'
+                END AS 'Title',
+                CASE
+                    WHEN s.book_id IS NOT NULL THEN 'Book'
+                    WHEN s.journal_id IS NOT NULL THEN 'Journal'
+                    ELSE 'Unknown'
+                END AS 'Item Type'
+            FROM
+                status s
+            LEFT JOIN
+                books b ON s.book_id = b.BookID
+            LEFT JOIN
+                journals j ON s.journal_id = j.JournalID
+            WHERE 
+                s.user_id = @userID
+            ORDER BY 
+                s.StatusID DESC";
 
-                // Fetch borrowed books from status + books tables
-                MySqlCommand cmd = new MySqlCommand(
-                    "SELECT b.BookID, b.BookTitle, b.Author, s.borrowed_date, s.return_date " +
-                    "FROM status s " +
-                    "JOIN books b ON s.book_id = b.BookID " +
-                    "WHERE s.user_id = @borrowerId AND s.status = 'BORROWED'", db.GetConnection());
-                cmd.Parameters.AddWithValue("@borrowerId", user_data.user_id);
+                MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
+                cmd.Parameters.AddWithValue("@userID", DATABASES.user_data.user_id);
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -102,7 +127,7 @@ namespace PasigLibrarySystem.USER
 
                 tableview.DataSource = dt;
                 tableview.ClearSelection();
-
+                tableview.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
                 db.Close();
             }

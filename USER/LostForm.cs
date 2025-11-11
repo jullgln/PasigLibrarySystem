@@ -1,4 +1,5 @@
-﻿using PasigLibrarySystem.DATABASES;
+﻿using MySql.Data.MySqlClient;
+using PasigLibrarySystem.DATABASES;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,16 +48,71 @@ namespace PasigLibrarySystem.USER
 
         private void settleaccbtn_Click(object sender, EventArgs e)
         {
-            //validation
-            Close();
-        }
+            // Confirmation is highly recommended since this applies a fine and closes the loan.
+            DialogResult confirm = MessageBox.Show(
+                $"Confirm that book '{book_data.currentbookname}' is LOST. A fine of ₱{fineAmount:0.00} will be applied to the user's account.",
+                "Confirm Book Lost", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-        private void amounttxt_TextChanged(object sender, EventArgs e)
-        {
-            double amountPaid=amounttxt.Text.Length;
-            
-            double amount=amountPaid- (double)fineAmount;
-            changetxt.Text = amount.ToString("0.00");
+            if (confirm == DialogResult.No)
+            {
+                return;
+            }
+
+            DBConnect db = new DBConnect();
+            db.Open();
+
+            string currentBookID = book_data.currentbookid;
+            string currentUserID = user_data.user_id;
+
+            MySqlTransaction transaction = db.GetConnection().BeginTransaction();
+
+            try
+            {
+                string updateStatusQuery = @"
+                    UPDATE status 
+                    SET 
+                        status = 'LOST', 
+                        Actual_Return_Date = @LostDate 
+                    WHERE book_id = @BookID 
+                    AND user_id = @UserID AND status = 'BORROWED'";
+
+                MySqlCommand cmdStatus = new MySqlCommand(updateStatusQuery, db.GetConnection(), transaction);
+                cmdStatus.Parameters.AddWithValue("@BookID", currentBookID);
+                cmdStatus.Parameters.AddWithValue("@UserID", currentUserID);
+                cmdStatus.Parameters.AddWithValue("@LostDate", DateTime.Now.ToString("yyyy-MM-dd"));
+                cmdStatus.ExecuteNonQuery();
+
+                string updateBookQuery = "UPDATE books SET status = 'LOST' WHERE BookID = @BookID";
+                MySqlCommand cmdBook = new MySqlCommand(updateBookQuery, db.GetConnection(), transaction);
+                cmdBook.Parameters.AddWithValue("@BookID", currentBookID);
+                cmdBook.ExecuteNonQuery();
+
+                string updateUsersQuery = @"
+                    UPDATE users 
+                    SET 
+                        borrowed_books = borrowed_books - 1, 
+                        fines_fees = fines_fees + @FineAmount 
+                    WHERE user_id = @UserID";
+
+                MySqlCommand cmdUsers = new MySqlCommand(updateUsersQuery, db.GetConnection(), transaction);
+                cmdUsers.Parameters.AddWithValue("@UserID", currentUserID);
+                cmdUsers.Parameters.AddWithValue("@FineAmount", fineAmount);
+                cmdUsers.ExecuteNonQuery();
+
+                transaction.Commit();
+
+                MessageBox.Show("Book successfully reported LOST and fine applied.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                MessageBox.Show("An error occurred while reporting the book lost: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.Close();
+            }
         }
     }
 }

@@ -33,17 +33,17 @@ namespace PasigLibrarySystem.ADMIN
             {
                 db.Open();
                 string activityQuery = @"
-        SELECT 
-        s.book_id AS BookID,
-        b.BookTitle,
-        s.user_id AS UserID,
-        s.status AS Status,
-        s.borrowed_date AS BorrowedDate,
-        s.return_date AS ReturnDate,
-        s.Actual_Return_Date AS ActualReturnDate
-        FROM status s
-        JOIN books b ON s.book_id = b.BookID
-        WHERE s.status IN ('BORROWED', 'RETURNED', 'LOST')";
+                        SELECT 
+                        s.book_id AS BookID,
+                        b.BookTitle,
+                        s.user_id AS UserID,
+                        s.status AS Status,
+                        s.borrowed_date AS BorrowedDate,
+                        s.return_date AS ReturnDate,
+                        s.Actual_Return_Date AS ActualReturnDate
+                        FROM status s
+                        JOIN books b ON s.book_id = b.BookID
+                        WHERE s.status IN ('BORROWED', 'RETURNED', 'LOST')";
 
                 MySqlDataAdapter daActivity = new MySqlDataAdapter(activityQuery, db.GetConnection());
                 DataTable dtActivity = new DataTable();
@@ -56,13 +56,13 @@ namespace PasigLibrarySystem.ADMIN
 
                 // Most-read
                 string popularQuery = @"
-        SELECT b.BookTitle, COUNT(*) AS TimesBorrowed
-        FROM status s
-        JOIN books b ON s.book_id = b.BookID
-        WHERE s.status IN ('BORROWED', 'RETURNED')
-        GROUP BY b.BookTitle
-        ORDER BY TimesBorrowed DESC
-        LIMIT 5";
+                        SELECT b.BookTitle, COUNT(*) AS TimesBorrowed
+                        FROM status s
+                        JOIN books b ON s.book_id = b.BookID
+                        WHERE s.status IN ('BORROWED', 'RETURNED')
+                        GROUP BY b.BookTitle
+                        ORDER BY TimesBorrowed DESC
+                        LIMIT 5";
 
                 MySqlCommand cmdPopular = new MySqlCommand(popularQuery, db.GetConnection());
                 using (MySqlDataReader reader = cmdPopular.ExecuteReader())
