@@ -17,7 +17,7 @@ namespace PasigLibrarySystem.DATABASES
     }
     public class DBConnect
     {
-        public static readonly string connectionString = "server=127.0.0.1;user=root;password=;database=pasiglibrary_db;";
+        public static readonly string connectionString = "server=127.0.0.1;user=root;password=;database=pasiglibrarydb;";
         private MySqlConnection connectdb;
 
         public DBConnect()

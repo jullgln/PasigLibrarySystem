@@ -18,7 +18,7 @@ namespace PasigLibrarySystem.DATABASES
         public static string currentISBN { get; set; }
         public static string currentstatus { get; set; }
         public static string currentshelfnumber { get; set; }
-        //public static string currentabstract { get; set; }
+        public static string currentabstract { get; set; }
     }
     public class status_data
     {

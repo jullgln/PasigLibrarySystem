@@ -102,6 +102,67 @@ namespace PasigLibrarySystem.USER
             tableview.ReadOnly = true;
             tableview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+        private bool LoadBookDetails(string bookID)
+        {
+            string sql = "SELECT BookTitle, Author, Genre, Pub_Date, Publisher, Pagecount, ISBN, status, Shelf_Number " +
+                         "FROM books WHERE BookID = @bookID";
+            DBConnect db = new DBConnect();
+            db.Open();
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, db.GetConnection());
+                cmd.Parameters.AddWithValue("@bookID", bookID);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        DATABASES.book_data.currentbookid = bookID;
+                        DATABASES.book_data.currentbookname = reader["BookTitle"].ToString();
+                        DATABASES.book_data.currentbookauthor = reader["Author"].ToString();
+                        DATABASES.book_data.currentgenre = reader["Genre"].ToString();
+                        DATABASES.book_data.currentpublishdate = reader["Pub_Date"].ToString();
+                        DATABASES.book_data.currentpublisher = reader["Publisher"].ToString();
+                        DATABASES.book_data.currentpagecount = reader["Pagecount"].ToString();
+                        DATABASES.book_data.currentISBN = reader["ISBN"].ToString();
+                        DATABASES.book_data.currentstatus = reader["status"].ToString();
+                        DATABASES.book_data.currentshelfnumber = reader["Shelf_Number"].ToString();
+
+
+                        string bookTitle = DATABASES.book_data.currentbookname;
+                        string genre = DATABASES.book_data.currentgenre.ToString().ToLower();
+                        string summary = "";
+
+                        if (genre.Contains("horror"))
+                            summary = $"A chilling horror story titled '{bookTitle}', filled with suspense and mystery.";
+                        else if (genre.Contains("romance"))
+                            summary = $"A heartwarming romance novel about love and destiny in '{bookTitle}'.";
+                        else if (genre.Contains("fantasy"))
+                            summary = $"An imaginative fantasy tale with adventure and magic in '{bookTitle}'.";
+                        else if (genre.Contains("science"))
+                            summary = $"A fascinating science-themed book exploring discoveries in '{bookTitle}'.";
+                        else if (genre.Contains("fiction"))
+                            summary = $"A captivating fiction story that brings imagination to life in '{bookTitle}'.";
+                        else
+                            summary = $"An interesting book titled '{bookTitle}' from the {genre} genre.";
+
+                        DATABASES.book_data.currentabstract = summary;
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                db.Close();
+            }
+        }
 
         private void MyAcclbl_Click(object sender, EventArgs e)
         {
@@ -160,14 +221,16 @@ namespace PasigLibrarySystem.USER
             if (tableview.SelectedRows.Count == 0) return;
 
             DataGridViewRow row = tableview.SelectedRows[0];
-            book_data.currentbookid = row.Cells["BookID"].Value.ToString();
-            book_data.currentbookname = row.Cells["BookTitle"].Value.ToString();
-            book_data.currentbookauthor = row.Cells["Author"].Value.ToString();
-            book_data.currentgenre=row.Cells["Genre"].Value.ToString();
-            book_data.currentpublishdate = row.Cells["Pub_Date"].Value.ToString();
-            book_data.currentstatus = row.Cells["Status"].Value.ToString();
+            string selectedBookID = row.Cells["BookID"].Value.ToString();
 
-            UTILS.Action.PopupForm(this, new ViewDetails());
+            if (LoadBookDetails(selectedBookID))
+            {
+                UTILS.Action.PopupForm(this, new ViewDetails());
+            }
+            else
+            {
+                MessageBox.Show("Could not load full book details.");
+            }
         }
 
         private void search_Click(object sender, EventArgs e)
