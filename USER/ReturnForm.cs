@@ -12,7 +12,7 @@ namespace PasigLibrarySystem.USER
 {
     public partial class ReturnForm : Form
     {
-        public ReturnForm()
+        public ReturnForm(string dateBorrowed, string dateReturn)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;

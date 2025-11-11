@@ -263,6 +263,7 @@
             changetxt.Size = new Size(23, 28);
             changetxt.TabIndex = 43;
             changetxt.Text = "_";
+            changetxt.Visible = false;
             // 
             // lbl8
             // 
@@ -274,6 +275,7 @@
             lbl8.Size = new Size(82, 28);
             lbl8.TabIndex = 42;
             lbl8.Text = "Change";
+            lbl8.Visible = false;
             // 
             // settleaccbtn
             // 

@@ -336,6 +336,7 @@
             search.Size = new Size(39, 31);
             search.TabIndex = 42;
             search.UseVisualStyleBackColor = false;
+            search.Click += search_Click;
             // 
             // tableview
             // 

@@ -72,5 +72,10 @@ namespace PasigLibrarySystem.USER
         {
             UTILS.Action.PopupForm(this, new ViewDetails());
         }
+
+        private void search_Click(object sender, EventArgs e)
+        {
+            lbl2.Text = "Based on Search:";
+        }
     }
 }

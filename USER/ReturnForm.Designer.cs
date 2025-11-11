@@ -170,6 +170,7 @@
             changetxt.Size = new Size(23, 28);
             changetxt.TabIndex = 41;
             changetxt.Text = "_";
+            changetxt.Visible = false;
             // 
             // ogreturndatetxt
             // 
@@ -191,6 +192,7 @@
             lbl11.Size = new Size(82, 28);
             lbl11.TabIndex = 40;
             lbl11.Text = "Change";
+            lbl11.Visible = false;
             // 
             // lbl7
             // 
@@ -213,6 +215,7 @@
             settleaccbtn.TabIndex = 39;
             settleaccbtn.Text = "Settle Account";
             settleaccbtn.UseVisualStyleBackColor = true;
+            settleaccbtn.Visible = false;
             settleaccbtn.Click += settleaccbtn_Click;
             // 
             // amounttxt
@@ -222,6 +225,7 @@
             amounttxt.Name = "amounttxt";
             amounttxt.Size = new Size(243, 25);
             amounttxt.TabIndex = 38;
+            amounttxt.Visible = false;
             // 
             // borrowdatetxt
             // 
@@ -243,6 +247,7 @@
             lbl10.Size = new Size(82, 28);
             lbl10.TabIndex = 37;
             lbl10.Text = "Amount";
+            lbl10.Visible = false;
             // 
             // lbl6
             // 
@@ -284,6 +289,7 @@
             finetxt.Size = new Size(34, 28);
             finetxt.TabIndex = 33;
             finetxt.Text = "__";
+            finetxt.Visible = false;
             // 
             // lbl4
             // 
@@ -306,6 +312,7 @@
             lbl9.Size = new Size(48, 28);
             lbl9.TabIndex = 32;
             lbl9.Text = "Fine";
+            lbl9.Visible = false;
             // 
             // lbl3
             // 
@@ -325,15 +332,15 @@
             lbl8.ForeColor = Color.FromArgb(15, 46, 103);
             lbl8.Location = new Point(53, 409);
             lbl8.Name = "lbl8";
-            lbl8.Size = new Size(117, 28);
+            lbl8.Size = new Size(180, 28);
             lbl8.TabIndex = 31;
-            lbl8.Text = "Return Date";
+            lbl8.Text = "Actual Return Date";
             // 
             // returneddatetxt
             // 
             returneddatetxt.AutoSize = true;
             returneddatetxt.Font = new Font("Poppins Light", 12F);
-            returneddatetxt.Location = new Point(213, 409);
+            returneddatetxt.Location = new Point(255, 409);
             returneddatetxt.Name = "returneddatetxt";
             returneddatetxt.Size = new Size(105, 28);
             returneddatetxt.TabIndex = 31;

@@ -514,6 +514,7 @@
             Name = "UserBookCollection";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UserBookCollection";
+            Load += UserBookCollection_Load;
             taskbarpanel.ResumeLayout(false);
             panel.ResumeLayout(false);
             panel.PerformLayout();

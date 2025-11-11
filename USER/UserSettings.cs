@@ -88,6 +88,13 @@ namespace PasigLibrarySystem.USER
 
         private void confirmbtn_Click(object sender, EventArgs e)
         {
+            string newpass = newpasstxt.Text.Trim();
+            string confirmpass = confirmnewpasstxt.Text.Trim();
+            if (newpass != confirmpass)
+            {
+                MessageBox.Show("Password not match");
+                return;
+            }
             //DBConnector class
             DBConnect db = new DBConnect();
 
