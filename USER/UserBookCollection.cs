@@ -35,34 +35,22 @@ namespace PasigLibrarySystem.USER
             // others
             welcomelbl.Text = "Welcome, " + UTILS.Session.CurrentUser + "!";
         }
-        private void LoadBook(string keyword = "", string category = "All")
+        private void LoadBorrowedItems(string keyword = "", string category = "All")
         {
-            string sql = $"SELECT b.BookID, b.BookTitle, b.Author, b.Genre, b.Pub_Date " +
-                         $"FROM books b";
+            string sql = $"SELECT b.BookID, b.BookTitle, b.Author, b.Genre, s.borrowed_date, s.return_date, s.status " +
+                         $"FROM books b " +
+                         $"JOIN status s ON b.BookID = s.book_id " +
+                         $"WHERE s.user_id = @userid AND (s.status = 'BORROWED' OR s.status = 'RESERVED')";
 
             if (!string.IsNullOrEmpty(keyword))
             {
-                if (category == "All")
-                {
-                    sql += " WHERE b.BookTitle LIKE @keyword OR b.Author LIKE @keyword OR b.Genre LIKE @keyword";
-                }
-                else if (category == "Title")
-                {
-                    sql += " WHERE b.BookTitle LIKE @keyword";
-                }
-                else if (category == "Author")
-                {
-                    sql += " WHERE b.Author LIKE @keyword";
-                }
-                else if (category == "Genre")
-                {
-                    sql += " WHERE b.Genre LIKE @keyword";
-                }
+                sql += " AND (b.BookTitle LIKE @keyword OR b.Author LIKE @keyword OR b.Genre LIKE @keyword)";
             }
             DBConnect db = new DBConnect();
             db.Open();
             MySqlCommand cmd = new MySqlCommand(sql, db.GetConnection());
 
+            cmd.Parameters.AddWithValue("@userid", DATABASES.user_data.user_id);
             if (!string.IsNullOrEmpty(keyword))
             {
                 cmd.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
@@ -71,6 +59,7 @@ namespace PasigLibrarySystem.USER
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
+            db.Close();
 
             // Add Summary column if missing
             if (!dt.Columns.Contains("Summary"))
@@ -103,7 +92,14 @@ namespace PasigLibrarySystem.USER
             dataGridView1.DataSource = dt;
             dataGridView1.ReadOnly = true;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            if (dataGridView1.Columns.Contains("borrowed_date"))
+                dataGridView1.Columns["borrowed_date"].HeaderText = "Date Borrowed";
+            if (dataGridView1.Columns.Contains("return_date"))
+                dataGridView1.Columns["return_date"].HeaderText = "Due Date";
+            if (dataGridView1.Columns.Contains("status"))
+                dataGridView1.Columns["status"].HeaderText = "Status";
         }
+
         private void LoadBookCounts()
         {
             DBConnect db = new DBConnect();
@@ -194,10 +190,17 @@ namespace PasigLibrarySystem.USER
 
             try
             {
+                if (dataGridView1.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Please select a borrowed book first.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 db.Open();
-                string query = "SELECT borrowed_date, return_date FROM status WHERE user_ID = @userID";
+                string query = "SELECT borrowed_date, return_date FROM status WHERE user_ID = @userID AND book_id = @bookId";
                 MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
-                cmd.Parameters.AddWithValue("@userID", UTILS.Session.CurrentUser);
+                cmd.Parameters.AddWithValue("@userID", user_data.user_id);
+                cmd.Parameters.AddWithValue("@bookId", book_data.currentbookid);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -205,6 +208,7 @@ namespace PasigLibrarySystem.USER
                     {
                         dateBorrowed = reader["borrowed_date"].ToString();
                         dateReturn = reader["return_date"].ToString();
+
                     }
                 }
             }
@@ -219,7 +223,7 @@ namespace PasigLibrarySystem.USER
 
         private void UserBookCollection_Load(object sender, EventArgs e)
         {
-            LoadBook();
+            LoadBorrowedItems();
             LoadBookCounts();
             timetxt.Text = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
 
@@ -228,7 +232,12 @@ namespace PasigLibrarySystem.USER
         private void searchbtn_Click(object sender, EventArgs e)
         {
             string keyword = searchtxt.Text.Trim();
-            LoadBook(keyword);
+            LoadBorrowedItems(keyword);
+        }
+
+        private void lbl3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

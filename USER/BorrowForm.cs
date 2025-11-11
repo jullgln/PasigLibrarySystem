@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using PasigLibrarySystem.DATABASES;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +28,13 @@ namespace PasigLibrarySystem.USER
             Cancelbtn.BackColor = UIColors.Crimson;
             Cancelbtn.ForeColor = UIColors.White;
             //others
+            displayname.Text = user_data.real_name;
+            displayemail.Text = user_data.email;    
+            idtxt.Text = book_data.currentbookid;
+            titletxt.Text = book_data.currentbookname;
+            authortxt.Text = book_data.currentbookauthor;
+            borrowdatetxt.Text = DateTime.Now.ToString("MM/dd/yyyy");
+            datepicker.Value = DateTime.Now.AddDays(7);
 
         }
 
@@ -36,9 +45,77 @@ namespace PasigLibrarySystem.USER
 
         private void borrowbtn_Click(object sender, EventArgs e)
         {
-            //validation can be added here
-            MessageBox.Show("Book Borrowed Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);//placeholder
-            Close();
+            DBConnect db = new DBConnect();
+            db.Open();
+
+            //Check book status
+            MySqlCommand checkCmd = new MySqlCommand(
+                "SELECT Status FROM books WHERE BookID=@bookId", db.GetConnection());
+            checkCmd.Parameters.AddWithValue("@bookId", book_data.currentbookid);
+            string currentStatus = checkCmd.ExecuteScalar()?.ToString();
+
+            if (string.IsNullOrEmpty(currentStatus))
+            {
+                MessageBox.Show("Book not found in the database.");
+                db.Close();
+                return;
+            }
+
+            string statusUpper = currentStatus.ToUpper();
+
+            // Check if user can borrow
+            bool canBorrow = false;
+
+            if (statusUpper == "AVAILABLE")
+            {
+                canBorrow = true;
+            }
+            else if (statusUpper == "RESERVED")
+            {
+                MySqlCommand checkQueue = new MySqlCommand(
+                    "SELECT user_id FROM status WHERE book_id=@bookId AND status='RESERVED' ORDER BY reserved_date LIMIT 1",
+                    db.GetConnection());
+                checkQueue.Parameters.AddWithValue("@bookId", book_data.currentbookid);
+
+                string firstInQueueStr = checkQueue.ExecuteScalar()?.ToString();
+                int firstInQueueId = 0;
+
+                if (!string.IsNullOrEmpty(firstInQueueStr))
+                {
+                    firstInQueueId = Convert.ToInt32(firstInQueueStr);
+                }
+
+                if (firstInQueueId == Convert.ToInt32(user_data.user_id))
+                    canBorrow = true;
+            }
+
+            if (!canBorrow)
+            {
+                MessageBox.Show("This book is currently not available for you to borrow.");
+                db.Close();
+                return;
+            }
+
+            //Insert borrow record 
+            MySqlCommand cmd = new MySqlCommand(
+                "INSERT INTO status (book_id, journal_id, user_id, status, borrowed_date, return_date, reserved_date) " +
+                "VALUES (@bookId, NULL, @userId, 'BORROWED', @borrowedDate, @returnDate, NULL)", db.GetConnection());
+            cmd.Parameters.AddWithValue("@bookId", book_data.currentbookid);
+            cmd.Parameters.AddWithValue("@userId", user_data.user_id);
+            cmd.Parameters.AddWithValue("@borrowedDate", DateTime.Now.ToString("yyyy-MM-dd"));
+            cmd.Parameters.AddWithValue("@returnDate", DateTime.Now.AddDays(7).ToString("yyyy-MM-dd"));
+            cmd.ExecuteNonQuery();
+
+            //Update book table status
+            MySqlCommand updateBookCmd = new MySqlCommand(
+                "UPDATE books SET Status='BORROWED' WHERE BookID=@bookId", db.GetConnection());
+            updateBookCmd.Parameters.AddWithValue("@bookId", book_data.currentbookid);
+            updateBookCmd.ExecuteNonQuery();
+
+            MessageBox.Show("Book borrowed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            db.Close();
+            this.Close();
         }
     }
 }

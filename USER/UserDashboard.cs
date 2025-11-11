@@ -190,6 +190,25 @@ namespace PasigLibrarySystem.USER
 
         private void borrowbtn_Click(object sender, EventArgs e)
         {
+            if (tableview.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a book to borrow.");
+                return;
+            }
+
+            DataGridViewRow row = tableview.SelectedRows[0];
+
+            string status = row.Cells["Status"].Value.ToString().ToUpper();
+            if (status != "AVAILABLE" && status != "RESERVED")
+            {
+                MessageBox.Show("This book is currently not available to borrow.");
+                return;
+            }
+
+            // Save selected book info to global book_data
+            book_data.currentbookid = row.Cells["BookID"].Value.ToString();
+            book_data.currentbookname = row.Cells["BookTitle"].Value.ToString();
+            book_data.currentbookauthor = row.Cells["Author"].Value.ToString();
             UTILS.Action.PopupForm(this, new BorrowForm());
         }
 
@@ -204,7 +223,7 @@ namespace PasigLibrarySystem.USER
             DataGridViewRow row = tableview.SelectedRows[0];
             string status = row.Cells["Status"].Value.ToString();
 
-            if (status.ToLower() == "available")
+            if (status == "AVAILABLE")
             {
                 MessageBox.Show("This book is currently available. Please borrow instead.");
                 return;
@@ -215,7 +234,6 @@ namespace PasigLibrarySystem.USER
             //book_data.currentbookauthor = row.Cells["Author"].Value.ToString();
             UTILS.Action.PopupForm(this, new ReserveForm());
         }
-
         private void ViewDetails_Click(object sender, EventArgs e)
         {
             if (tableview.SelectedRows.Count == 0) return;
