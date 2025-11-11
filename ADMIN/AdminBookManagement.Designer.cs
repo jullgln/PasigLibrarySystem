@@ -53,6 +53,9 @@
             addbtn = new Button();
             viewdetailsbtn = new Button();
             filtertxt = new ComboBox();
+            panel2 = new Panel();
+            pictureBox2 = new PictureBox();
+            label1 = new Label();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             taskbarpanel.SuspendLayout();
@@ -63,6 +66,8 @@
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tableview).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // headerpanel
@@ -73,18 +78,20 @@
             headerpanel.Controls.Add(H1);
             headerpanel.Controls.Add(pictureBox1);
             headerpanel.ForeColor = SystemColors.ControlText;
-            headerpanel.Location = new Point(-33, 0);
+            headerpanel.Location = new Point(-38, 0);
+            headerpanel.Margin = new Padding(3, 4, 3, 4);
             headerpanel.Name = "headerpanel";
-            headerpanel.Size = new Size(1316, 88);
+            headerpanel.Size = new Size(1504, 117);
             headerpanel.TabIndex = 4;
             // 
             // LogOutbtn
             // 
             LogOutbtn.FlatStyle = FlatStyle.Flat;
             LogOutbtn.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LogOutbtn.Location = new Point(1160, 27);
+            LogOutbtn.Location = new Point(1326, 36);
+            LogOutbtn.Margin = new Padding(3, 4, 3, 4);
             LogOutbtn.Name = "LogOutbtn";
-            LogOutbtn.Size = new Size(93, 35);
+            LogOutbtn.Size = new Size(106, 47);
             LogOutbtn.TabIndex = 17;
             LogOutbtn.Text = " Log Out";
             LogOutbtn.TextAlign = ContentAlignment.BottomCenter;
@@ -96,9 +103,9 @@
             welcomelbl.AutoSize = true;
             welcomelbl.Font = new Font("Poppins Light", 13F);
             welcomelbl.ForeColor = Color.White;
-            welcomelbl.Location = new Point(946, 31);
+            welcomelbl.Location = new Point(1081, 41);
             welcomelbl.Name = "welcomelbl";
-            welcomelbl.Size = new Size(150, 31);
+            welcomelbl.Size = new Size(184, 39);
             welcomelbl.TabIndex = 7;
             welcomelbl.Text = "Welcome, User!";
             welcomelbl.TextAlign = ContentAlignment.TopCenter;
@@ -108,9 +115,9 @@
             H1.AutoSize = true;
             H1.Font = new Font("Poppins", 22F, FontStyle.Bold);
             H1.ForeColor = Color.White;
-            H1.Location = new Point(157, 18);
+            H1.Location = new Point(179, 24);
             H1.Name = "H1";
-            H1.Size = new Size(354, 53);
+            H1.Size = new Size(439, 65);
             H1.TabIndex = 6;
             H1.Text = "Public Library System";
             H1.TextAlign = ContentAlignment.TopCenter;
@@ -119,9 +126,10 @@
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(34, -18);
+            pictureBox1.Location = new Point(39, -24);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(137, 116);
+            pictureBox1.Size = new Size(157, 155);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -131,10 +139,12 @@
             taskbarpanel.BackColor = Color.White;
             taskbarpanel.Controls.Add(panel1);
             taskbarpanel.Controls.Add(highlightpanel);
+            taskbarpanel.Controls.Add(panel2);
             taskbarpanel.Controls.Add(panel3);
-            taskbarpanel.Location = new Point(-1, 78);
+            taskbarpanel.Location = new Point(-1, 104);
+            taskbarpanel.Margin = new Padding(3, 4, 3, 4);
             taskbarpanel.Name = "taskbarpanel";
-            taskbarpanel.Size = new Size(236, 602);
+            taskbarpanel.Size = new Size(270, 803);
             taskbarpanel.TabIndex = 5;
             // 
             // panel1
@@ -142,17 +152,19 @@
             panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(pictureBox7);
             panel1.Controls.Add(memberlbl);
-            panel1.Location = new Point(-8, 126);
+            panel1.Location = new Point(-9, 168);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(288, 82);
+            panel1.Size = new Size(329, 109);
             panel1.TabIndex = 8;
             // 
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(33, 21);
+            pictureBox7.Location = new Point(38, 28);
+            pictureBox7.Margin = new Padding(3, 4, 3, 4);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(37, 37);
+            pictureBox7.Size = new Size(42, 49);
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox7.TabIndex = 0;
             pictureBox7.TabStop = false;
@@ -162,9 +174,9 @@
             memberlbl.AutoSize = true;
             memberlbl.Font = new Font("Poppins", 12F);
             memberlbl.ForeColor = Color.FromArgb(15, 46, 103);
-            memberlbl.Location = new Point(71, 13);
+            memberlbl.Location = new Point(81, 17);
             memberlbl.Name = "memberlbl";
-            memberlbl.Size = new Size(121, 56);
+            memberlbl.Size = new Size(152, 72);
             memberlbl.TabIndex = 7;
             memberlbl.Text = "Member \r\nManagement";
             memberlbl.Click += memberlbl_Click;
@@ -174,17 +186,19 @@
             highlightpanel.BackColor = Color.Black;
             highlightpanel.Controls.Add(pictureBox8);
             highlightpanel.Controls.Add(BookManagelbl);
-            highlightpanel.Location = new Point(-11, 227);
+            highlightpanel.Location = new Point(-13, 303);
+            highlightpanel.Margin = new Padding(3, 4, 3, 4);
             highlightpanel.Name = "highlightpanel";
-            highlightpanel.Size = new Size(288, 82);
+            highlightpanel.Size = new Size(329, 109);
             highlightpanel.TabIndex = 2;
             // 
             // pictureBox8
             // 
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(33, 20);
+            pictureBox8.Location = new Point(38, 27);
+            pictureBox8.Margin = new Padding(3, 4, 3, 4);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(37, 37);
+            pictureBox8.Size = new Size(42, 49);
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 0;
             pictureBox8.TabStop = false;
@@ -194,9 +208,9 @@
             BookManagelbl.AutoSize = true;
             BookManagelbl.Font = new Font("Poppins", 12F);
             BookManagelbl.ForeColor = Color.White;
-            BookManagelbl.Location = new Point(74, 12);
+            BookManagelbl.Location = new Point(85, 16);
             BookManagelbl.Name = "BookManagelbl";
-            BookManagelbl.Size = new Size(121, 56);
+            BookManagelbl.Size = new Size(152, 72);
             BookManagelbl.TabIndex = 7;
             BookManagelbl.Text = "Book\r\nManagement";
             // 
@@ -205,17 +219,20 @@
             panel3.BackColor = Color.Transparent;
             panel3.Controls.Add(pictureBox9);
             panel3.Controls.Add(rep_invlbl);
-            panel3.Location = new Point(-7, 325);
+            panel3.Location = new Point(-8, 433);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(288, 82);
+            panel3.Size = new Size(329, 109);
             panel3.TabIndex = 2;
+            panel3.Paint += panel3_Paint;
             // 
             // pictureBox9
             // 
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(33, 22);
+            pictureBox9.Location = new Point(38, 29);
+            pictureBox9.Margin = new Padding(3, 4, 3, 4);
             pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(37, 37);
+            pictureBox9.Size = new Size(42, 49);
             pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox9.TabIndex = 0;
             pictureBox9.TabStop = false;
@@ -225,32 +242,35 @@
             rep_invlbl.AutoSize = true;
             rep_invlbl.Font = new Font("Poppins", 12F);
             rep_invlbl.ForeColor = Color.FromArgb(15, 46, 103);
-            rep_invlbl.Location = new Point(74, 13);
+            rep_invlbl.Location = new Point(86, 20);
             rep_invlbl.Name = "rep_invlbl";
-            rep_invlbl.Size = new Size(109, 56);
+            rep_invlbl.Size = new Size(152, 72);
             rep_invlbl.TabIndex = 7;
-            rep_invlbl.Text = "Reports and\r\n Inventory";
+            rep_invlbl.Text = "Circulation \r\nManagement\r\n";
             rep_invlbl.Click += rep_invlbl_Click;
             // 
             // searchtxt
             // 
             searchtxt.Font = new Font("Poppins", 12F);
-            searchtxt.Location = new Point(279, 123);
+            searchtxt.Location = new Point(319, 164);
+            searchtxt.Margin = new Padding(3, 4, 3, 4);
             searchtxt.Name = "searchtxt";
             searchtxt.PlaceholderText = "Search by Title, Author, Category or ISBN";
-            searchtxt.Size = new Size(407, 31);
+            searchtxt.Size = new Size(465, 37);
             searchtxt.TabIndex = 57;
             // 
             // searchbtn
             // 
             searchbtn.FlatStyle = FlatStyle.Flat;
             searchbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
-            searchbtn.Location = new Point(721, 124);
+            searchbtn.Location = new Point(824, 165);
+            searchbtn.Margin = new Padding(3, 4, 3, 4);
             searchbtn.Name = "searchbtn";
-            searchbtn.Size = new Size(125, 32);
+            searchbtn.Size = new Size(143, 43);
             searchbtn.TabIndex = 56;
             searchbtn.Text = "Search";
             searchbtn.UseVisualStyleBackColor = true;
+            searchbtn.Click += searchbtn_Click;
             // 
             // tableview
             // 
@@ -266,19 +286,22 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             tableview.DefaultCellStyle = dataGridViewCellStyle1;
-            tableview.Location = new Point(279, 188);
+            tableview.Location = new Point(319, 251);
+            tableview.Margin = new Padding(3, 4, 3, 4);
             tableview.Name = "tableview";
             tableview.ReadOnly = true;
-            tableview.Size = new Size(941, 381);
+            tableview.RowHeadersWidth = 51;
+            tableview.Size = new Size(1075, 508);
             tableview.TabIndex = 58;
             // 
             // editbtn
             // 
             editbtn.FlatStyle = FlatStyle.Flat;
             editbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
-            editbtn.Location = new Point(1095, 596);
+            editbtn.Location = new Point(1251, 795);
+            editbtn.Margin = new Padding(3, 4, 3, 4);
             editbtn.Name = "editbtn";
-            editbtn.Size = new Size(125, 32);
+            editbtn.Size = new Size(143, 43);
             editbtn.TabIndex = 59;
             editbtn.Text = "Edit";
             editbtn.UseVisualStyleBackColor = true;
@@ -288,9 +311,10 @@
             // 
             deletebtn.FlatStyle = FlatStyle.Flat;
             deletebtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
-            deletebtn.Location = new Point(936, 596);
+            deletebtn.Location = new Point(1070, 795);
+            deletebtn.Margin = new Padding(3, 4, 3, 4);
             deletebtn.Name = "deletebtn";
-            deletebtn.Size = new Size(125, 32);
+            deletebtn.Size = new Size(143, 43);
             deletebtn.TabIndex = 60;
             deletebtn.Text = "Delete";
             deletebtn.UseVisualStyleBackColor = true;
@@ -299,9 +323,10 @@
             // 
             addbtn.FlatStyle = FlatStyle.Flat;
             addbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
-            addbtn.Location = new Point(279, 596);
+            addbtn.Location = new Point(319, 795);
+            addbtn.Margin = new Padding(3, 4, 3, 4);
             addbtn.Name = "addbtn";
-            addbtn.Size = new Size(125, 32);
+            addbtn.Size = new Size(143, 43);
             addbtn.TabIndex = 61;
             addbtn.Text = "Add Book";
             addbtn.UseVisualStyleBackColor = true;
@@ -311,9 +336,10 @@
             // 
             viewdetailsbtn.FlatStyle = FlatStyle.Flat;
             viewdetailsbtn.Font = new Font("Poppins Medium", 10F, FontStyle.Bold);
-            viewdetailsbtn.Location = new Point(443, 596);
+            viewdetailsbtn.Location = new Point(506, 795);
+            viewdetailsbtn.Margin = new Padding(3, 4, 3, 4);
             viewdetailsbtn.Name = "viewdetailsbtn";
-            viewdetailsbtn.Size = new Size(125, 32);
+            viewdetailsbtn.Size = new Size(143, 43);
             viewdetailsbtn.TabIndex = 62;
             viewdetailsbtn.Text = "View Details";
             viewdetailsbtn.UseVisualStyleBackColor = true;
@@ -323,17 +349,53 @@
             // 
             filtertxt.Font = new Font("Poppins", 10F);
             filtertxt.FormattingEnabled = true;
-            filtertxt.Items.AddRange(new object[] { "Books", "Journal" });
-            filtertxt.Location = new Point(874, 123);
+            filtertxt.Items.AddRange(new object[] { "All" });
+            filtertxt.Location = new Point(999, 164);
+            filtertxt.Margin = new Padding(3, 4, 3, 4);
             filtertxt.Name = "filtertxt";
-            filtertxt.Size = new Size(121, 31);
+            filtertxt.Size = new Size(148, 38);
             filtertxt.TabIndex = 63;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(pictureBox2);
+            panel2.Controls.Add(label1);
+            panel2.Location = new Point(3, 574);
+            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(329, 109);
+            panel2.TabIndex = 2;
+            panel2.Paint += panel3_Paint;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(38, 29);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(42, 49);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Poppins", 12F);
+            label1.ForeColor = Color.FromArgb(15, 46, 103);
+            label1.Location = new Point(85, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(136, 72);
+            label1.TabIndex = 7;
+            label1.Text = "Reports and\r\n Inventory";
+            label1.Click += rep_invlbl_Click;
             // 
             // AdminBookManagement
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1264, 681);
+            ClientSize = new Size(1445, 908);
             Controls.Add(filtertxt);
             Controls.Add(viewdetailsbtn);
             Controls.Add(addbtn);
@@ -344,6 +406,7 @@
             Controls.Add(searchbtn);
             Controls.Add(headerpanel);
             Controls.Add(taskbarpanel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AdminBookManagement";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "S";
@@ -361,6 +424,9 @@
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)tableview).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -390,5 +456,8 @@
         private Button addbtn;
         private Button viewdetailsbtn;
         private ComboBox filtertxt;
+        private Panel panel2;
+        private PictureBox pictureBox2;
+        private Label label1;
     }
 }

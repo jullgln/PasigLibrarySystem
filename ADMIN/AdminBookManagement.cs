@@ -1,4 +1,7 @@
-﻿using PasigLibrarySystem.USER;
+﻿using Microsoft.VisualBasic.Devices;
+using MySql.Data.MySqlClient;
+using PasigLibrarySystem.DATABASES;
+using PasigLibrarySystem.USER;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +19,7 @@ namespace PasigLibrarySystem.ADMIN
         public AdminBookManagement()
         {
             InitializeComponent();
+            loadBooks();
             this.FormBorderStyle = FormBorderStyle.None;
             UIRounder.FormRounder(this, 30);
             highlightpanel.BackColor = UIColors.VividAzure;
@@ -32,6 +36,53 @@ namespace PasigLibrarySystem.ADMIN
             deletebtn.BackColor = UIColors.VividAzure;
             searchbtn.ForeColor = UIColors.White;
             searchbtn.BackColor = UIColors.VividAzure;
+        }
+        private void loadBooks(string keyword = "", string category = "All")
+        {
+            DBConnect db = new DBConnect();
+            {
+                db.Open();
+                string sql = $"SELECT b.BookID, b.BookTitle, b.Author, b.Genre, b.Pub_Date, b.status " +
+                         $"FROM books b";
+
+                if (!string.IsNullOrEmpty(keyword))
+                {
+                    if (category == "All")
+                    {
+                        sql += " WHERE b.BookTitle LIKE @keyword OR b.Author LIKE @keyword OR b.Genre LIKE @keyword";
+                    }
+                    else if (category == "Title")
+                    {
+                        sql += " WHERE b.BookTitle LIKE @keyword";
+                    }
+                    else if (category == "Author")
+                    {
+                        sql += " WHERE b.Author LIKE @keyword";
+                    }
+                    else if (category == "Genre")
+                    {
+                        sql += " WHERE b.Genre LIKE @keyword";
+                    }
+                }
+                MySqlCommand cmd = new MySqlCommand(sql, db.GetConnection());
+
+                if (!string.IsNullOrEmpty(keyword))
+                {
+                    cmd.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
+                }
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                MySqlCommand command = new MySqlCommand("SELECT * FROM books", db.GetConnection());
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dz = new DataTable();
+                da.Fill(dz);
+                tableview.DataSource = dz;
+                tableview.ClearSelection();
+                db.Close();
+            }
         }
         private void LogOutbtn_Click(object sender, EventArgs e)
         {
@@ -60,6 +111,17 @@ namespace PasigLibrarySystem.ADMIN
         private void editbtn_Click(object sender, EventArgs e)
         {
             UTILS.Action.PopupForm(this, new EditForm());
+
+        }
+
+        private void searchbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
