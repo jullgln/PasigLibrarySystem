@@ -244,11 +244,12 @@
             // 
             filtertxt.Font = new Font("Poppins", 10F);
             filtertxt.FormattingEnabled = true;
-            filtertxt.Items.AddRange(new object[] { "Books", "Journal" });
+            filtertxt.Items.AddRange(new object[] { "Book Reports", "Book Inventory" });
             filtertxt.Location = new Point(382, 113);
             filtertxt.Name = "filtertxt";
             filtertxt.Size = new Size(121, 31);
             filtertxt.TabIndex = 68;
+            filtertxt.SelectedIndexChanged += filtertxt_SelectedIndexChanged;
             // 
             // tableview
             // 
@@ -276,6 +277,7 @@
             abstractxt.Location = new Point(284, 523);
             abstractxt.Multiline = true;
             abstractxt.Name = "abstractxt";
+            abstractxt.ScrollBars = ScrollBars.Vertical;
             abstractxt.Size = new Size(936, 134);
             abstractxt.TabIndex = 71;
             // 

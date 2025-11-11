@@ -157,6 +157,16 @@ namespace PasigLibrarySystem.USER
 
         private void ViewDetails_Click(object sender, EventArgs e)
         {
+            if (tableview.SelectedRows.Count == 0) return;
+
+            DataGridViewRow row = tableview.SelectedRows[0];
+            book_data.currentbookid = row.Cells["BookID"].Value.ToString();
+            book_data.currentbookname = row.Cells["BookTitle"].Value.ToString();
+            book_data.currentbookauthor = row.Cells["Author"].Value.ToString();
+            book_data.currentgenre=row.Cells["Genre"].Value.ToString();
+            book_data.currentpublishdate = row.Cells["Pub_Date"].Value.ToString();
+            book_data.currentstatus = row.Cells["Status"].Value.ToString();
+
             UTILS.Action.PopupForm(this, new ViewDetails());
         }
 

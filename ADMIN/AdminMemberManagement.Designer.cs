@@ -234,11 +234,12 @@
             // 
             filtertxt.Font = new Font("Poppins", 10F);
             filtertxt.FormattingEnabled = true;
-            filtertxt.Items.AddRange(new object[] { "Books", "Journal" });
+            filtertxt.Items.AddRange(new object[] { "Admin", "Member" });
             filtertxt.Location = new Point(1095, 123);
             filtertxt.Name = "filtertxt";
             filtertxt.Size = new Size(121, 31);
             filtertxt.TabIndex = 66;
+            filtertxt.SelectedIndexChanged += filtertxt_SelectedIndexChanged;
             // 
             // searchtxt
             // 
@@ -259,6 +260,7 @@
             searchbtn.TabIndex = 64;
             searchbtn.Text = "Search";
             searchbtn.UseVisualStyleBackColor = true;
+            searchbtn.Click += searchbtn_Click;
             // 
             // lbl3
             // 

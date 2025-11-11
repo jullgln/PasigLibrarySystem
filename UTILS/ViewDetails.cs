@@ -20,7 +20,17 @@ namespace PasigLibrarySystem.USER
             UIRounder.RoundBtn(backtosearch, 20);
             backtosearch.BackColor = UIColors.VividAzure;
             backtosearch.ForeColor = UIColors.White;
+
+            //details
+            idtxt.Text = DATABASES.book_data.currentbookid;
+            titletxt.Text = DATABASES.book_data.currentbookname;
+            authortxt.Text = DATABASES.book_data.currentbookauthor;
+            genretxt.Text = DATABASES.book_data.currentgenre;
+            pubdatetxt.Text = DATABASES.book_data.currentpublishdate;
+            statustxt.Text = DATABASES.book_data.currentstatus;
+
         }
+
 
         private void backtosearch_Click(object sender, EventArgs e)
         {
