@@ -115,7 +115,7 @@ namespace PasigLibrarySystem.USER
             MySqlCommand updateCountCmd = new MySqlCommand(
                 "UPDATE users SET borrowed_books = borrowed_books + 1 WHERE user_id=@userId",
                 db.GetConnection());
-            updateCountCmd.Parameters.AddWithValue("@userId", user_data.currentuser);
+            updateCountCmd.Parameters.AddWithValue("@userId", user_data.user_id);
             updateCountCmd.ExecuteNonQuery();
 
             MessageBox.Show("Book borrowed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
