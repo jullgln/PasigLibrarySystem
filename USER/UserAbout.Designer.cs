@@ -279,10 +279,10 @@
             // 
             LogOutbtn.FlatStyle = FlatStyle.Flat;
             LogOutbtn.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LogOutbtn.Location = new Point(1326, 36);
+            LogOutbtn.Location = new Point(1271, 36);
             LogOutbtn.Margin = new Padding(3, 4, 3, 4);
             LogOutbtn.Name = "LogOutbtn";
-            LogOutbtn.Size = new Size(106, 47);
+            LogOutbtn.Size = new Size(161, 47);
             LogOutbtn.TabIndex = 17;
             LogOutbtn.Text = " Log Out";
             LogOutbtn.TextAlign = ContentAlignment.BottomCenter;
@@ -294,7 +294,7 @@
             welcomelbl.AutoSize = true;
             welcomelbl.Font = new Font("Poppins Light", 13F);
             welcomelbl.ForeColor = Color.White;
-            welcomelbl.Location = new Point(1081, 41);
+            welcomelbl.Location = new Point(1047, 41);
             welcomelbl.Name = "welcomelbl";
             welcomelbl.Size = new Size(184, 39);
             welcomelbl.TabIndex = 7;

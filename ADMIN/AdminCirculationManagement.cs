@@ -1,4 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Google.Protobuf.Reflection;
+using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
+using PasigLibrarySystem.DATABASES;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,22 +14,24 @@ using System.Windows.Forms;
 
 namespace PasigLibrarySystem.ADMIN
 {
-    public partial class CirculationManagement : Form
+    public partial class AdminCirculationManagement : Form
     {
-        public CirculationManagement()
+        public AdminCirculationManagement()
         {
             InitializeComponent();
-            LoadCirculationData();
-            if (cbxFilter.SelectedIndex == -1)
-            {
-                cbxFilter.SelectedIndex = 0;
-            }
-            cbxFilter.SelectedIndexChanged += cbxFilter_SelectedIndexChanged;
+            this.FormBorderStyle = FormBorderStyle.None;
+            UIRounder.FormRounder(this, 30);
+            highlightpanel.BackColor = UIColors.VividAzure;
+            UIRounder.RoundBtn(LogOutbtn, 30);
+            LogOutbtn.BackColor = UIColors.White;
+            LogOutbtn.ForeColor = UIColors.DarkBlue;
+            welcomelbl.Text = "Welcome, " + UTILS.Session.CurrentUser + "!";
+            cbxFilter.SelectedIndex = 0;
         }
 
-        private void backBtn_Click(object sender, EventArgs e)
+        private void AdminCirculationManagement_Load(object sender, EventArgs e)
         {
-            UTILS.Action.SwitchForm(this, new AdminBookManagement());
+
         }
         private void LoadCirculationData()
         {
@@ -47,21 +52,15 @@ namespace PasigLibrarySystem.ADMIN
                         u.user_id AS 'User ID',
                         u.fullname AS 'Borrower Name',
                         u.fines_fees AS 'Total Fines (₱)',
-                        COALESCE(s.book_id, s.journal_id) AS 'Item ID',
-                        CASE
-                            WHEN s.book_id IS NOT NULL THEN 'Book'
-                            WHEN s.journal_id IS NOT NULL THEN 'Journal'
-                            ELSE 'Unknown'
-                        END AS 'Item Type',
-                        COALESCE(b.BookTitle, j.JournalTitle) AS 'Title'
+                        s.ID AS 'Item ID',
+                        b.type AS 'Item Type',
+                        b.Title AS 'Title'
                     FROM
                         status s
                     LEFT JOIN
                         users u ON UPPER(s.user_id) = UPPER(u.user_id)
                     LEFT JOIN
-                        books b ON UPPER(s.book_id) = UPPER(b.BookID)
-                    LEFT JOIN
-                        journals j ON UPPER(s.journal_id) = UPPER(j.JournalID)";
+                        books b ON UPPER(s.ID) = UPPER(b.ID)";
 
             if (selectedStatus != null && selectedStatus.StartsWith("ALL", StringComparison.OrdinalIgnoreCase))
             {
@@ -108,6 +107,29 @@ namespace PasigLibrarySystem.ADMIN
         private void cbxFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadCirculationData();
+        }
+
+        private void LogOutbtn_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.LogOut(this, new LogIn());
+        }
+
+        private void memberlbl_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.SwitchForm(this, new AdminMemberManagement());
+
+        }
+
+        private void BookManagelbl_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.SwitchForm(this, new AdminBookManagement());
+
+        }
+
+        private void rep_invlbl_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.SwitchForm(this, new AdminReports_Inventory());
+
         }
     }
 }

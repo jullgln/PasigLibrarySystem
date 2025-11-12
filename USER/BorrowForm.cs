@@ -50,7 +50,7 @@ namespace PasigLibrarySystem.USER
 
             //Check book status
             MySqlCommand checkCmd = new MySqlCommand(
-                "SELECT Status FROM books WHERE BookID=@bookId", db.GetConnection());
+                "SELECT Status FROM books WHERE ID=@bookId", db.GetConnection());
             checkCmd.Parameters.AddWithValue("@bookId", book_data.currentbookid);
             string currentStatus = checkCmd.ExecuteScalar()?.ToString();
 
@@ -73,7 +73,7 @@ namespace PasigLibrarySystem.USER
             else if (statusUpper == "RESERVED")
             {
                 MySqlCommand checkQueue = new MySqlCommand(
-                    "SELECT user_id FROM status WHERE book_id=@bookId AND status='RESERVED' ORDER BY reserved_date LIMIT 1",
+                    "SELECT user_id FROM status WHERE ID=@bookId AND status='RESERVED' ORDER BY reserved_date LIMIT 1",
                     db.GetConnection());
                 checkQueue.Parameters.AddWithValue("@bookId", book_data.currentbookid);
 
@@ -98,17 +98,17 @@ namespace PasigLibrarySystem.USER
 
             //Insert borrow record 
             MySqlCommand cmd = new MySqlCommand(
-                "INSERT INTO status (book_id, journal_id, user_id, status, borrowed_date, return_date, reserved_date) " +
-                "VALUES (@bookId, NULL, @userId, 'BORROWED', @borrowedDate, @returnDate, NULL)", db.GetConnection());
+                "INSERT INTO status (ID, user_id, status, borrowed_date, return_date, reserved_date) " +
+                "VALUES (@bookID, @userId, 'BORROWED', @borrowedDate, @returnDate, NULL)", db.GetConnection());
             cmd.Parameters.AddWithValue("@bookId", book_data.currentbookid);
             cmd.Parameters.AddWithValue("@userId", user_data.user_id);
-            cmd.Parameters.AddWithValue("@borrowedDate", DateTime.Now.ToString("yyyy-MM-dd"));
-            cmd.Parameters.AddWithValue("@returnDate", DateTime.Now.AddDays(7).ToString("yyyy-MM-dd"));
+            cmd.Parameters.AddWithValue("@borrowedDate", DateTime.Now.ToString("MM/dd/yyyy"));
+            cmd.Parameters.AddWithValue("@returnDate", DateTime.Now.AddDays(7).ToString("MM/dd/yyyy"));
             cmd.ExecuteNonQuery();
 
             //Update book table status
             MySqlCommand updateBookCmd = new MySqlCommand(
-                "UPDATE books SET Status='BORROWED' WHERE BookID=@bookId", db.GetConnection());
+                "UPDATE books SET Status='BORROWED' WHERE ID=@bookId", db.GetConnection());
             updateBookCmd.Parameters.AddWithValue("@bookId", book_data.currentbookid);
             updateBookCmd.ExecuteNonQuery();
 

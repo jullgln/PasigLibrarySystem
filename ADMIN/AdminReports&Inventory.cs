@@ -24,6 +24,7 @@ namespace PasigLibrarySystem.ADMIN
             UIRounder.RoundBtn(LogOutbtn, 30);
             LogOutbtn.BackColor = UIColors.White;
             LogOutbtn.ForeColor = UIColors.DarkBlue;
+            welcomelbl.Text = "Welcome, " + UTILS.Session.CurrentUser + "!";
 
         }
 
@@ -34,15 +35,15 @@ namespace PasigLibrarySystem.ADMIN
                 db.Open();
                 string activityQuery = @"
                         SELECT 
-                        s.book_id AS BookID,
-                        b.BookTitle,
+                        s.ID AS ID,
+                        b.Title,
                         s.user_id AS UserID,
                         s.status AS Status,
                         s.borrowed_date AS BorrowedDate,
                         s.return_date AS ReturnDate,
                         s.Actual_Return_Date AS ActualReturnDate
                         FROM status s
-                        JOIN books b ON s.book_id = b.BookID
+                        JOIN books b ON s.ID = b.ID
                         WHERE s.status IN ('BORROWED', 'RETURNED', 'LOST')";
 
                 MySqlDataAdapter daActivity = new MySqlDataAdapter(activityQuery, db.GetConnection());
@@ -56,11 +57,11 @@ namespace PasigLibrarySystem.ADMIN
 
                 // Most-read
                 string popularQuery = @"
-                        SELECT b.BookTitle, COUNT(*) AS TimesBorrowed
+                        SELECT b.Title, COUNT(*) AS TimesBorrowed
                         FROM status s
-                        JOIN books b ON s.book_id = b.BookID
+                        JOIN books b ON s.ID = b.ID
                         WHERE s.status IN ('BORROWED', 'RETURNED')
-                        GROUP BY b.BookTitle
+                        GROUP BY b.Title
                         ORDER BY TimesBorrowed DESC
                         LIMIT 5";
 
@@ -69,7 +70,7 @@ namespace PasigLibrarySystem.ADMIN
                 {
                     while (reader.Read())
                     {
-                        summaryText += $"• {reader["BookTitle"]} — {reader["TimesBorrowed"]} times\r\n";
+                        summaryText += $"• {reader["Title"]} — {reader["TimesBorrowed"]} times\r\n";
                     }
                 }
 
@@ -98,8 +99,8 @@ namespace PasigLibrarySystem.ADMIN
                 // Grid data
                 string query = @"
                 SELECT 
-                    BookID,
-                    BookTitle,
+                    ID,
+                    Title,
                     Author,
                     Genre,
                     Pub_Date,
@@ -168,6 +169,11 @@ namespace PasigLibrarySystem.ADMIN
                 tableview.Visible = true;
                 abstractxt.Visible = true;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.SwitchForm(this, new AdminCirculationManagement());
         }
     }
 }

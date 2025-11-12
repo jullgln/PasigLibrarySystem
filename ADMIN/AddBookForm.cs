@@ -36,7 +36,7 @@ namespace PasigLibrarySystem.ADMIN
 
         private void addbookbtn_Click(object sender, EventArgs e)
         {
-            string bookid = IDGenerator.GeneratebookID();
+            string ID = IDGenerator.GeneratebookID();
             string isbn = IDGenerator.GenerateISBN();
             string shelf = IDGenerator.GenerateShelfNumber();
             string title = titletxt.Text;
@@ -52,9 +52,9 @@ namespace PasigLibrarySystem.ADMIN
             DBConnect db = new DBConnect();
             {
                 db.Open();
-                MySqlCommand cmd = new MySqlCommand($"INSERT INTO books (BookID, BookTitle, Author, Genre, Pub_Date, pagecount, publisher, language, ISBN, Shelf_Number, status) " +
+                MySqlCommand cmd = new MySqlCommand($"INSERT INTO books (ID, Title, Author, Genre, Pub_Date, pagecount, publisher, language, ISBN, Shelf_Number, status) " +
                                $"VALUES (@id, @title, @author, @genre, @pubYear, @pages, @publisher, @lang, @isbn, @shelf, @status)", db.GetConnection());
-                cmd.Parameters.AddWithValue("id", bookid);
+                cmd.Parameters.AddWithValue("@id", ID);
                 cmd.Parameters.AddWithValue("@title", title);
                 cmd.Parameters.AddWithValue("@author", author);
                 cmd.Parameters.AddWithValue("@genre", genre);

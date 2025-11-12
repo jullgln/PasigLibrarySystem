@@ -33,6 +33,7 @@ namespace PasigLibrarySystem.USER
             titletxt.Text = book_data.currentbookname;
             borrowdatetxt.Text = DateTime.Now.ToString("MM/dd/yyyy");
             ogreturndatetxt.Text = dateReturn;
+            returneddatetxt.Text = DateTime.Now.ToString("MM/dd/yyyy");
         }
 
         private void settleaccbtn_Click(object sender, EventArgs e)
@@ -66,7 +67,7 @@ namespace PasigLibrarySystem.USER
                 }
 
                 MySqlCommand updateBook = new MySqlCommand(
-                    "UPDATE books SET Status='AVAILABLE' WHERE BookID=@bookId", db.GetConnection());
+                    "UPDATE books SET Status='AVAILABLE' WHERE ID=@bookId", db.GetConnection());
                 updateBook.Parameters.AddWithValue("@bookId", book_data.currentbookid);
                 updateBook.ExecuteNonQuery();
 
@@ -77,11 +78,12 @@ namespace PasigLibrarySystem.USER
                 updateUser.ExecuteNonQuery();
 
                 MySqlCommand updateStatus = new MySqlCommand(
-                    "UPDATE status SET status='RETURNED', return_date=@returnDate " +
-                    "WHERE book_id=@bookId AND user_id=@userId AND status='BORROWED'", db.GetConnection());
+                    "UPDATE status SET status='RETURNED', return_date=@returnDate, Actual_Return_date=@actualreturndate " +
+                    "WHERE ID=@bookId AND user_id=@userId AND status='BORROWED'", db.GetConnection());
                 updateStatus.Parameters.AddWithValue("@bookId", book_data.currentbookid);
                 updateStatus.Parameters.AddWithValue("@userId", user_data.user_id);
-                updateStatus.Parameters.AddWithValue("@returnDate", DateTime.Now.ToString("yyyy-MM-dd"));
+                updateStatus.Parameters.AddWithValue("@returnDate", DateTime.Now.ToString("MM/dd/yyyy"));
+                updateStatus.Parameters.AddWithValue("@actualreturndate", returneddatetxt.Text.ToString());
 
                 int rowsAffected = updateStatus.ExecuteNonQuery();
 

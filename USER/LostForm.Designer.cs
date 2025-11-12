@@ -67,11 +67,11 @@
             // H1
             // 
             H1.AutoSize = true;
-            H1.Font = new Font("Microsoft Sans Serif", 22F, FontStyle.Bold);
+            H1.Font = new Font("Poppins", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             H1.ForeColor = Color.White;
             H1.Location = new Point(160, 24);
             H1.Name = "H1";
-            H1.Size = new Size(194, 42);
+            H1.Size = new Size(213, 65);
             H1.TabIndex = 6;
             H1.Text = "Lost Form";
             H1.TextAlign = ContentAlignment.TopCenter;
@@ -91,21 +91,21 @@
             // displayname
             // 
             displayname.AutoSize = true;
-            displayname.Font = new Font("Microsoft Sans Serif", 12F);
+            displayname.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             displayname.Location = new Point(141, 157);
             displayname.Name = "displayname";
-            displayname.Size = new Size(122, 25);
+            displayname.Size = new Size(148, 36);
             displayname.TabIndex = 22;
             displayname.Text = "namedisplay";
             // 
             // lbl1
             // 
             lbl1.AutoSize = true;
-            lbl1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl1.Font = new Font("Poppins", 12F, FontStyle.Bold);
             lbl1.ForeColor = Color.FromArgb(15, 46, 103);
             lbl1.Location = new Point(50, 157);
             lbl1.Name = "lbl1";
-            lbl1.Size = new Size(68, 25);
+            lbl1.Size = new Size(77, 36);
             lbl1.TabIndex = 21;
             lbl1.Text = "Name";
             // 
@@ -133,112 +133,112 @@
             // finetxt
             // 
             finetxt.AutoSize = true;
-            finetxt.Font = new Font("Microsoft Sans Serif", 12F);
+            finetxt.Font = new Font("Poppins", 12F);
             finetxt.Location = new Point(213, 244);
             finetxt.Name = "finetxt";
-            finetxt.Size = new Size(115, 25);
+            finetxt.Size = new Size(131, 36);
             finetxt.TabIndex = 32;
             finetxt.Text = "Return Date";
             // 
             // lbl5
             // 
             lbl5.AutoSize = true;
-            lbl5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl5.Font = new Font("Poppins", 12F, FontStyle.Bold);
             lbl5.ForeColor = Color.FromArgb(15, 46, 103);
             lbl5.Location = new Point(25, 244);
             lbl5.Name = "lbl5";
-            lbl5.Size = new Size(54, 25);
+            lbl5.Size = new Size(57, 36);
             lbl5.TabIndex = 31;
             lbl5.Text = "Fine";
             // 
             // lostdatetxt
             // 
             lostdatetxt.AutoSize = true;
-            lostdatetxt.Font = new Font("Microsoft Sans Serif", 12F);
+            lostdatetxt.Font = new Font("Poppins", 12F);
             lostdatetxt.Location = new Point(208, 176);
             lostdatetxt.Name = "lostdatetxt";
-            lostdatetxt.Size = new Size(115, 25);
+            lostdatetxt.Size = new Size(131, 36);
             lostdatetxt.TabIndex = 30;
             lostdatetxt.Text = "Return Date";
             // 
             // lbl4
             // 
             lbl4.AutoSize = true;
-            lbl4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl4.Font = new Font("Poppins", 12F, FontStyle.Bold);
             lbl4.ForeColor = Color.FromArgb(15, 46, 103);
             lbl4.Location = new Point(25, 176);
             lbl4.Name = "lbl4";
-            lbl4.Size = new Size(173, 25);
+            lbl4.Size = new Size(183, 36);
             lbl4.TabIndex = 29;
             lbl4.Text = "Lost Report Date";
             // 
             // borrowdatetxt
             // 
             borrowdatetxt.AutoSize = true;
-            borrowdatetxt.Font = new Font("Microsoft Sans Serif", 12F);
+            borrowdatetxt.Font = new Font("Poppins", 12F);
             borrowdatetxt.Location = new Point(208, 111);
             borrowdatetxt.Name = "borrowdatetxt";
-            borrowdatetxt.Size = new Size(119, 25);
+            borrowdatetxt.Size = new Size(135, 36);
             borrowdatetxt.TabIndex = 28;
             borrowdatetxt.Text = "Borrow Date";
             // 
             // lbl3
             // 
             lbl3.AutoSize = true;
-            lbl3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl3.Font = new Font("Poppins", 12F, FontStyle.Bold);
             lbl3.ForeColor = Color.FromArgb(15, 46, 103);
             lbl3.Location = new Point(25, 111);
             lbl3.Name = "lbl3";
-            lbl3.Size = new Size(154, 25);
+            lbl3.Size = new Size(168, 36);
             lbl3.TabIndex = 27;
             lbl3.Text = "Borrowed Date";
             // 
             // titletxt
             // 
             titletxt.AutoSize = true;
-            titletxt.Font = new Font("Microsoft Sans Serif", 12F);
+            titletxt.Font = new Font("Poppins", 12F);
             titletxt.Location = new Point(585, 39);
             titletxt.Name = "titletxt";
-            titletxt.Size = new Size(81, 25);
+            titletxt.Size = new Size(87, 36);
             titletxt.TabIndex = 23;
             titletxt.Text = "Book ID";
             // 
             // idtxt
             // 
             idtxt.AutoSize = true;
-            idtxt.Font = new Font("Microsoft Sans Serif", 12F);
+            idtxt.Font = new Font("Poppins", 12F);
             idtxt.Location = new Point(208, 39);
             idtxt.Name = "idtxt";
-            idtxt.Size = new Size(81, 25);
+            idtxt.Size = new Size(87, 36);
             idtxt.TabIndex = 22;
             idtxt.Text = "Book ID";
             // 
             // lbl6
             // 
             lbl6.AutoSize = true;
-            lbl6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl6.Font = new Font("Poppins", 12F, FontStyle.Bold);
             lbl6.ForeColor = Color.FromArgb(15, 46, 103);
             lbl6.Location = new Point(402, 39);
             lbl6.Name = "lbl6";
-            lbl6.Size = new Size(109, 25);
+            lbl6.Size = new Size(114, 36);
             lbl6.TabIndex = 20;
             lbl6.Text = "Book Title";
             // 
             // lbl2
             // 
             lbl2.AutoSize = true;
-            lbl2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl2.Font = new Font("Poppins", 12F, FontStyle.Bold);
             lbl2.ForeColor = Color.FromArgb(15, 46, 103);
             lbl2.Location = new Point(25, 39);
             lbl2.Name = "lbl2";
-            lbl2.Size = new Size(88, 25);
+            lbl2.Size = new Size(91, 36);
             lbl2.TabIndex = 19;
             lbl2.Text = "Book ID";
             // 
             // settleaccbtn
             // 
             settleaccbtn.FlatStyle = FlatStyle.Flat;
-            settleaccbtn.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            settleaccbtn.Font = new Font("Poppins", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             settleaccbtn.Location = new Point(770, 612);
             settleaccbtn.Margin = new Padding(3, 4, 3, 4);
             settleaccbtn.Name = "settleaccbtn";
@@ -251,7 +251,7 @@
             // Cancelbtn
             // 
             Cancelbtn.FlatStyle = FlatStyle.Flat;
-            Cancelbtn.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Cancelbtn.Font = new Font("Poppins", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Cancelbtn.Location = new Point(618, 612);
             Cancelbtn.Margin = new Padding(3, 4, 3, 4);
             Cancelbtn.Name = "Cancelbtn";

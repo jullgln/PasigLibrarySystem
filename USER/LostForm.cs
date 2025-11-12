@@ -73,7 +73,7 @@ namespace PasigLibrarySystem.USER
                     SET 
                         status = 'LOST', 
                         Actual_Return_Date = @LostDate 
-                    WHERE book_id = @BookID 
+                    WHERE ID = @BookID 
                     AND user_id = @UserID AND status = 'BORROWED'";
 
                 MySqlCommand cmdStatus = new MySqlCommand(updateStatusQuery, db.GetConnection(), transaction);
@@ -82,7 +82,7 @@ namespace PasigLibrarySystem.USER
                 cmdStatus.Parameters.AddWithValue("@LostDate", DateTime.Now.ToString("yyyy-MM-dd"));
                 cmdStatus.ExecuteNonQuery();
 
-                string updateBookQuery = "UPDATE books SET status = 'LOST' WHERE BookID = @BookID";
+                string updateBookQuery = "UPDATE books SET status = 'LOST' WHERE ID = @BookID";
                 MySqlCommand cmdBook = new MySqlCommand(updateBookQuery, db.GetConnection(), transaction);
                 cmdBook.Parameters.AddWithValue("@BookID", currentBookID);
                 cmdBook.ExecuteNonQuery();

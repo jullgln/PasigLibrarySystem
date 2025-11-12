@@ -96,23 +96,19 @@ namespace PasigLibrarySystem.USER
                 s.borrowed_date AS 'Borrowed Date',
                 s.return_date AS 'Due Date',
                 s.Actual_Return_Date AS 'Returned Date',
-                COALESCE(s.book_id, s.journal_id) AS 'Item ID',
+                COALESCE(s.ID) AS 'Item ID',
                 CASE
-                    WHEN s.book_id IS NOT NULL THEN COALESCE(b.BookTitle, 'N/A')
-                    WHEN s.journal_id IS NOT NULL THEN COALESCE(j.JournalTitle, 'N/A')
+                    WHEN s.ID IS NOT NULL THEN COALESCE(b.Title, 'N/A')
                     ELSE 'Item Deleted'
                 END AS 'Title',
                 CASE
-                    WHEN s.book_id IS NOT NULL THEN 'Book'
-                    WHEN s.journal_id IS NOT NULL THEN 'Journal'
+                    WHEN s.ID IS NOT NULL THEN 'Book'
                     ELSE 'Unknown'
                 END AS 'Item Type'
             FROM
                 status s
             LEFT JOIN
-                books b ON s.book_id = b.BookID
-            LEFT JOIN
-                journals j ON s.journal_id = j.JournalID
+                books b ON s.ID = b.ID
             WHERE 
                 s.user_id = @userID
             ORDER BY 

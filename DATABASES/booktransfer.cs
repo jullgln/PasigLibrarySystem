@@ -19,6 +19,7 @@ namespace PasigLibrarySystem.DATABASES
         public static string currentstatus { get; set; }
         public static string currentshelfnumber { get; set; }
         public static string currentabstract { get; set; }
+        public static string currenttype { get; set; }
     }
     public class status_data
     {

@@ -50,7 +50,7 @@ namespace PasigLibrarySystem.ADMIN
             {
                 string updateQuery = @"
                     UPDATE books SET
-                        BookTitle = @title,
+                        Title = @title,
                         Author = @author,
                         Genre = @genre,
                         Pub_Date = @pubDate,
@@ -59,7 +59,7 @@ namespace PasigLibrarySystem.ADMIN
                         ISBN = @isbn,
                         Status = @status,
                         Shelf_Number = @shelfNum
-                    WHERE BookID = @bookId";
+                    WHERE ID = @bookId";
 
                 MySqlCommand cmd = new MySqlCommand(updateQuery, db.GetConnection());
 
@@ -89,7 +89,7 @@ namespace PasigLibrarySystem.ADMIN
                 }
                 else
                 {
-                    MessageBox.Show("Book details not changed or BookID not found.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Book details not changed or ID not found.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)

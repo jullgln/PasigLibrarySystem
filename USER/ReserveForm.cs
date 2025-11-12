@@ -44,7 +44,7 @@ namespace PasigLibrarySystem.USER
             db.Open();
 
             // Check book status
-            MySqlCommand checkCmd = new MySqlCommand("SELECT Status FROM books WHERE BookID=@bookId", db.GetConnection());
+            MySqlCommand checkCmd = new MySqlCommand("SELECT Status FROM books WHERE ID=@bookId", db.GetConnection());
             checkCmd.Parameters.AddWithValue("@bookId", book_data.currentbookid);
             string currentStatus = checkCmd.ExecuteScalar()?.ToString();
 
@@ -58,7 +58,7 @@ namespace PasigLibrarySystem.USER
             if (currentStatus.ToUpper() == "RESERVED" || currentStatus.ToUpper() == "BORROWED" || currentStatus.ToUpper() == "AVAILABLE")
             {
                 MySqlCommand cmd = new MySqlCommand(
-                    $"INSERT INTO status (book_id, journal_id, user_id, status, borrowed_date, return_date, reserved_date) " +
+                    $"INSERT INTO status (ID, user_id, status, borrowed_date, return_date, reserved_date) " +
                     $"VALUES (@bookId, NULL, @userId, 'RESERVED', NULL, NULL, @reservedDate)", db.GetConnection());
                 cmd.Parameters.AddWithValue("@bookId", book_data.currentbookid);
                 cmd.Parameters.AddWithValue("@userId", user_data.user_id);
@@ -68,7 +68,7 @@ namespace PasigLibrarySystem.USER
                 if (currentStatus.ToUpper() == "AVAILABLE")
                 {
                     MySqlCommand updateBookCmd = new MySqlCommand(
-                        $"UPDATE books SET Status='RESERVED' WHERE BookID=@bookId", db.GetConnection());
+                        $"UPDATE books SET Status='RESERVED' WHERE ID=@bookId", db.GetConnection());
                     updateBookCmd.Parameters.AddWithValue("@bookId", book_data.currentbookid);
                     updateBookCmd.ExecuteNonQuery();
                 }

@@ -36,24 +36,25 @@ namespace PasigLibrarySystem.ADMIN
             deletebtn.BackColor = UIColors.VividAzure;
             searchbtn.ForeColor = UIColors.White;
             searchbtn.BackColor = UIColors.VividAzure;
+            welcomelbl.Text = "Welcome, " + UTILS.Session.CurrentUser + "!";
         }
         private void loadBooks(string keyword = "", string category = "All")
         {
             DBConnect db = new DBConnect();
             {
                 db.Open();
-                string sql = $"SELECT b.BookID, b.BookTitle, b.Author, b.Genre, b.Pub_Date, b.status " +
+                string sql = $"SELECT b.ID, b.Title, b.Author, b.Genre, b.Pub_Date, b.status " +
                          $"FROM books b";
 
                 if (!string.IsNullOrEmpty(keyword))
                 {
                     if (category == "All")
                     {
-                        sql += " WHERE b.BookTitle LIKE @keyword OR b.Author LIKE @keyword OR b.Genre LIKE @keyword";
+                        sql += " WHERE b.Title LIKE @keyword OR b.Author LIKE @keyword OR b.Genre LIKE @keyword";
                     }
                     else if (category == "Title")
                     {
-                        sql += " WHERE b.BookTitle LIKE @keyword";
+                        sql += " WHERE b.Title LIKE @keyword";
                     }
                     else if (category == "Author")
                     {
@@ -103,7 +104,7 @@ namespace PasigLibrarySystem.ADMIN
             if (tableview.SelectedRows.Count == 0) return;
 
             DataGridViewRow row = tableview.SelectedRows[0];
-            string selectedBookID = row.Cells["BookID"].Value.ToString();
+            string selectedBookID = row.Cells["ID"].Value.ToString();
 
             if (LoadBookDetails(selectedBookID))
             {
@@ -130,7 +131,7 @@ namespace PasigLibrarySystem.ADMIN
             }
 
             DataGridViewRow row = tableview.SelectedRows[0];
-            string selectedBookID = row.Cells["BookID"].Value.ToString();
+            string selectedBookID = row.Cells["ID"].Value.ToString();
 
             if (LoadBookDetails(selectedBookID))
             {
@@ -148,33 +149,24 @@ namespace PasigLibrarySystem.ADMIN
             loadBooks(keyword);
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        private bool LoadBookDetails(string ID)
         {
-
-        }
-
-        private void circulationBtn_Click(object sender, EventArgs e)
-        {
-            UTILS.Action.SwitchForm(this, new CirculationManagement());
-        }
-        private bool LoadBookDetails(string bookID)
-        {
-            string sql = "SELECT BookTitle, Author, Genre, Pub_Date, Publisher, Pagecount, ISBN, status, Shelf_Number " +
-                         "FROM books WHERE BookID = @bookID";
+            string sql = "SELECT Title, Author, Genre, Pub_Date, Publisher, Pagecount, ISBN, status, Shelf_Number " +
+                         "FROM books WHERE ID = @bookID";
             DBConnect db = new DBConnect();
             db.Open();
 
             try
             {
                 MySqlCommand cmd = new MySqlCommand(sql, db.GetConnection());
-                cmd.Parameters.AddWithValue("@bookID", bookID);
+                cmd.Parameters.AddWithValue("@bookID", ID);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        DATABASES.book_data.currentbookid = bookID;
-                        DATABASES.book_data.currentbookname = reader["BookTitle"].ToString();
+                        DATABASES.book_data.currentbookid = ID;
+                        DATABASES.book_data.currentbookname = reader["Title"].ToString();
                         DATABASES.book_data.currentbookauthor = reader["Author"].ToString();
                         DATABASES.book_data.currentgenre = reader["Genre"].ToString();
                         DATABASES.book_data.currentpublishdate = reader["Pub_Date"].ToString();
@@ -228,11 +220,11 @@ namespace PasigLibrarySystem.ADMIN
             }
 
             DataGridViewRow row = tableview.SelectedRows[0];
-            string bookID = row.Cells["BookID"].Value.ToString();
-            string bookTitle = row.Cells["BookTitle"].Value.ToString();
+            string ID = row.Cells["ID"].Value.ToString();
+            string bookTitle = row.Cells["Title"].Value.ToString();
 
             DialogResult result = MessageBox.Show(
-                $"Are you sure you want to mark '{bookTitle}' ({bookID}) as DISPOSED? This action cannot be undone.",
+                $"Are you sure you want to mark '{bookTitle}' ({ID}) as DISPOSED? This action cannot be undone.",
                 "Confirm Disposal",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
@@ -247,9 +239,9 @@ namespace PasigLibrarySystem.ADMIN
 
             try
             {
-                string updateBookQuery = "UPDATE books SET status = 'DISPOSED' WHERE BookID = @BookID";
+                string updateBookQuery = "UPDATE books SET status = 'DISPOSED' WHERE ID = @BookID";
                 MySqlCommand cmd = new MySqlCommand(updateBookQuery, db.GetConnection());
-                cmd.Parameters.AddWithValue("@BookID", bookID);
+                cmd.Parameters.AddWithValue("@BookID", ID);
                 int rowsAffected = cmd.ExecuteNonQuery();
 
                 if (rowsAffected > 0)
@@ -259,16 +251,16 @@ namespace PasigLibrarySystem.ADMIN
                         SET 
                             status = 'DISPOSED', 
                             Actual_Return_Date = @CurrentDate 
-                        WHERE book_id = @BookID 
+                        WHERE ID = @BookID 
                         AND (status = 'BORROWED' OR status = 'RESERVED')";
 
                     MySqlCommand updateStatusCmd = new MySqlCommand(updateActiveStatusQuery, db.GetConnection());
-                    updateStatusCmd.Parameters.AddWithValue("@BookID", bookID);
+                    updateStatusCmd.Parameters.AddWithValue("@BookID", ID);
                     updateStatusCmd.Parameters.AddWithValue("@CurrentDate", DateTime.Now.ToString("yyyy-MM-dd"));
 
                     updateStatusCmd.ExecuteNonQuery();
 
- 
+
                     MessageBox.Show($"Book '{bookTitle}' has been marked as DISPOSED, and any active circulation records were closed.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     loadBooks();
                 }
@@ -286,5 +278,16 @@ namespace PasigLibrarySystem.ADMIN
                 db.Close();
             }
         }
+
+        private void AdminBookManagement_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void circlbl_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.SwitchForm(this, new AdminCirculationManagement());
+        }
+
     }
 }

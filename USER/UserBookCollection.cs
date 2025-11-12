@@ -37,14 +37,14 @@ namespace PasigLibrarySystem.USER
         }
         private void LoadBorrowedItems(string keyword = "", string category = "All")
         {
-            string sql = $"SELECT b.BookID, b.BookTitle, b.Author, b.Genre, s.borrowed_date, s.return_date, s.status " +
+            string sql = $"SELECT b.ID, b.Title, b.Author, b.Genre, s.borrowed_date, s.return_date, s.status " +
                          $"FROM books b " +
-                         $"JOIN status s ON b.BookID = s.book_id " +
+                         $"JOIN status s ON b.ID = s.ID " +
                          $"WHERE s.user_id = @userid AND (s.status = 'BORROWED' OR s.status = 'RESERVED')";
 
             if (!string.IsNullOrEmpty(keyword))
             {
-                sql += " AND (b.BookTitle LIKE @keyword OR b.Author LIKE @keyword OR b.Genre LIKE @keyword)";
+                sql += " AND (b.Title LIKE @keyword OR b.Author LIKE @keyword OR b.Genre LIKE @keyword)";
             }
             DBConnect db = new DBConnect();
             db.Open();
@@ -68,7 +68,7 @@ namespace PasigLibrarySystem.USER
             // Generate simple summaries
             foreach (DataRow row in dt.Rows)
             {
-                book_data.currentbookname = row["BookTitle"].ToString();
+                book_data.currentbookname = row["Title"].ToString();
                 string genre = row["Genre"].ToString().ToLower();
                 string summary = "";
 
@@ -171,8 +171,8 @@ namespace PasigLibrarySystem.USER
             if (dataGridView1.SelectedRows.Count == 0) return;
 
             DataGridViewRow row = dataGridView1.SelectedRows[0];
-            book_data.currentbookid = row.Cells["BookID"].Value.ToString();
-            book_data.currentbookname = row.Cells["BookTitle"].Value.ToString();
+            book_data.currentbookid = row.Cells["ID"].Value.ToString();
+            book_data.currentbookname = row.Cells["Title"].Value.ToString();
             book_data.currentbookauthor = row.Cells["Author"].Value.ToString();
             string dateBorrowed = row.Cells["borrowed_date"].Value.ToString();
 
@@ -195,7 +195,7 @@ namespace PasigLibrarySystem.USER
                 }
 
                 db.Open();
-                string query = "SELECT borrowed_date, return_date FROM status WHERE user_ID = @userID AND book_id = @bookId";
+                string query = "SELECT borrowed_date, return_date FROM status WHERE user_ID = @userID AND ID = @bookId";
                 MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
                 cmd.Parameters.AddWithValue("@userID", user_data.user_id);
                 cmd.Parameters.AddWithValue("@bookId", book_data.currentbookid);

@@ -36,6 +36,9 @@
             H1 = new Label();
             pictureBox1 = new PictureBox();
             taskbarpanel = new Panel();
+            panel1 = new Panel();
+            pictureBox2 = new PictureBox();
+            label1 = new Label();
             highlightpanel = new Panel();
             pictureBox7 = new PictureBox();
             memberlbl = new Label();
@@ -54,6 +57,8 @@
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             taskbarpanel.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             highlightpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel2.SuspendLayout();
@@ -81,10 +86,10 @@
             // 
             LogOutbtn.FlatStyle = FlatStyle.Flat;
             LogOutbtn.Font = new Font("Poppins Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LogOutbtn.Location = new Point(1326, 36);
+            LogOutbtn.Location = new Point(1289, 36);
             LogOutbtn.Margin = new Padding(3, 4, 3, 4);
             LogOutbtn.Name = "LogOutbtn";
-            LogOutbtn.Size = new Size(106, 47);
+            LogOutbtn.Size = new Size(143, 47);
             LogOutbtn.TabIndex = 17;
             LogOutbtn.Text = " Log Out";
             LogOutbtn.TextAlign = ContentAlignment.BottomCenter;
@@ -96,7 +101,7 @@
             welcomelbl.AutoSize = true;
             welcomelbl.Font = new Font("Poppins Light", 13F);
             welcomelbl.ForeColor = Color.White;
-            welcomelbl.Location = new Point(1081, 41);
+            welcomelbl.Location = new Point(1066, 41);
             welcomelbl.Name = "welcomelbl";
             welcomelbl.Size = new Size(184, 39);
             welcomelbl.TabIndex = 7;
@@ -130,6 +135,7 @@
             // taskbarpanel
             // 
             taskbarpanel.BackColor = Color.White;
+            taskbarpanel.Controls.Add(panel1);
             taskbarpanel.Controls.Add(highlightpanel);
             taskbarpanel.Controls.Add(panel2);
             taskbarpanel.Controls.Add(panel3);
@@ -138,6 +144,40 @@
             taskbarpanel.Name = "taskbarpanel";
             taskbarpanel.Size = new Size(270, 803);
             taskbarpanel.TabIndex = 5;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(-6, 572);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(329, 109);
+            panel1.TabIndex = 9;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(38, 29);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(42, 42);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Poppins", 12F);
+            label1.ForeColor = Color.FromArgb(15, 46, 103);
+            label1.Location = new Point(85, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(152, 72);
+            label1.TabIndex = 7;
+            label1.Text = "Circulation\r\nManagement";
+            label1.Click += label1_Click;
             // 
             // highlightpanel
             // 
@@ -343,6 +383,9 @@
             headerpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             taskbarpanel.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             highlightpanel.ResumeLayout(false);
             highlightpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
@@ -380,5 +423,8 @@
         private Label lbl3;
         private DataGridView tableview;
         private Button addadminbtn;
+        private Panel panel1;
+        private PictureBox pictureBox2;
+        private Label label1;
     }
 }

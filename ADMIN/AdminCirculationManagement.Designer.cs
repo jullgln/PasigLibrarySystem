@@ -1,6 +1,6 @@
 ﻿namespace PasigLibrarySystem.ADMIN
 {
-    partial class AdminReports_Inventory
+    partial class AdminCirculationManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminReports_Inventory));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminCirculationManagement));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             headerpanel = new Panel();
             LogOutbtn = new Button();
@@ -36,34 +36,33 @@
             H1 = new Label();
             pictureBox1 = new PictureBox();
             taskbarpanel = new Panel();
-            panel3 = new Panel();
+            highlightpanel = new Panel();
             pictureBox2 = new PictureBox();
             label1 = new Label();
-            panel1 = new Panel();
+            panel = new Panel();
             pictureBox7 = new PictureBox();
             memberlbl = new Label();
             panel2 = new Panel();
             pictureBox8 = new PictureBox();
             BookManagelbl = new Label();
-            highlightpanel = new Panel();
+            panel3 = new Panel();
             pictureBox9 = new PictureBox();
             rep_invlbl = new Label();
+            cbxFilter = new ComboBox();
+            dataGridView1 = new DataGridView();
             lbl3 = new Label();
-            filtertxt = new ComboBox();
-            tableview = new DataGridView();
-            abstractxt = new TextBox();
             headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             taskbarpanel.SuspendLayout();
-            panel3.SuspendLayout();
+            highlightpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel1.SuspendLayout();
+            panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            highlightpanel.SuspendLayout();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)tableview).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // headerpanel
@@ -78,7 +77,7 @@
             headerpanel.Margin = new Padding(3, 4, 3, 4);
             headerpanel.Name = "headerpanel";
             headerpanel.Size = new Size(1504, 117);
-            headerpanel.TabIndex = 4;
+            headerpanel.TabIndex = 5;
             // 
             // LogOutbtn
             // 
@@ -133,26 +132,26 @@
             // taskbarpanel
             // 
             taskbarpanel.BackColor = Color.White;
-            taskbarpanel.Controls.Add(panel3);
-            taskbarpanel.Controls.Add(panel1);
-            taskbarpanel.Controls.Add(panel2);
             taskbarpanel.Controls.Add(highlightpanel);
+            taskbarpanel.Controls.Add(panel);
+            taskbarpanel.Controls.Add(panel2);
+            taskbarpanel.Controls.Add(panel3);
             taskbarpanel.Location = new Point(-1, 104);
             taskbarpanel.Margin = new Padding(3, 4, 3, 4);
             taskbarpanel.Name = "taskbarpanel";
             taskbarpanel.Size = new Size(270, 803);
-            taskbarpanel.TabIndex = 5;
+            taskbarpanel.TabIndex = 6;
             // 
-            // panel3
+            // highlightpanel
             // 
-            panel3.BackColor = Color.Transparent;
-            panel3.Controls.Add(pictureBox2);
-            panel3.Controls.Add(label1);
-            panel3.Location = new Point(-6, 572);
-            panel3.Margin = new Padding(3, 4, 3, 4);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(329, 109);
-            panel3.TabIndex = 9;
+            highlightpanel.BackColor = Color.Black;
+            highlightpanel.Controls.Add(pictureBox2);
+            highlightpanel.Controls.Add(label1);
+            highlightpanel.Location = new Point(-6, 572);
+            highlightpanel.Margin = new Padding(3, 4, 3, 4);
+            highlightpanel.Name = "highlightpanel";
+            highlightpanel.Size = new Size(329, 109);
+            highlightpanel.TabIndex = 8;
             // 
             // pictureBox2
             // 
@@ -169,24 +168,23 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Poppins", 12F);
-            label1.ForeColor = Color.FromArgb(15, 46, 103);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(85, 17);
             label1.Name = "label1";
             label1.Size = new Size(152, 72);
             label1.TabIndex = 7;
             label1.Text = "Circulation\r\nManagement";
-            label1.Click += label1_Click;
             // 
-            // panel1
+            // panel
             // 
-            panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(pictureBox7);
-            panel1.Controls.Add(memberlbl);
-            panel1.Location = new Point(-9, 168);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(329, 109);
-            panel1.TabIndex = 8;
+            panel.BackColor = Color.Transparent;
+            panel.Controls.Add(pictureBox7);
+            panel.Controls.Add(memberlbl);
+            panel.Location = new Point(-9, 168);
+            panel.Margin = new Padding(3, 4, 3, 4);
+            panel.Name = "panel";
+            panel.Size = new Size(329, 109);
+            panel.TabIndex = 8;
             // 
             // pictureBox7
             // 
@@ -245,16 +243,16 @@
             BookManagelbl.Text = "Book\r\nManagement";
             BookManagelbl.Click += BookManagelbl_Click;
             // 
-            // highlightpanel
+            // panel3
             // 
-            highlightpanel.BackColor = Color.Black;
-            highlightpanel.Controls.Add(pictureBox9);
-            highlightpanel.Controls.Add(rep_invlbl);
-            highlightpanel.Location = new Point(-8, 433);
-            highlightpanel.Margin = new Padding(3, 4, 3, 4);
-            highlightpanel.Name = "highlightpanel";
-            highlightpanel.Size = new Size(329, 109);
-            highlightpanel.TabIndex = 2;
+            panel3.BackColor = Color.Transparent;
+            panel3.Controls.Add(pictureBox9);
+            panel3.Controls.Add(rep_invlbl);
+            panel3.Location = new Point(-8, 433);
+            panel3.Margin = new Padding(3, 4, 3, 4);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(329, 109);
+            panel3.TabIndex = 2;
             // 
             // pictureBox9
             // 
@@ -271,102 +269,86 @@
             // 
             rep_invlbl.AutoSize = true;
             rep_invlbl.Font = new Font("Poppins", 12F);
-            rep_invlbl.ForeColor = Color.White;
+            rep_invlbl.ForeColor = Color.FromArgb(15, 46, 103);
             rep_invlbl.Location = new Point(85, 17);
             rep_invlbl.Name = "rep_invlbl";
             rep_invlbl.Size = new Size(136, 72);
             rep_invlbl.TabIndex = 7;
             rep_invlbl.Text = "Reports and\r\n Inventory";
+            rep_invlbl.Click += rep_invlbl_Click;
+            // 
+            // cbxFilter
+            // 
+            cbxFilter.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxFilter.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbxFilter.FormattingEnabled = true;
+            cbxFilter.Items.AddRange(new object[] { "ALL", "BORROWED", "RETURNED", "RESERVED", "LOST" });
+            cbxFilter.Location = new Point(448, 169);
+            cbxFilter.Name = "cbxFilter";
+            cbxFilter.Size = new Size(151, 34);
+            cbxFilter.TabIndex = 7;
+            cbxFilter.SelectedIndexChanged += cbxFilter_SelectedIndexChanged;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.Location = new Point(326, 250);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(1045, 577);
+            dataGridView1.TabIndex = 8;
             // 
             // lbl3
             // 
             lbl3.AutoSize = true;
             lbl3.Font = new Font("Poppins", 13F);
             lbl3.ForeColor = Color.FromArgb(15, 46, 103);
-            lbl3.Location = new Point(317, 153);
+            lbl3.Location = new Point(326, 169);
             lbl3.Name = "lbl3";
             lbl3.Size = new Size(106, 39);
-            lbl3.TabIndex = 69;
+            lbl3.TabIndex = 68;
             lbl3.Text = "Filter by:";
             lbl3.TextAlign = ContentAlignment.TopCenter;
             // 
-            // filtertxt
-            // 
-            filtertxt.Font = new Font("Poppins", 10F);
-            filtertxt.FormattingEnabled = true;
-            filtertxt.Items.AddRange(new object[] { "Book Reports", "Book Inventory" });
-            filtertxt.Location = new Point(437, 151);
-            filtertxt.Margin = new Padding(3, 4, 3, 4);
-            filtertxt.Name = "filtertxt";
-            filtertxt.Size = new Size(138, 38);
-            filtertxt.TabIndex = 68;
-            filtertxt.SelectedIndexChanged += filtertxt_SelectedIndexChanged;
-            // 
-            // tableview
-            // 
-            tableview.AllowUserToAddRows = false;
-            tableview.AllowUserToDeleteRows = false;
-            tableview.BackgroundColor = Color.White;
-            tableview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            tableview.DefaultCellStyle = dataGridViewCellStyle1;
-            tableview.Location = new Point(325, 213);
-            tableview.Margin = new Padding(3, 4, 3, 4);
-            tableview.Name = "tableview";
-            tableview.ReadOnly = true;
-            tableview.RowHeadersWidth = 51;
-            tableview.Size = new Size(1070, 445);
-            tableview.TabIndex = 70;
-            // 
-            // abstractxt
-            // 
-            abstractxt.Font = new Font("Poppins", 9F);
-            abstractxt.Location = new Point(325, 697);
-            abstractxt.Margin = new Padding(3, 4, 3, 4);
-            abstractxt.Multiline = true;
-            abstractxt.Name = "abstractxt";
-            abstractxt.ScrollBars = ScrollBars.Vertical;
-            abstractxt.Size = new Size(1069, 177);
-            abstractxt.TabIndex = 71;
-            // 
-            // AdminReports_Inventory
+            // AdminCirculationManagement
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1445, 908);
-            Controls.Add(abstractxt);
-            Controls.Add(tableview);
             Controls.Add(lbl3);
-            Controls.Add(filtertxt);
+            Controls.Add(dataGridView1);
+            Controls.Add(cbxFilter);
             Controls.Add(headerpanel);
             Controls.Add(taskbarpanel);
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "AdminReports_Inventory";
+            Name = "AdminCirculationManagement";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AdminReports_Inventory";
+            Text = "AdminCirculationManagement";
+            Load += AdminCirculationManagement_Load;
             headerpanel.ResumeLayout(false);
             headerpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             taskbarpanel.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            highlightpanel.ResumeLayout(false);
+            highlightpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panel.ResumeLayout(false);
+            panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            highlightpanel.ResumeLayout(false);
-            highlightpanel.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)tableview).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -379,21 +361,20 @@
         private Label H1;
         private PictureBox pictureBox1;
         private Panel taskbarpanel;
-        private Panel panel1;
+        private Panel highlightpanel;
+        private PictureBox pictureBox2;
+        private Label label1;
+        private Panel panel;
         private PictureBox pictureBox7;
         private Label memberlbl;
         private Panel panel2;
         private PictureBox pictureBox8;
         private Label BookManagelbl;
-        private Panel highlightpanel;
+        private Panel panel3;
         private PictureBox pictureBox9;
         private Label rep_invlbl;
+        private ComboBox cbxFilter;
+        private DataGridView dataGridView1;
         private Label lbl3;
-        private ComboBox filtertxt;
-        private DataGridView tableview;
-        private TextBox abstractxt;
-        private Panel panel3;
-        private PictureBox pictureBox2;
-        private Label label1;
     }
 }

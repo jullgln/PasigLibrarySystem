@@ -21,6 +21,7 @@ namespace PasigLibrarySystem.ADMIN
             searchbtn.BackColor = UIColors.VividAzure;
             addadminbtn.ForeColor = UIColors.White;
             addadminbtn.BackColor = UIColors.DarkBlue;
+            welcomelbl.Text = "Welcome, " + UTILS.Session.CurrentUser + "!";
             loadUsers("");
         }
         private void loadUsers(string searchTerm)
@@ -106,6 +107,8 @@ namespace PasigLibrarySystem.ADMIN
         private void rep_invlbl_Click(object sender, EventArgs e)
         {
             UTILS.Action.SwitchForm(this, new AdminReports_Inventory());
+
+
         }
 
         private void addadminbtn_Click(object sender, EventArgs e)
@@ -123,6 +126,11 @@ namespace PasigLibrarySystem.ADMIN
         {
             string selectedRole = filtertxt.SelectedItem?.ToString();
             loadUsersByRole(selectedRole);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            UTILS.Action.SwitchForm(this, new AdminCirculationManagement());
         }
     }
 }
